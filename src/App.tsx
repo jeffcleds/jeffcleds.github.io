@@ -14,9 +14,9 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <> {/* Added React Fragment here */}
+  <QueryClientProvider client={queryClient}> {/* QueryClientProvider receives one child: TooltipProvider */}
+    <TooltipProvider> {/* TooltipProvider receives one child: React Fragment */}
+      <> {/* This React Fragment correctly wraps multiple children */}
         <Toaster />
         <Sonner />
         <BrowserRouter>
@@ -32,7 +32,7 @@ const App = () => (
             </Routes>
           </Layout>
         </BrowserRouter>
-      </> {/* Closed React Fragment here */}
+      </>
     </TooltipProvider>
   </QueryClientProvider>
 );
