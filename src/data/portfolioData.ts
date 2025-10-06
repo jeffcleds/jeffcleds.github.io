@@ -23,6 +23,16 @@ export interface PortfolioLink {
   className?: string; // For specific styling if needed
 }
 
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  githubLink?: string;
+  liveLink?: string;
+}
+
 export const profileData = {
   name: "Ernie Joseph Cledera",
   profileImage: "/placeholder.svg", // Replace with your profile image path, e.g., "/profile.jpg"
@@ -171,6 +181,44 @@ export const languagesData: string[] = [
   "CSS3",
   "PHP",
   "C++",
+];
+
+export const projectsData: Project[] = [
+  {
+    id: 1,
+    title: "Personal Portfolio Website",
+    description: "A responsive personal portfolio website built with React, TypeScript, and Tailwind CSS, showcasing my skills and projects.",
+    image: "/placeholder.svg",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    githubLink: "https://github.com/yourusername/portfolio",
+    liveLink: "https://yourportfolio.com",
+  },
+  {
+    id: 2,
+    title: "E-commerce Dashboard",
+    description: "A dashboard for managing e-commerce operations, including product inventory, orders, and customer data. Built with React and a mock API.",
+    image: "/placeholder.svg",
+    technologies: ["React", "Node.js", "Express", "MongoDB"],
+    githubLink: "https://github.com/yourusername/ecommerce-dashboard",
+    liveLink: "https://ecommerce-dashboard.com",
+  },
+  {
+    id: 3,
+    title: "Task Management CLI Tool",
+    description: "A command-line interface tool for managing daily tasks, built with Python. Features include adding, deleting, and marking tasks as complete.",
+    image: "/placeholder.svg",
+    technologies: ["Python", "CLI"],
+    githubLink: "https://github.com/yourusername/task-cli",
+  },
+  {
+    id: 4,
+    title: "Simple Calculator",
+    description: "A basic interactive calculator application built with React and TypeScript, demonstrating fundamental UI and state management.",
+    image: "/ai-calculator.png", // AI-generated photo
+    technologies: ["React", "TypeScript", "Tailwind CSS"],
+    githubLink: "https://github.com/yourusername/simple-calculator", // Placeholder
+    liveLink: "/projects/calculator", // Internal link to the calculator component
+  },
 ];
 
 export const diplomaData = {
