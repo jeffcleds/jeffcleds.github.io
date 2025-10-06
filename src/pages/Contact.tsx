@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Github, Link as LinkIcon } from "lucide-react"; // Added Github and LinkIcon
+import { Mail, Phone, MapPin, Github, Link as LinkIcon } from "lucide-react";
 import { showSuccess, showError } from "@/utils/toast";
 
 const Contact = () => {
@@ -59,15 +59,15 @@ const Contact = () => {
             <CardContent className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-muted-foreground" />
-                <a href="mailto:john.doe@example.com" className="text-muted-foreground hover:text-primary">john.doe@example.com</a>
+                <a href="mailto:cledera.ernie@gmail.com" className="text-muted-foreground hover:text-primary">cledera.ernie@gmail.com</a>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-muted-foreground" />
-                <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary">+1 (234) 567-890</a>
+                <a href="tel:+639296529698" className="text-muted-foreground hover:text-primary">+63 929 652 9698</a>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-muted-foreground" />
-                <span className="text-muted-foreground">New York, NY, USA</span>
+                <span className="text-muted-foreground">Philippines</span>
               </div>
             </CardContent>
           </Card>
@@ -78,11 +78,11 @@ const Contact = () => {
             <CardContent className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Github className="h-5 w-5 text-muted-foreground" />
-                <a href="https://github.com/johndoe" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">github.com/johndoe</a>
+                <a href="https://github.com/jeffcleds" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">github.com/jeffcleds</a>
               </div>
               <div className="flex items-center space-x-3">
                 <LinkIcon className="h-5 w-5 text-muted-foreground" />
-                <a href="https://linkedin.com/in/johndoe" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">linkedin.com/in/johndoe</a>
+                <a href="https://www.linkedin.com/in/ernie-cledera/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">linkedin.com/in/ernie-cledera</a>
               </div>
             </CardContent>
           </Card>
