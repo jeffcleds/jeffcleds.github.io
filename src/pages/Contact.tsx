@@ -4,17 +4,20 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Link as LinkIcon } from "lucide-react"; // Added Github and LinkIcon
 import { showSuccess, showError } from "@/utils/toast";
 
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    console.log("Form submitted!"); // Debug log
     // In a real application, you would send this data to a backend service.
     // For now, we'll just show a success toast.
     showSuccess("Your message has been sent!");
+    console.log("Success toast shown."); // Debug log
     // You might want to clear the form fields here
     (e.target as HTMLFormElement).reset();
+    console.log("Form reset."); // Debug log
   };
 
   return (
