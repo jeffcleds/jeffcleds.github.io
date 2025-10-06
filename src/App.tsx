@@ -9,28 +9,30 @@ import About from "./pages/About";
 import Projects from "./pages/Projects"; // This is the original Projects page
 import Contact from "./pages/Contact";
 import ProjectsPage from "./pages/ProjectsPage"; // Renamed from Portfolio
-import NotFound from "./pages/NotFound"; // <--- Added this import
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects-old" element={<Projects />} /> {/* Renamed original Projects route to avoid conflict */}
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/projects" element={<ProjectsPage />} /> {/* New Projects route, renamed from /portfolio */}
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
-      </BrowserRouter>
+      <> {/* Added React Fragment here */}
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/projects-old" element={<Projects />} /> {/* Renamed original Projects route to avoid conflict */}
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/projects" element={<ProjectsPage />} /> {/* New Projects route, renamed from /portfolio */}
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      </> {/* Closed React Fragment here */}
     </TooltipProvider>
   </QueryClientProvider>
 );
