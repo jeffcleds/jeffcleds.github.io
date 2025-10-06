@@ -7,7 +7,7 @@ import SkillsCard from "@/components/portfolio/SkillsCard";
 import ExperienceSection from "@/components/portfolio/ExperienceSection";
 import ToolsCard from "@/components/portfolio/ToolsCard";
 import LanguagesCard from "@/components/portfolio/LanguagesCard";
-import EducationSection from "@/components/portfolio/EducationSection"; // Import EducationSection
+import EducationSection from "@/components/portfolio/EducationSection";
 
 const About = () => {
   return (
@@ -20,9 +20,9 @@ const About = () => {
           <DetailsCard />
           <InterestsCard />
         </div>
+        <SkillsCard /> {/* Moved SkillsCard here */}
         <ExperienceSection />
-        <EducationSection /> {/* Added EducationSection here */}
-        <SkillsCard />
+        <EducationSection />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <ToolsCard />
           <LanguagesCard />
