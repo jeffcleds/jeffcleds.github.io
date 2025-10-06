@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Projects from "./pages/Projects"; // This is the original Projects page
 import Contact from "./pages/Contact";
 import ProjectsPage from "./pages/ProjectsPage"; // Renamed from Portfolio
+import NotFound from "./pages/NotFound"; // <--- Added this import
 
 const queryClient = new QueryClient();
 
