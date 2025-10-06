@@ -1,21 +1,20 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { softwareUsedData } from "@/data/portfolioData"; // Updated import
+import { softwareUsedData } from "@/data/portfolioData";
 
 const ToolsCard: React.FC = () => {
   return (
     <Card className="p-6">
       <CardHeader className="p-0 pb-4">
-        <CardTitle className="text-2xl font-bold">Software Used</CardTitle> {/* Renamed title */}
+        <CardTitle className="text-2xl font-bold">Software Used</CardTitle>
       </CardHeader>
-      <CardContent className="p-0 flex flex-wrap gap-3">
+      <CardContent className="p-0 flex flex-wrap gap-2">
         {softwareUsedData.map((tool, index) => (
           <span
             key={index}
-            className={`inline-flex items-center justify-center h-10 w-10 rounded-full text-lg font-bold ${tool.className || 'bg-muted text-muted-foreground'}`}
-            title={tool.name}
+            className="inline-flex items-center rounded-md bg-accent px-3 py-1 text-sm font-medium text-accent-foreground"
           >
-            {tool.icon}
+            {tool.name}
           </span>
         ))}
       </CardContent>
