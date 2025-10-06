@@ -18,7 +18,7 @@ const Index = () => {
       </p>
       <div className="flex flex-col sm:flex-row gap-4">
         <Button asChild size="lg">
-          <Link to="/projects">View My Projects</Link> {/* Changed from /portfolio to /projects */}
+          <Link to="/projects">View My Projects</Link>
         </Button>
         <Button asChild variant="outline" size="lg">
           <Link to="/contact">Contact Me</Link>
