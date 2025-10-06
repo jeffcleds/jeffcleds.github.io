@@ -136,16 +136,30 @@ export const educationData: Education[] = [
   },
 ];
 
-export const editingToolsData: { icon: string; name: string; className?: string }[] = [
-  { icon: "Ae", name: "After Effects", className: "bg-purple-600 text-white" },
-  { icon: "Pr", name: "Premiere Pro", className: "bg-blue-600 text-white" },
-  { icon: "🎨", name: "DaVinci Resolve", className: "bg-gray-800 text-white" },
-];
-
-export const languagesData: { flag: string; name: string }[] = [
-  { flag: "🇵🇭", name: "Filipino" },
-  { flag: "🇬🇧", name: "English (UK)" },
-  { flag: "🇺🇸", name: "English (US)" },
+export const softwareUsedData: { icon: string; name: string; className?: string }[] = [
+  { icon: "VS", name: "Visual Studio", className: "bg-purple-700 text-white" },
+  { icon: "VSC", name: "Visual Studio Code", className: "bg-blue-500 text-white" },
+  { icon: "GPT", name: "ChatGPT", className: "bg-green-500 text-white" },
+  { icon: "GH", name: "Github", className: "bg-gray-800 text-white" },
+  { icon: "U", name: "Unity", className: "bg-gray-900 text-white" },
+  { icon: "HS", name: "HubSpot", className: "bg-orange-500 text-white" },
+  { icon: "ZD", name: "Zendesk", className: "bg-green-600 text-white" },
+  { icon: "M365", name: "Microsoft 365", className: "bg-red-600 text-white" },
+  { icon: "GS", name: "Google Suite", className: "bg-blue-600 text-white" },
+  { icon: "GW", name: "Google Workspace", className: "bg-yellow-600 text-white" },
+  { icon: "ST", name: "ServiceTitan", className: "bg-blue-800 text-white" },
+  { icon: "NB", name: "Netbeans", className: "bg-blue-700 text-white" },
+  { icon: "IDLE", name: "IDLE", className: "bg-orange-400 text-white" },
+  { icon: "Z", name: "Zoom", className: "bg-blue-400 text-white" },
+  { icon: "ZP", name: "Zapier", className: "bg-orange-700 text-white" },
+  { icon: "A", name: "Asana", className: "bg-pink-500 text-white" },
+  { icon: "M", name: "Monday", className: "bg-blue-500 text-white" },
+  { icon: "S", name: "Slack", className: "bg-purple-500 text-white" },
+  { icon: "O", name: "Outlook", className: "bg-blue-700 text-white" },
+  { icon: "GHL", name: "GoHighLevel", className: "bg-red-700 text-white" },
+  { icon: "SAP", name: "SAP", className: "bg-blue-800 text-white" },
+  { icon: "C", name: "Cisco", className: "bg-blue-900 text-white" },
+  { icon: "PT", name: "Packet Tracer", className: "bg-teal-600 text-white" },
 ];
 
 export const portfolioLinksData: PortfolioLink[] = [
