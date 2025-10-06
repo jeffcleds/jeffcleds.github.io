@@ -1,5 +1,4 @@
 import React from "react";
-import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Footer = () => {
   return (
@@ -8,7 +7,6 @@ const Footer = () => {
         <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
           © {new Date().getFullYear()} My Portfolio. All rights reserved.
         </p>
-        <MadeWithDyad />
       </div>
     </footer>
   );
