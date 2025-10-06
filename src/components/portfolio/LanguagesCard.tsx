@@ -1,16 +1,6 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
-const languagesData = [
-  { name: "JavaScript" },
-  { name: "TypeScript" },
-  { name: "Python" },
-  { name: "Java" },
-  { name: "HTML5" },
-  { name: "CSS3" },
-  { name: "PHP" },
-  { name: "C++" },
-];
+import { languagesData } from "@/data/portfolioData"; // Import languagesData
 
 const LanguagesCard: React.FC = () => {
   return (
@@ -18,14 +8,15 @@ const LanguagesCard: React.FC = () => {
       <CardHeader>
         <CardTitle>Languages</CardTitle>
       </CardHeader>
-      <CardContent>
-        <div className="grid grid-cols-2 gap-4">
-          {languagesData.map((lang, index) => (
-            <div key={index} className="flex items-center space-x-2">
-              <span className="text-lg font-medium">{lang.name}</span>
-            </div>
-          ))}
-        </div>
+      <CardContent className="p-0 flex flex-wrap gap-2">
+        {languagesData.map((lang, index) => (
+          <span
+            key={index}
+            className="inline-flex items-center rounded-md bg-accent px-3 py-1 text-sm font-medium text-accent-foreground"
+          >
+            {lang}
+          </span>
+        ))}
       </CardContent>
     </Card>
   );

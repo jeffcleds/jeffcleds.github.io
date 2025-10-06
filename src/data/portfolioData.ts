@@ -170,6 +170,17 @@ export const portfolioLinksData: PortfolioLink[] = [
   { id: "dribbble", name: "Dribbble", icon: "🏀", url: "https://dribbble.com/yourusername", className: "bg-pink-700 text-white" },
 ];
 
+export const languagesData: string[] = [
+  "JavaScript",
+  "TypeScript",
+  "Python",
+  "Java",
+  "HTML5",
+  "CSS3",
+  "PHP",
+  "C++",
+];
+
 export const diplomaData = {
   title: "Diploma",
   subtitle: "Animation and Graphic Design",
