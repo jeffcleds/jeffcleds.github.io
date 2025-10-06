@@ -9,6 +9,7 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Projects", path: "/projects" },
+    { name: "Portfolio", path: "/portfolio" }, // Added Portfolio link
     { name: "Contact", path: "/contact" },
   ];
 
