@@ -162,14 +162,6 @@ export const softwareUsedData: { icon: string; name: string; className?: string 
   { icon: "PT", name: "Packet Tracer", className: "bg-teal-600 text-white" },
 ];
 
-export const portfolioLinksData: PortfolioLink[] = [
-  { id: "bento", name: "Bento", icon: "🎨", url: "https://bento.me/yourusername", className: "bg-green-500 text-white" },
-  { id: "behance", name: "Behance", icon: "Bē", url: "https://behance.net/yourusername", className: "bg-blue-700 text-white" },
-  { id: "instagram", name: "Instagram", icon: "📷", url: "https://instagram.com/jeffcleds", className: "bg-pink-500 text-white" },
-  { id: "youtube", name: "Youtube", icon: "▶️", url: "https://youtube.com/@yourusername", className: "bg-red-600 text-white" },
-  { id: "dribbble", name: "Dribbble", icon: "🏀", url: "https://dribbble.com/yourusername", className: "bg-pink-700 text-white" },
-];
-
 export const languagesData: string[] = [
   "JavaScript",
   "TypeScript",

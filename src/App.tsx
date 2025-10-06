@@ -3,13 +3,12 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/layout/Layout"; // Import the new Layout component
+import Layout from "./components/layout/Layout";
 import Index from "./pages/Index";
-import About from "./pages/About"; // Import the new About page
-import Projects from "./pages/Projects"; // Import the new Projects page
-import Contact from "./pages/Contact"; // Import the new Contact page
-import Portfolio from "./pages/Portfolio"; // Import the new Portfolio page
-import NotFound from "./pages/NotFound";
+import About from "./pages/About";
+import Projects from "./pages/Projects"; // This is the original Projects page
+import Contact from "./pages/Contact";
+import ProjectsPage from "./pages/ProjectsPage"; // Renamed from Portfolio
 
 const queryClient = new QueryClient();
 
@@ -19,13 +18,13 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Layout> {/* Wrap routes with the Layout component */}
+        <Layout>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} /> {/* New About route */}
-            <Route path="/projects" element={<Projects />} /> {/* New Projects route */}
-            <Route path="/contact" element={<Contact />} /> {/* New Contact route */}
-            <Route path="/portfolio" element={<Portfolio />} /> {/* New Portfolio route */}
+            <Route path="/about" element={<About />} />
+            <Route path="/projects-old" element={<Projects />} /> {/* Renamed original Projects route to avoid conflict */}
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/projects" element={<ProjectsPage />} /> {/* New Projects route, renamed from /portfolio */}
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
