@@ -96,7 +96,11 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-image: url('/starry-background.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    @apply text-foreground; /* Keep text color based on theme */
   }
 }
 
