@@ -14,9 +14,9 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}> {/* QueryClientProvider receives one child: TooltipProvider */}
-    <TooltipProvider> {/* TooltipProvider receives one child: React Fragment */}
-      <> {/* This React Fragment correctly wraps multiple children */}
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <>
         <Toaster />
         <Sonner />
         <BrowserRouter>
@@ -24,9 +24,9 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
-              <Route path="/projects-old" element={<Projects />} /> {/* Renamed original Projects route to avoid conflict */}
+              <Route path="/projects-old" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/projects" element={<ProjectsPage />} /> {/* New Projects route, renamed from /portfolio */}
+              <Route path="/projects" element={<ProjectsPage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
