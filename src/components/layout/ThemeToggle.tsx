@@ -8,10 +8,18 @@ import { Button } from "@/components/ui/button";
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
 
+  React.useEffect(() => {
+    console.log("ThemeToggle mounted. Current theme:", theme, "setTheme function:", setTheme);
+  }, [theme, setTheme]);
+
   const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    console.log("Toggled theme to:", newTheme);
+    if (setTheme) { // Ensure setTheme is available before calling it
+      const newTheme = theme === "dark" ? "light" : "dark";
+      setTheme(newTheme);
+      console.log("Toggled theme to:", newTheme);
+    } else {
+      console.error("setTheme function is not available from useTheme hook.");
+    }
   };
 
   return (
