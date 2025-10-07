@@ -1,9 +1,9 @@
 import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Github, Link as LinkIcon } from "lucide-react";
-import { projectsData } from "@/data/portfolioData"; // Import projectsData
-import { Link } from "react-router-dom"; // Import Link for internal navigation
+import { Github, Info } from "lucide-react"; // Changed Link as LinkIcon to Info
+import { projectsData } from "@/data/portfolioData";
+import { Link } from "react-router-dom";
 
 const ProjectCards: React.FC = () => {
   return (
@@ -43,13 +43,13 @@ const ProjectCards: React.FC = () => {
               project.liveLink.startsWith('/') ? (
                 <Button asChild size="sm">
                   <Link to={project.liveLink}>
-                    <LinkIcon className="h-4 w-4 mr-2" /> Live Demo
+                    <Info className="h-4 w-4 mr-2" /> View Details
                   </Link>
                 </Button>
               ) : (
                 <Button asChild size="sm">
                   <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                    <LinkIcon className="h-4 w-4 mr-2" /> Live Demo
+                    <Info className="h-4 w-4 mr-2" /> View Details
                   </a>
                 </Button>
               )
