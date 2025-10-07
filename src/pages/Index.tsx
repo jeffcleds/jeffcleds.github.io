@@ -5,7 +5,10 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import IntroCard from '@/components/portfolio/IntroCard';
 import TypewriterEffect from '@/components/TypewriterEffect';
-import SplitText from '@/components/SplitText'; // Import the new SplitText component
+import SplitText from '@/components/SplitText';
+import LogoLoop from '@/components/animations/LogoLoop';
+import MagnetEffect from '@/components/animations/MagnetEffect'; // New import for MagnetEffect
+import { softwareUsedData } from '@/data/portfolioData';
 
 export default function Index() {
   const jobTitles = [
@@ -40,7 +43,7 @@ export default function Index() {
         threshold={0.1}
         rootMargin="-100px"
         textAlign="center"
-        tag="h1" // Use h1 tag for semantic correctness
+        tag="h1"
         onLetterAnimationComplete={handleAnimationComplete}
       />
       <TypewriterEffect
@@ -48,11 +51,18 @@ export default function Index() {
         className="text-xl text-muted-foreground mb-8 max-w-2xl"
       />
       <div className="mb-12">
-        <Button asChild size="lg">
-          <Link to="/projects">View My Work</Link>
-        </Button>
+        <MagnetEffect strength={20} tolerance={0.8}> {/* Apply magnet effect here */}
+          <Button asChild size="lg">
+            <Link to="/projects">View My Work</Link>
+          </Button>
+        </MagnetEffect>
       </div>
       <IntroCard />
+
+      <div className="w-full mt-12">
+        <h2 className="text-2xl font-bold mb-6">Software & Tools Used</h2>
+        <LogoLoop items={softwareUsedData} duration={25} className="bg-muted py-4 rounded-lg" />
+      </div>
     </div>
   );
 }
