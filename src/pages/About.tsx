@@ -9,7 +9,7 @@ import ToolsCard from "@/components/portfolio/ToolsCard";
 import LanguagesCard from "@/components/portfolio/LanguagesCard";
 import EducationSection from "@/components/portfolio/EducationSection";
 import ScrollReveal from "@/components/animations/ScrollReveal";
-import ProfileOverviewCard from "@/components/portfolio/ProfileOverviewCard"; // Import the new ProfileOverviewCard
+import ReactbitsProfileCard from "@/components/portfolio/ReactbitsProfileCard"; // Import the new ReactbitsProfileCard
 
 const About = () => {
   return (
@@ -18,7 +18,7 @@ const About = () => {
 
       <div className="space-y-8">
         <ScrollReveal delay={0}>
-          <ProfileOverviewCard /> {/* New Profile Card */}
+          <ReactbitsProfileCard /> {/* Using the new ReactbitsProfileCard */}
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
           <IntroCard /> {/* Description */}
