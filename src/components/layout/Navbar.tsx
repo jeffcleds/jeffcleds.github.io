@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"; // Import useLocation
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
@@ -8,11 +8,13 @@ import { Menu } from "lucide-react";
 const navItems = [
   { name: "Home", to: "/" },
   { name: "About", to: "/about" },
-  { name: "Projects", to: "/projects" }, // Changed from Portfolio to Projects
+  { name: "Projects", to: "/projects" },
   { name: "Contact", to: "/contact" },
 ];
 
 const Navbar = () => {
+  const location = useLocation(); // Get current location
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center">
@@ -25,7 +27,11 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.to}
-                className="text-foreground/60 transition-colors hover:text-foreground/80"
+                className={`transition-colors ${
+                  location.pathname === item.to
+                    ? "text-[#14243d] font-semibold" // Highlight color for active link
+                    : "text-foreground/60 hover:text-foreground/80"
+                }`}
               >
                 {item.name}
               </Link>
@@ -51,7 +57,9 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.to}
-                  className="flex w-full items-center py-2 text-lg font-semibold"
+                  className={`flex w-full items-center py-2 text-lg font-semibold ${
+                    location.pathname === item.to ? "text-[#14243d]" : "" // Highlight color for active link in mobile menu
+                  }`}
                 >
                   {item.name}
                 </Link>
