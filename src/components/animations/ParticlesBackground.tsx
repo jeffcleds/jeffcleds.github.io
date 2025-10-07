@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useCallback } from "react";
-import Particles from "tsparticles";
-import { loadSlim } from "tsparticles-slim"; // loads tsparticles-slim
+import Particles from "tsparticles-react"; // Corrected import path
+import { loadSlim } from "tsparticles-slim";
 import type { Container, Engine } from "tsparticles-engine";
 import { ParticlesProps } from "tsparticles-react";
 
