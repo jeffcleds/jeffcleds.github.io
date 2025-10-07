@@ -3,8 +3,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { IntroCard } from '@/components/portfolio/IntroCard';
-import TypewriterEffect from '@/components/TypewriterEffect'; // Import the new component
+import IntroCard from '@/components/portfolio/IntroCard'; // Changed to default import
+import TypewriterEffect from '@/components/TypewriterEffect';
 
 const profileData = {
   name: "Ernie Joseph Cledera",
@@ -16,14 +16,14 @@ export default function Index() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-14rem)] text-center px-4 py-12">
       <img
-        src="/ernie-joseph-cledera.jpg" // Ensure this image is in your 'public' folder
+        src="/ernie-joseph-cledera.jpg"
         alt="Ernie Joseph Cledera"
-        className="w-48 h-48 rounded-full object-cover mb-8 transition-transform duration-300 ease-in-out border-4 border-primary shadow-lg hover:scale-105" // Removed grayscale, added hover:scale-105
+        className="w-48 h-48 rounded-full object-cover mb-8 transition-transform duration-300 ease-in-out border-4 border-primary shadow-lg hover:scale-105"
       />
       <h1 className="text-5xl font-extrabold tracking-tight mb-4">
         Hello, I'm Ernie Joseph Cledera
       </h1>
-      <TypewriterEffect // Using the new TypewriterEffect component
+      <TypewriterEffect
         text="Virtual Assistant | Data Management Specialist | Web Developer"
         className="text-xl text-muted-foreground mb-8 max-w-2xl"
       />
@@ -32,7 +32,7 @@ export default function Index() {
           <Link to="/portfolio">View My Work</Link>
         </Button>
       </div>
-      <IntroCard profileData={profileData} />
+      <IntroCard /> {/* Removed profileData prop */}
     </div>
   );
 }
