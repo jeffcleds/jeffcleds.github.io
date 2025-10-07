@@ -204,11 +204,12 @@ export const projectsData: Project[] = [
   },
   {
     id: 3,
-    title: "Task Management CLI Tool",
-    description: "A command-line interface tool for managing daily tasks, built with Python. Features include adding, deleting, and marking tasks as complete.",
-    image: "/placeholder.svg",
-    technologies: ["Python", "CLI"],
-    githubLink: "https://github.com/yourusername/task-cli",
+    title: "Class Scheduler",
+    description: "A web application to help students and instructors manage and visualize class schedules, assignments, and deadlines.",
+    image: "/placeholder.svg", // You can replace this with a specific image for your Class Scheduler project
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Firebase"],
+    githubLink: "https://github.com/yourusername/class-scheduler", // Placeholder
+    liveLink: "https://class-scheduler.com", // Placeholder
   },
   {
     id: 4,
