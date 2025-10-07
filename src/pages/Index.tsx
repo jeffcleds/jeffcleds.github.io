@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import IntroCard from '@/components/portfolio/IntroCard';
 import TypewriterEffect from '@/components/TypewriterEffect';
+import ShinyText from '@/components/ShinyText'; // Import ShinyText
+import ScrollReveal from '@/components/ScrollReveal'; // Keep existing import
 
 export default function Index() {
   const jobTitles = [
@@ -23,9 +25,11 @@ export default function Index() {
         alt="Ernie Joseph Cledera"
         className="w-48 h-48 rounded-full object-cover mb-8 transition-transform duration-300 ease-in-out border-4 border-primary shadow-lg hover:scale-105 hover:shadow-xl hover:shadow-primary/50"
       />
-      <h1 className="text-5xl font-extrabold tracking-tight mb-4">
-        Hello, I'm Ernie Joseph Cledera
-      </h1>
+      <ShinyText
+        text="Hello, I'm Ernie Joseph Cledera"
+        speed={5} // You can adjust the speed as needed
+        className="text-5xl font-extrabold tracking-tight mb-4" // Apply existing styling
+      />
       <TypewriterEffect
         words={jobTitles}
         className="text-xl text-muted-foreground mb-8 max-w-2xl"
