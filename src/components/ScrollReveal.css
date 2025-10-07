@@ -1,9 +1,0 @@
-/* src/components/ScrollReveal.css */
-.scroll-reveal .word {
-  display: inline-block; /* Essential for individual word animation */
-  white-space: nowrap; /* Prevents words from breaking onto new lines */
-}
-
-.scroll-reveal .split-char {
-  display: inline-block; /* Essential for individual character animation */
-}

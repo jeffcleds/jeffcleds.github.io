@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import IntroCard from '@/components/portfolio/IntroCard';
 import TypewriterEffect from '@/components/TypewriterEffect';
-import SplitText from '@/components/SplitText';
-import LogoLoop from '@/components/animations/LogoLoop';
-import { softwareUsedData } from '@/data/portfolioData'; // Import softwareUsedData
+import SplitText from '@/components/SplitText'; // Import the new SplitText component
 
 export default function Index() {
   const jobTitles = [
@@ -42,7 +40,7 @@ export default function Index() {
         threshold={0.1}
         rootMargin="-100px"
         textAlign="center"
-        tag="h1"
+        tag="h1" // Use h1 tag for semantic correctness
         onLetterAnimationComplete={handleAnimationComplete}
       />
       <TypewriterEffect
@@ -55,11 +53,6 @@ export default function Index() {
         </Button>
       </div>
       <IntroCard />
-
-      <div className="w-full mt-12">
-        <h2 className="text-2xl font-bold mb-6">Software & Tools Used</h2>
-        <LogoLoop items={softwareUsedData} duration={25} className="bg-muted py-4 rounded-lg" />
-      </div>
     </div>
   );
 }
