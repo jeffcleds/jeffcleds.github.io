@@ -169,7 +169,7 @@ export const softwareUsedData: { icon: string; name: string; className?: string 
   { icon: "ZP", name: "Zapier", className: "bg-orange-700 text-white" },
   { icon: "A", name: "Asana", className: "bg-pink-500 text-white" },
   { icon: "M", name: "Monday", className: "bg-blue-500 text-white" },
-  { icon: "S", name: "Slack", className="bg-purple-500 text-white" },
+  { icon: "S", name: "Slack", className: "bg-purple-500 text-white" },
   { icon: "O", name: "Outlook", className: "bg-blue-700 text-white" },
   { icon: "GHL", name: "GoHighLevel", className: "bg-red-700 text-white" },
   { icon: "SAP", name: "SAP", className: "bg-blue-800 text-white" },
