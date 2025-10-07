@@ -31,8 +31,8 @@ export default function Index() {
       <SplitText
         text="Hello, I'm Ernie Joseph Cledera"
         className="text-5xl font-extrabold tracking-tight mb-4"
-        delay={100}
-        duration={0.6}
+        delay={50}   {/* Reduced delay */}
+        duration={0.4} {/* Reduced duration */}
         ease="power3.out"
         splitType="chars"
         from={{ opacity: 0, y: 40 }}
@@ -40,7 +40,7 @@ export default function Index() {
         threshold={0.1}
         rootMargin="-100px"
         textAlign="center"
-        tag="h1" // Use h1 tag for semantic correctness
+        tag="h1"
         onLetterAnimationComplete={handleAnimationComplete}
       />
       <TypewriterEffect
