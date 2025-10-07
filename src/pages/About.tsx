@@ -20,10 +20,10 @@ const About = () => {
           <IntroCard /> {/* Description */}
         </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <ScrollReveal delay={0.1}>
+          <ScrollReveal delay={0.1} className="h-full"> {/* Added h-full */}
             <DetailsCard />
           </ScrollReveal>
-          <ScrollReveal delay={0.2}>
+          <ScrollReveal delay={0.2} className="h-full"> {/* Added h-full */}
             <InterestsCard />
           </ScrollReveal>
         </div>
