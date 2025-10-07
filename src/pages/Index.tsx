@@ -6,12 +6,6 @@ import { Button } from '@/components/ui/button';
 import IntroCard from '@/components/portfolio/IntroCard';
 import TypewriterEffect from '@/components/TypewriterEffect';
 
-const profileData = {
-  name: "Ernie Joseph Cledera",
-  tagline: "Passionate about creating impactful digital experiences.",
-  introduction: "I am <span class=\"highlight\">Ernie Joseph Cledera</span>, a dedicated professional with a strong background in virtual assistance, data management, and web development. My goal is to leverage technology to streamline processes and build user-friendly applications. I thrive in dynamic environments and am always eager to learn new technologies and improve my skills."
-};
-
 export default function Index() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-14rem)] text-center px-4 py-12">
@@ -29,7 +23,7 @@ export default function Index() {
       />
       <div className="mb-12">
         <Button asChild size="lg">
-          <Link to="/projects">View My Work</Link> {/* Changed link to /projects */}
+          <Link to="/projects">View My Work</Link>
         </Button>
       </div>
       <IntroCard />
