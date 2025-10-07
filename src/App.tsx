@@ -6,20 +6,20 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Index from "./pages/Index";
 import About from "./pages/About";
-import Projects from "./pages/Projects"; // This is the original Projects page
+import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-import ProjectsPage from "./pages/ProjectsPage"; // Renamed from Portfolio
+import ProjectsPage from "./pages/ProjectsPage";
 import NotFound from "./pages/NotFound";
-import CalculatorProject from "./components/portfolio/CalculatorProject"; // Import the new CalculatorProject
+import CalculatorProject from "./components/portfolio/CalculatorProject";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <>
-        <Toaster />
-        <Sonner />
+    <> {/* Added a React Fragment to wrap all children */}
+      <Toaster />
+      <Sonner />
+      <TooltipProvider>
         <BrowserRouter>
           <Layout>
             <Routes>
@@ -28,14 +28,14 @@ const App = () => (
               <Route path="/projects-old" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/projects/calculator" element={<CalculatorProject />} /> {/* New route for calculator */}
+              <Route path="/projects/calculator" element={<CalculatorProject />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
         </BrowserRouter>
-      </>
-    </TooltipProvider>
+      </TooltipProvider>
+    </>
   </QueryClientProvider>
 );
 
