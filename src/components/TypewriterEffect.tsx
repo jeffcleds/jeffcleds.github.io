@@ -28,7 +28,6 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
     if (hiddenSpanRef.current && words.length > 0) {
       const longestWord = words.reduce((a, b) => (a.length > b.length ? a : b), '');
       hiddenSpanRef.current.innerText = longestWord;
-      // Use a small delay to ensure styles are applied before measuring
       const timer = setTimeout(() => {
         if (hiddenSpanRef.current) {
           setMinWidth(`${hiddenSpanRef.current.offsetWidth}px`);
@@ -36,24 +35,36 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
       }, 50); 
       return () => clearTimeout(timer);
     }
-  }, [words, className]); // Recalculate if words or className (styles) change
+  }, [words, className]);
 
   useEffect(() => {
     const handleType = () => {
       const fullText = words[currentWordIndex];
+      const currentLength = currentText.length;
 
       if (isDeleting) {
-        setCurrentText(fullText.substring(0, currentText.length - 1));
-      } else {
-        setCurrentText(fullText.substring(0, currentText.length + 1));
-      }
-
-      if (!isDeleting && currentText === fullText) {
-        // Pause at end of word
-        setTimeout(() => setIsDeleting(true), pauseDelay);
-      } else if (isDeleting && currentText === '') {
-        setIsDeleting(false);
-        setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+        if (currentLength > 1) { // Keep deleting until one character is left
+          setCurrentText(fullText.substring(0, currentLength - 1));
+        } else { // One character left, stop deleting, switch to next word
+          setIsDeleting(false);
+          setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+          // The currentText will remain as the single character for a brief moment
+          // The next typing phase will handle replacing it.
+        }
+      } else { // Typing
+        // If we just switched from deleting (currentLength was 1 from previous word)
+        // or if we are starting a new word from scratch (currentLength is 0)
+        if (currentLength === 0 || (currentLength === 1 && currentText !== fullText.charAt(0))) {
+            // This condition means we are either truly empty, or we have the last char of the *previous* word
+            // and need to start typing the *new* word.
+            setCurrentText(fullText.charAt(0)); // Start with the first character of the new word
+        } else if (currentLength < fullText.length) {
+            // Continue typing the current word
+            setCurrentText(fullText.substring(0, currentLength + 1));
+        } else {
+            // Full word typed, pause and then start deleting
+            setTimeout(() => setIsDeleting(true), pauseDelay);
+        }
       }
     };
 
