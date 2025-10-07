@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import IntroCard from '@/components/portfolio/IntroCard';
 import TypewriterEffect from '@/components/TypewriterEffect';
-import SplitText from '@/components/SplitText'; // Import the new SplitText component
+import SplitText from '@/components/SplitText';
+import LogoLoop from '@/components/animations/LogoLoop'; // New import for LogoLoop
 
 export default function Index() {
   const jobTitles = [
@@ -15,6 +16,13 @@ export default function Index() {
     "Network Engineer",
     "Dispatcher",
     "Software Developer"
+  ];
+
+  const companyLogos = [
+    "/sti-logo.png",
+    "/ateneo-logo.png",
+    "/bell-canada-logo.png",
+    "/concentrix-logo.png",
   ];
 
   const handleAnimationComplete = () => {
@@ -40,7 +48,7 @@ export default function Index() {
         threshold={0.1}
         rootMargin="-100px"
         textAlign="center"
-        tag="h1" // Use h1 tag for semantic correctness
+        tag="h1"
         onLetterAnimationComplete={handleAnimationComplete}
       />
       <TypewriterEffect
@@ -53,6 +61,11 @@ export default function Index() {
         </Button>
       </div>
       <IntroCard />
+
+      <div className="w-full mt-12">
+        <h2 className="text-2xl font-bold mb-6">Trusted By</h2>
+        <LogoLoop logos={companyLogos} duration={25} className="bg-muted py-4 rounded-lg" />
+      </div>
     </div>
   );
 }
