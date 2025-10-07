@@ -4,6 +4,7 @@ export interface Experience {
   subtitle: string;
   date: string;
   responsibilities: string[];
+  logo?: string; // Added optional logo property
 }
 
 export interface Education {
@@ -53,6 +54,7 @@ export const experienceData: Experience[] = [
       "Coordinates schedules, assigns tasks, and monitors workflows to ensure timely service delivery.",
       "Communicates effectively between clients, teams, and management while maintaining accuracy in records and prioritizing urgent requests with a consistent 90% booking rate.",
     ],
+    logo: "/placeholder.svg", // Placeholder logo
   },
   {
     id: "bell-canada",
@@ -63,6 +65,7 @@ export const experienceData: Experience[] = [
       "Manage customers' account records, walkthrough their technical concerns in internet, satellite TV, and mobile phone services, provide support with billing concerns, and establish trust by providing excellent customer service and resolving telephone inquiries in a timely manner.",
       "Best in first call resolution. Best in average hold time resolving inquiries within 140 seconds.",
     ],
+    logo: "/placeholder.svg", // Placeholder logo
   },
   {
     id: "concentrix",
@@ -73,6 +76,7 @@ export const experienceData: Experience[] = [
       "Manages insurance claims, verifies coverage, and ensures compliance with policies and regulations.",
       "Provides clients with accurate information, resolves inquiries, and maintains detailed records to support smooth processing, resolving 95% of cases within first contact, improving satisfaction.",
     ],
+    logo: "/placeholder.svg", // Placeholder logo
   },
   {
     id: "ateneo-intern",
@@ -82,6 +86,7 @@ export const experienceData: Experience[] = [
     responsibilities: [
       "Completed a 3-month Engineering Internship at Ateneo De Naga University, providing hardware and technical support throughout the university and conducted network design and troubleshooting, install different types of operating systems and attended seminars regarding cybersecurity.",
     ],
+    logo: "/ateneo-logo.png", // Using existing Ateneo logo
   },
 ];
 
@@ -164,7 +169,7 @@ export const softwareUsedData: { icon: string; name: string; className?: string 
   { icon: "ZP", name: "Zapier", className: "bg-orange-700 text-white" },
   { icon: "A", name: "Asana", className: "bg-pink-500 text-white" },
   { icon: "M", name: "Monday", className: "bg-blue-500 text-white" },
-  { icon: "S", name: "Slack", className: "bg-purple-500 text-white" },
+  { icon: "S", name: "Slack", className="bg-purple-500 text-white" },
   { icon: "O", name: "Outlook", className: "bg-blue-700 text-white" },
   { icon: "GHL", name: "GoHighLevel", className: "bg-red-700 text-white" },
   { icon: "SAP", name: "SAP", className: "bg-blue-800 text-white" },
