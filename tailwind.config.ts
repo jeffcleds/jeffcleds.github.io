@@ -95,11 +95,16 @@ export default {
             transform: "translateY(0)",
           },
         },
+        shine: { // Added shine keyframes
+          from: { 'background-position': '200% 0' },
+          to: { 'background-position': '-200% 0' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in-up": "fade-in-up 1s ease-out forwards",
+        shine: 'shine 8s ease-in-out infinite', // Added shine animation
       },
     },
   },

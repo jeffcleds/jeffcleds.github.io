@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom"; // Import useLocation
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-
+import ShinyText from "@/components/animations/ShinyText"; // Import ShinyText
 
 const navItems = [
   { name: "Home", to: "/" },
@@ -20,7 +20,7 @@ const Navbar = () => {
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <Link to="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold">cledera.ernie</span>
+            <ShinyText className="font-bold">cledera.ernie</ShinyText>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             {navItems.map((item) => (
@@ -50,7 +50,7 @@ const Navbar = () => {
           </SheetTrigger>
           <SheetContent side="left" className="pr-0">
             <Link to="/" className="flex items-center space-x-2">
-              <span className="font-bold">cledera.ernie</span>
+              <ShinyText className="font-bold">cledera.ernie</ShinyText>
             </Link>
             <nav className="flex flex-col gap-2 mt-4">
               {navItems.map((item) => (
