@@ -6,7 +6,8 @@ import { Button } from '@/components/ui/button';
 import IntroCard from '@/components/portfolio/IntroCard';
 import TypewriterEffect from '@/components/TypewriterEffect';
 import SplitText from '@/components/SplitText';
-import LogoLoop from '@/components/animations/LogoLoop'; // New import for LogoLoop
+import LogoLoop from '@/components/animations/LogoLoop';
+import { softwareUsedData } from '@/data/portfolioData'; // Import softwareUsedData
 
 export default function Index() {
   const jobTitles = [
@@ -16,13 +17,6 @@ export default function Index() {
     "Network Engineer",
     "Dispatcher",
     "Software Developer"
-  ];
-
-  const companyLogos = [
-    "/sti-logo.png",
-    "/ateneo-logo.png",
-    "/bell-canada-logo.png",
-    "/concentrix-logo.png",
   ];
 
   const handleAnimationComplete = () => {
@@ -63,8 +57,8 @@ export default function Index() {
       <IntroCard />
 
       <div className="w-full mt-12">
-        <h2 className="text-2xl font-bold mb-6">Trusted By</h2>
-        <LogoLoop logos={companyLogos} duration={25} className="bg-muted py-4 rounded-lg" />
+        <h2 className="text-2xl font-bold mb-6">Software & Tools Used</h2>
+        <LogoLoop items={softwareUsedData} duration={25} className="bg-muted py-4 rounded-lg" />
       </div>
     </div>
   );
