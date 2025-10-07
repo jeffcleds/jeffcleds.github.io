@@ -4,20 +4,15 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Github, Link as LinkIcon, Download } from "lucide-react"; // Import Download icon
-import { showSuccess, showError } from "@/utils/toast";
+import { Mail, Phone, MapPin, Github, Link as LinkIcon, Download } from "lucide-react";
+import { showError } from "@/utils/toast"; // Only need showError now
 
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted!"); // Debug log
-    // In a real application, you would send this data to a backend service.
-    // For now, we'll just show a success toast.
-    showSuccess("Your message has been sent!");
-    console.log("Success toast shown."); // Debug log
-    // You might want to clear the form fields here
-    (e.target as HTMLFormElement).reset();
-    console.log("Form reset."); // Debug log
+    // Instead of sending data to a backend, show the requested message.
+    showError("Kindly email me for now as the API for this is not working properly.");
+    // No need to reset the form or show success if the API isn't working.
   };
 
   return (
@@ -86,7 +81,6 @@ const Contact = () => {
               </div>
               <div className="pt-4">
                 <Button asChild className="w-full">
-                  {/* IMPORTANT: Replace '/path/to/your/resume.pdf' with the actual path to your resume file in the public folder */}
                   <a href="/ernie-joseph-cledera-resume.pdf" download="Ernie_Joseph_Cledera_Resume.pdf">
                     <Download className="h-4 w-4 mr-2" /> Download Resume
                   </a>
