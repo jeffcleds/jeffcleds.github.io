@@ -4,7 +4,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig(() => ({
-  base: "/<REPOSITORY_NAME>/", // IMPORTANT: Replace <REPOSITORY_NAME> with your actual repository name
+  base: "/", // Changed to root path for user/organization pages
   server: {
     host: "::",
     port: 8080,
