@@ -121,6 +121,7 @@ const Particles: React.FC<ParticlesProps> = ({
   const particlesMeshRef = useRef<Mesh>();
   const programRef = useRef<Program>();
   const rendererRef = useRef<Renderer>();
+  const geometryRef = useRef<Geometry>(); // Added ref for geometry
 
   const animationState = useRef({
     elapsed: 0,
@@ -197,6 +198,7 @@ const Particles: React.FC<ParticlesProps> = ({
       random: { size: 4, data: randoms },
       color: { size: 3, data: colors }
     });
+    geometryRef.current = geometry; // Store geometry in ref
 
     const program = new Program(gl, {
       vertex,
@@ -222,7 +224,10 @@ const Particles: React.FC<ParticlesProps> = ({
       const renderer = rendererRef.current;
       const camera = cameraRef.current;
 
-      if (!particles || !program || !renderer || !camera) return;
+      if (!particles || !program || !renderer || !camera) {
+        animationRef.current = undefined; // Stop animation if resources are gone
+        return;
+      }
 
       const delta = t - state.lastTime;
       state.lastTime = t;
@@ -256,13 +261,35 @@ const Particles: React.FC<ParticlesProps> = ({
         container.removeEventListener('mousemove', handleMouseMove);
       }
       cancelAnimationFrame(animationRef.current!);
-      if (container.contains(gl.canvas)) {
-        container.removeChild(gl.canvas);
+      animationRef.current = undefined; // Clear animation frame ID
+
+      // Explicitly dispose OGL resources
+      if (particlesMeshRef.current) {
+        particlesMeshRef.current.setParent(null); // Detach from scene
+        particlesMeshRef.current = undefined;
       }
+      if (programRef.current) {
+        programRef.current.remove(); // Dispose program
+        programRef.current = undefined;
+      }
+      if (geometryRef.current) {
+        geometryRef.current.remove(); // Dispose geometry
+        geometryRef.current = undefined;
+      }
+      if (rendererRef.current) {
+        const canvas = rendererRef.current.gl.canvas;
+        if (container.contains(canvas)) {
+          container.removeChild(canvas);
+        }
+        rendererRef.current.gl.getExtension('WEBGL_lose_context')?.loseContext(); // Force context loss
+        rendererRef.current = undefined;
+      }
+      glRef.current = undefined;
+      cameraRef.current = undefined;
     };
   }, [
     particleCount,
-    particleColors,
+    JSON.stringify(particleColors), // Stringify to ensure deep comparison for array content
     cameraDistance,
     resize,
     handleMouseMove
