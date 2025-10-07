@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Github, Link as LinkIcon } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Link as LinkIcon, Download } from "lucide-react"; // Import Download icon
 import { showSuccess, showError } from "@/utils/toast";
 
 const Contact = () => {
@@ -83,6 +83,14 @@ const Contact = () => {
               <div className="flex items-center space-x-3">
                 <LinkIcon className="h-5 w-5 text-muted-foreground" />
                 <a href="https://www.linkedin.com/in/ernie-cledera/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">linkedin.com/in/ernie-cledera</a>
+              </div>
+              <div className="pt-4">
+                <Button asChild className="w-full">
+                  {/* IMPORTANT: Replace '/path/to/your/resume.pdf' with the actual path to your resume file in the public folder */}
+                  <a href="/ernie-joseph-cledera-resume.pdf" download="Ernie_Joseph_Cledera_Resume.pdf">
+                    <Download className="h-4 w-4 mr-2" /> Download Resume
+                  </a>
+                </Button>
               </div>
             </CardContent>
           </Card>
