@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Info } from "lucide-react"; // Removed Github import
+import { Info } from "lucide-react";
 import { projectsData } from "@/data/portfolioData";
 import { Link } from "react-router-dom";
 
@@ -9,7 +9,10 @@ const ProjectCards: React.FC = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {projectsData.map((project) => (
-        <Card key={project.id} className="flex flex-col">
+        <Card 
+          key={project.id} 
+          className="flex flex-col transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg hover:border-primary" // Added hover effects
+        >
           <img
             src={project.image}
             alt={project.title}
@@ -32,7 +35,6 @@ const ProjectCards: React.FC = () => {
             </div>
           </CardContent>
           <CardFooter className="flex justify-end gap-2">
-            {/* Removed GitHub button */}
             {project.liveLink && (
               project.liveLink.startsWith('/') ? (
                 <Button asChild size="sm">
