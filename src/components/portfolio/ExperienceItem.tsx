@@ -8,13 +8,12 @@ interface ExperienceItemProps {
 const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience }) => {
   return (
     <div className="mb-6 last:mb-0">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
+      <div className="flex justify-between items-center mb-2"> {/* Changed to flex (defaults to row) and items-center for vertical alignment */}
         <div className="flex-grow">
           <h3 className="text-xl font-semibold text-foreground">{experience.title}</h3>
           <p className="text-muted-foreground">{experience.subtitle}</p>
         </div>
-        {/* Removed mt-2 to ensure proper alignment on mobile */}
-        <div className="flex flex-col sm:items-end sm:mt-0">
+        <div className="flex flex-col items-end"> {/* Ensures date/logo stack and align to the right */}
           <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-2">
             {experience.date}
           </span>
