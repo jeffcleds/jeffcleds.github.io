@@ -73,13 +73,13 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
         style={{ visibility: 'hidden', position: 'absolute', whiteSpace: 'nowrap' }} 
         className={className}
       ></span>
-      {/* Visible span with min-width to prevent layout shifts */}
-      <span 
+      {/* Visible div with min-width to prevent layout shifts */}
+      <div 
         className={className} 
         style={{ minWidth: minWidth, display: 'inline-block', whiteSpace: 'nowrap' }}
       >
         {currentText}
-      </span>
+      </div>
     </>
   );
 };
