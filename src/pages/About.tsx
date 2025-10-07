@@ -8,7 +8,8 @@ import ExperienceSection from "@/components/portfolio/ExperienceSection";
 import ToolsCard from "@/components/portfolio/ToolsCard";
 import LanguagesCard from "@/components/portfolio/LanguagesCard";
 import EducationSection from "@/components/portfolio/EducationSection";
-import ScrollReveal from "@/components/animations/ScrollReveal"; // Import the new ScrollReveal component
+import ScrollReveal from "@/components/animations/ScrollReveal";
+import ProfileOverviewCard from "@/components/portfolio/ProfileOverviewCard"; // Import the new ProfileOverviewCard
 
 const About = () => {
   return (
@@ -17,30 +18,33 @@ const About = () => {
 
       <div className="space-y-8">
         <ScrollReveal delay={0}>
+          <ProfileOverviewCard /> {/* New Profile Card */}
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
           <IntroCard /> {/* Description */}
         </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <ScrollReveal delay={0.1} className="h-full"> {/* Added h-full */}
+          <ScrollReveal delay={0.2} className="h-full">
             <DetailsCard />
           </ScrollReveal>
-          <ScrollReveal delay={0.2} className="h-full"> {/* Added h-full */}
+          <ScrollReveal delay={0.3} className="h-full">
             <InterestsCard />
           </ScrollReveal>
         </div>
-        <ScrollReveal delay={0.3}>
-          <SkillsCard /> {/* Moved SkillsCard here */}
-        </ScrollReveal>
         <ScrollReveal delay={0.4}>
-          <ExperienceSection />
+          <SkillsCard />
         </ScrollReveal>
         <ScrollReveal delay={0.5}>
+          <ExperienceSection />
+        </ScrollReveal>
+        <ScrollReveal delay={0.6}>
           <EducationSection />
         </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <ScrollReveal delay={0.6} className="h-full"> {/* Added h-full */}
+          <ScrollReveal delay={0.7} className="h-full">
             <ToolsCard />
           </ScrollReveal>
-          <ScrollReveal delay={0.7} className="h-full"> {/* Added h-full */}
+          <ScrollReveal delay={0.8} className="h-full">
             <LanguagesCard />
           </ScrollReveal>
         </div>
@@ -48,7 +52,7 @@ const About = () => {
 
       <Separator className="my-12" />
 
-      <ScrollReveal delay={0.8}>
+      <ScrollReveal delay={0.9}>
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-6">My Philosophy</h2>
           <p className="text-lg leading-relaxed text-muted-foreground max-w-3xl mx-auto">
