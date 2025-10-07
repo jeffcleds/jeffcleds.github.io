@@ -54,7 +54,7 @@ export const experienceData: Experience[] = [
       "Coordinates schedules, assigns tasks, and monitors workflows to ensure timely service delivery.",
       "Communicates effectively between clients, teams, and management while maintaining accuracy in records and prioritizing urgent requests with a consistent 90% booking rate.",
     ],
-    logo: "/placeholder.svg", // Placeholder logo
+    logo: "/mr-rooter-logo.png", // Example path for Mr. Rooter logo
   },
   {
     id: "bell-canada",
@@ -65,7 +65,7 @@ export const experienceData: Experience[] = [
       "Manage customers' account records, walkthrough their technical concerns in internet, satellite TV, and mobile phone services, provide support with billing concerns, and establish trust by providing excellent customer service and resolving telephone inquiries in a timely manner.",
       "Best in first call resolution. Best in average hold time resolving inquiries within 140 seconds.",
     ],
-    logo: "/placeholder.svg", // Placeholder logo
+    logo: "/bell-canada-logo.png", // Example path for Bell Canada logo
   },
   {
     id: "concentrix",
@@ -76,7 +76,7 @@ export const experienceData: Experience[] = [
       "Manages insurance claims, verifies coverage, and ensures compliance with policies and regulations.",
       "Provides clients with accurate information, resolves inquiries, and maintains detailed records to support smooth processing, resolving 95% of cases within first contact, improving satisfaction.",
     ],
-    logo: "/placeholder.svg", // Placeholder logo
+    logo: "/concentrix-logo.png", // Example path for Concentrix logo
   },
   {
     id: "ateneo-intern",
