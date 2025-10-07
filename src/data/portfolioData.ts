@@ -175,6 +175,13 @@ export const softwareUsedData: { icon: string; name: string; className?: string 
   { icon: "SAP", name: "SAP", className: "bg-blue-800 text-white" },
   { icon: "C", name: "Cisco", className: "bg-blue-900 text-white" },
   { icon: "PT", name: "Packet Tracer", className: "bg-teal-600 text-white" },
+  { icon: "PS", name: "Photoshop", className: "bg-blue-800 text-white" },
+  { icon: "CNV", name: "Canva", className: "bg-purple-600 text-white" },
+  { icon: "PR", name: "Premiere Pro", className: "bg-purple-900 text-white" },
+  { icon: "AI", name: "Illustrator", className: "bg-orange-500 text-white" },
+  { icon: "DW", name: "Dreamweaver", className: "bg-blue-700 text-white" },
+  { icon: "CC", name: "CapCut", className: "bg-blue-500 text-white" },
+  { icon: "NT", name: "Notion", className: "bg-gray-700 text-white" },
 ];
 
 export const languagesData: string[] = [
