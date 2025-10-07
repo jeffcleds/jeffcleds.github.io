@@ -11,7 +11,7 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Instead of sending data to a backend, show the requested message.
-    showError("Kindly email me for now as the API for this is not working properly.");
+    showError("Kindly send me an email for now as the API for this is not working properly. I apologize for the inconvenience.");
     // No need to reset the form or show success if the API isn't working.
   };
 
