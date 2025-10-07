@@ -21,7 +21,7 @@ const NotFound = () => {
           baseIntensity={0.2}
           hoverIntensity={0.5}
           enableHover={true}
-          className="text-foreground mb-4"
+          className="text-foreground mb-4 mx-auto" // Added mx-auto for centering
         >
           404
         </FuzzyText>
@@ -31,13 +31,11 @@ const NotFound = () => {
           baseIntensity={0.1}
           hoverIntensity={0.3}
           enableHover={true}
-          className="text-muted-foreground mb-8"
+          className="text-muted-foreground mb-8 mx-auto" // Added mx-auto for centering
         >
           This section is under maintenance.
         </FuzzyText>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
+        {/* Removed the "Return to Home" button */}
       </div>
     </div>
   );
