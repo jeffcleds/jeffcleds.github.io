@@ -1,27 +1,37 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import IntroCard from '@/components/portfolio/IntroCard'; // Import IntroCard
 
 const Index = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-14rem)] text-center px-4 py-12">
       <img
-        src="/ernie-joseph-cledera.jpg"
+        src="/ernie-joseph-cledera-new.jpg" {/* Updated image source */}
         alt="Ernie Joseph Cledera"
         className="w-48 h-48 rounded-full object-cover mb-8 grayscale hover:grayscale-0 transition-all duration-300 ease-in-out border-4 border-primary shadow-lg"
       />
-      <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl mb-6">
-        Hi, I'm <span className="text-primary animate-fade-in-up">Ernie Joseph Cledera</span>
+      <h1 className="text-5xl font-extrabold tracking-tight mb-4 text-foreground">
+        Ernie Joseph Cledera
       </h1>
-      <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mb-10">
-        A tech-savvy Virtual Assistant with 3+ years of experience optimizing workflows, data management, and digital tools to deliver accurate, high-quality support.
+      <p className="text-xl text-muted-foreground mb-8 max-w-2xl">
+        Virtual Assistant | Data Management Specialist | Web Developer
       </p>
-      <div className="flex flex-col sm:flex-row gap-4">
+      <div className="mb-12">
+        <IntroCard /> {/* Use the IntroCard component */}
+      </div>
+      <div className="flex space-x-4">
         <Button asChild size="lg">
-          <Link to="/projects">View My Projects</Link>
+          <Link to="/portfolio">
+            View My Work <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
         </Button>
         <Button asChild variant="outline" size="lg">
-          <Link to="/contact">Contact Me</Link>
+          <Link to="/contact">
+            Contact Me
+          </Link>
         </Button>
       </div>
     </div>
