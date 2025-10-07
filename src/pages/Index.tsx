@@ -3,7 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import IntroCard from '@/components/portfolio/IntroCard'; // Changed to default import
+import IntroCard from '@/components/portfolio/IntroCard';
 import TypewriterEffect from '@/components/TypewriterEffect';
 
 const profileData = {
@@ -29,10 +29,10 @@ export default function Index() {
       />
       <div className="mb-12">
         <Button asChild size="lg">
-          <Link to="/portfolio">View My Work</Link>
+          <Link to="/projects">View My Work</Link> {/* Changed link to /projects */}
         </Button>
       </div>
-      <IntroCard /> {/* Removed profileData prop */}
+      <IntroCard />
     </div>
   );
 }
