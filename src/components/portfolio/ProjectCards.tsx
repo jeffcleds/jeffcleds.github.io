@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Github, Info } from "lucide-react"; // Changed Link as LinkIcon to Info
+import { Info } from "lucide-react"; // Removed Github import
 import { projectsData } from "@/data/portfolioData";
 import { Link } from "react-router-dom";
 
@@ -32,13 +32,7 @@ const ProjectCards: React.FC = () => {
             </div>
           </CardContent>
           <CardFooter className="flex justify-end gap-2">
-            {project.githubLink && (
-              <Button asChild variant="outline" size="sm">
-                <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                  <Github className="h-4 w-4 mr-2" /> GitHub
-                </a>
-              </Button>
-            )}
+            {/* Removed GitHub button */}
             {project.liveLink && (
               project.liveLink.startsWith('/') ? (
                 <Button asChild size="sm">
