@@ -34,10 +34,7 @@ const About = () => {
       <div className="text-center">
         <h2 className="text-3xl font-bold mb-6">My Philosophy</h2>
         <p className="text-lg leading-relaxed text-muted-foreground max-w-3xl mx-auto">
-          I believe that good software is a blend of elegant design, robust
-          engineering, and a deep understanding of user needs. My goal is always
-          to build solutions that are not only functional but also delightful to
-          use and easy to maintain.
+          Don’t chase busywork. Build assets — skills, tools, networks, and habits that multiply output without multiplying effort. Anything that doesn’t scale or compound is either a stepping stone or dead weight. Learn to tell the difference fast.
         </p>
       </div>
     </div>
