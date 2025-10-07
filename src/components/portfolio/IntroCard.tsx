@@ -2,12 +2,7 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-
-// This profileData is assumed to be defined here or passed as props.
-// We're updating the introduction string to include the highlight tags around the name.
-const profileData = {
-  introduction: `Hello! I'm <span class="highlight">Ernie Joseph B. Cledera</span>, a passionate and dedicated Full Stack Web Developer with a strong foundation in creating dynamic and responsive web applications. I specialize in both front-end and back-end development, bringing ideas to life with clean, efficient, and scalable code.`,
-};
+import { profileData } from '@/data/portfolioData'; // Import profileData
 
 const IntroCard = () => {
   return (

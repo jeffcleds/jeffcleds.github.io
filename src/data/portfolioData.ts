@@ -36,7 +36,7 @@ export interface Project {
 export const profileData = {
   name: "Ernie Joseph Cledera",
   profileImage: "/placeholder.svg", // Replace with your profile image path, e.g., "/profile.jpg"
-  introduction: `My name is Ernie Joseph Cledera, a tech-savvy Virtual Assistant with 3+ years of experience optimizing workflows, data management, and digital tools to deliver accurate, high-quality support. Strong communicator skilled in client relations, time management, and leveraging technology to boost productivity.`,
+  introduction: `My name is <span class="highlight">Ernie Joseph Cledera</span>, a tech-savvy Virtual Assistant with 3+ years of experience optimizing workflows, data management, and digital tools to deliver accurate, high-quality support. Strong communicator skilled in client relations, time management, and leveraging technology to boost productivity.`,
   birthDate: '1998-04-09',
   email: "cledera.ernie@gmail.com",
   phone: "+63 929 652 9698",
