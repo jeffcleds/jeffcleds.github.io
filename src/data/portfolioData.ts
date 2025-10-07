@@ -195,12 +195,12 @@ export const projectsData: Project[] = [
   },
   {
     id: 2,
-    title: "E-commerce Dashboard",
-    description: "A dashboard for managing e-commerce operations, including product inventory, orders, and customer data. Built with React and a mock API.",
-    image: "/placeholder.svg",
-    technologies: ["React", "Node.js", "Express", "MongoDB"],
-    githubLink: "https://github.com/yourusername/ecommerce-dashboard",
-    liveLink: "https://ecommerce-dashboard.com",
+    title: "Calabanga Community College - School Management System",
+    description: "A comprehensive school management system designed for Calabanga Community College, handling student records, course management, and administrative tasks.",
+    image: "/placeholder.svg", // You can replace this with a specific image for your project
+    technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+    githubLink: "https://github.com/yourusername/calabanga-sms", // Placeholder
+    liveLink: "https://calabanga-sms.com", // Placeholder
   },
   {
     id: 3,
