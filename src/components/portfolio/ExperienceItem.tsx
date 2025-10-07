@@ -13,7 +13,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience }) => {
           <h3 className="text-xl font-semibold text-foreground">{experience.title}</h3>
           <p className="text-muted-foreground">{experience.subtitle}</p>
         </div>
-        <div className="flex flex-col items-end mt-2 sm:mt-0">
+        <div className="flex flex-col sm:items-end mt-2 sm:mt-0"> {/* Adjusted alignment here */}
           <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-2">
             {experience.date}
           </span>
