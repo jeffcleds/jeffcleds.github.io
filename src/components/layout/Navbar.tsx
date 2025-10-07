@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle"; // Import ThemeToggle
 
 const navItems = [
   { name: "Home", to: "/" },
@@ -58,8 +59,8 @@ const Navbar = () => {
             </nav>
           </SheetContent>
         </Sheet>
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          {/* Additional right-aligned items can go here if needed */}
+        <div className="flex flex-1 items-center justify-end space-x-2"> {/* Changed to justify-end */}
+          <ThemeToggle /> {/* Added ThemeToggle here */}
         </div>
       </div>
     </header>
