@@ -196,7 +196,7 @@ export const projectsData: Project[] = [
     image: "/my-portfolio-website.jpg", // Updated path
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     githubLink: "https://github.com/yourusername/portfolio",
-    liveLink: "/projects/portfolio-details-under-maintenance", // Changed to an unknown internal route
+    liveLink: "/portfolio-details-under-maintenance", // Changed to the maintenance route
   },
   {
     id: 2,
@@ -205,7 +205,7 @@ export const projectsData: Project[] = [
     image: "/calabanga-sms.png", // Updated path
     technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
     githubLink: "https://github.com/yourusername/calabanga-sms", // Placeholder
-    liveLink: "https://calabanga-sms.com", // Placeholder
+    liveLink: "/portfolio-details-under-maintenance", // Changed to the maintenance route
   },
   {
     id: 3,
@@ -214,7 +214,7 @@ export const projectsData: Project[] = [
     image: "/class-scheduler.png", // Updated path
     technologies: ["React", "TypeScript", "Tailwind CSS", "Firebase"],
     githubLink: "https://github.com/yourusername/class-scheduler", // Placeholder
-    liveLink: "https://class-scheduler.com", // Placeholder
+    liveLink: "/portfolio-details-under-maintenance", // Changed to the maintenance route
   },
   {
     id: 4,
@@ -223,7 +223,7 @@ export const projectsData: Project[] = [
     image: "/ai-calculator.png", // AI-generated photo
     technologies: ["React", "TypeScript", "Tailwind CSS"],
     githubLink: "https://github.com/yourusername/simple-calculator", // Placeholder
-    liveLink: "/projects/calculator", // Internal link to the calculator component
+    liveLink: "/portfolio-details-under-maintenance", // Changed to the maintenance route
   },
 ];
 
