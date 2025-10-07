@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import IntroCard from '@/components/portfolio/IntroCard';
 import TypewriterEffect from '@/components/TypewriterEffect';
-import SplitText from '@/components/SplitText'; // Import the new SplitText component
 
 export default function Index() {
   const jobTitles = [
@@ -17,10 +16,6 @@ export default function Index() {
     "Software Developer"
   ];
 
-  const handleAnimationComplete = () => {
-    console.log('Main heading animation complete!');
-  };
-
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-14rem)] text-center px-4 py-12">
       <img
@@ -28,21 +23,9 @@ export default function Index() {
         alt="Ernie Joseph Cledera"
         className="w-48 h-48 rounded-full object-cover mb-8 transition-transform duration-300 ease-in-out border-4 border-primary shadow-lg hover:scale-105 hover:shadow-xl hover:shadow-primary/50"
       />
-      <SplitText
-        text="Hello, I'm Ernie Joseph Cledera"
-        className="text-5xl font-extrabold tracking-tight mb-4"
-        delay={50}   {/* Reduced delay */}
-        duration={0.4} {/* Reduced duration */}
-        ease="power3.out"
-        splitType="chars"
-        from={{ opacity: 0, y: 40 }}
-        to={{ opacity: 1, y: 0 }}
-        threshold={0.1}
-        rootMargin="-100px"
-        textAlign="center"
-        tag="h1"
-        onLetterAnimationComplete={handleAnimationComplete}
-      />
+      <h1 className="text-5xl font-extrabold tracking-tight mb-4">
+        Hello, I'm Ernie Joseph Cledera
+      </h1>
       <TypewriterEffect
         words={jobTitles}
         className="text-xl text-muted-foreground mb-8 max-w-2xl"
