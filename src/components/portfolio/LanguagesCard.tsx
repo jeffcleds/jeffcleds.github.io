@@ -4,7 +4,7 @@ import { languagesData } from "@/data/portfolioData";
 
 const LanguagesCard: React.FC = () => {
   return (
-    <Card className="p-6"> {/* Added p-6 for overall card padding */}
+    <Card className="p-6 h-full"> {/* Added p-6 for overall card padding and h-full */}
       <CardHeader className="p-0 pb-4"> {/* Added p-0 pb-4 for header padding */}
         <CardTitle className="text-2xl font-bold">Languages</CardTitle>
       </CardHeader>

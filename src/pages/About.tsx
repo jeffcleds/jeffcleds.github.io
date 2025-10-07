@@ -37,10 +37,10 @@ const About = () => {
           <EducationSection />
         </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <ScrollReveal delay={0.6}>
+          <ScrollReveal delay={0.6} className="h-full"> {/* Added h-full */}
             <ToolsCard />
           </ScrollReveal>
-          <ScrollReveal delay={0.7}>
+          <ScrollReveal delay={0.7} className="h-full"> {/* Added h-full */}
             <LanguagesCard />
           </ScrollReveal>
         </div>

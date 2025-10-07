@@ -4,7 +4,7 @@ import { softwareUsedData } from "@/data/portfolioData";
 
 const ToolsCard: React.FC = () => {
   return (
-    <Card className="p-6">
+    <Card className="p-6 h-full"> {/* Added h-full here */}
       <CardHeader className="p-0 pb-4">
         <CardTitle className="text-2xl font-bold">Software Used</CardTitle>
       </CardHeader>
