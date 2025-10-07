@@ -33,8 +33,8 @@ export default function Index() {
       <SplitText
         text="Hello, I'm Ernie Joseph Cledera"
         className="text-5xl font-extrabold tracking-tight mb-4"
-        delay={100}
-        duration={0.6}
+        delay={50} // Reduced delay for faster character appearance
+        duration={0.4} // Reduced duration for faster individual character animation
         ease="power3.out"
         splitType="chars"
         from={{ opacity: 0, y: 40 }}
