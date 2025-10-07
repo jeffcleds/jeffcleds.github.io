@@ -13,18 +13,28 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
       <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
         <FuzzyText
-          text="This section is under maintenance."
-          className="text-xl text-gray-600 mb-4"
-          layers={5}
-          maxOffset={4}
-          baseOpacity={0.4}
-          duration={1.5}
-          delay={0.5}
-        />
+          fontSize="clamp(3rem, 10vw, 10rem)"
+          fontWeight={900}
+          baseIntensity={0.2}
+          hoverIntensity={0.5}
+          enableHover={true}
+          className="text-foreground mb-4"
+        >
+          404
+        </FuzzyText>
+        <FuzzyText
+          fontSize="clamp(1.5rem, 5vw, 2.5rem)"
+          fontWeight={600}
+          baseIntensity={0.1}
+          hoverIntensity={0.3}
+          enableHover={true}
+          className="text-muted-foreground mb-8"
+        >
+          This section is under maintenance.
+        </FuzzyText>
         <a href="/" className="text-blue-500 hover:text-blue-700 underline">
           Return to Home
         </a>
