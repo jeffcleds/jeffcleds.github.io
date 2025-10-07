@@ -8,6 +8,7 @@ import ExperienceSection from "@/components/portfolio/ExperienceSection";
 import ToolsCard from "@/components/portfolio/ToolsCard";
 import LanguagesCard from "@/components/portfolio/LanguagesCard";
 import EducationSection from "@/components/portfolio/EducationSection";
+import ScrollReveal from "@/components/animations/ScrollReveal"; // Import the new ScrollReveal component
 
 const About = () => {
   return (
@@ -15,28 +16,46 @@ const About = () => {
       <h1 className="text-4xl font-bold text-center mb-10">About Me</h1>
 
       <div className="space-y-8">
-        <IntroCard /> {/* Description */}
+        <ScrollReveal delay={0}>
+          <IntroCard /> {/* Description */}
+        </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <DetailsCard />
-          <InterestsCard />
+          <ScrollReveal delay={0.1}>
+            <DetailsCard />
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <InterestsCard />
+          </ScrollReveal>
         </div>
-        <SkillsCard /> {/* Moved SkillsCard here */}
-        <ExperienceSection />
-        <EducationSection />
+        <ScrollReveal delay={0.3}>
+          <SkillsCard /> {/* Moved SkillsCard here */}
+        </ScrollReveal>
+        <ScrollReveal delay={0.4}>
+          <ExperienceSection />
+        </ScrollReveal>
+        <ScrollReveal delay={0.5}>
+          <EducationSection />
+        </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <ToolsCard />
-          <LanguagesCard />
+          <ScrollReveal delay={0.6}>
+            <ToolsCard />
+          </ScrollReveal>
+          <ScrollReveal delay={0.7}>
+            <LanguagesCard />
+          </ScrollReveal>
         </div>
       </div>
 
       <Separator className="my-12" />
 
-      <div className="text-center">
-        <h2 className="text-3xl font-bold mb-6">My Philosophy</h2>
-        <p className="text-lg leading-relaxed text-muted-foreground max-w-3xl mx-auto">
-          Don’t chase busywork. Build assets — skills, tools, networks, and habits that multiply output without multiplying effort. Anything that doesn’t scale or compound is either a stepping stone or dead weight. Learn to tell the difference fast.
-        </p>
-      </div>
+      <ScrollReveal delay={0.8}>
+        <div className="text-center">
+          <h2 className="text-3xl font-bold mb-6">My Philosophy</h2>
+          <p className="text-lg leading-relaxed text-muted-foreground max-w-3xl mx-auto">
+            Don’t chase busywork. Build assets — skills, tools, networks, and habits that multiply output without multiplying effort. Anything that doesn’t scale or compound is either a stepping stone or dead weight. Learn to tell the difference fast.
+          </p>
+        </div>
+      </ScrollReveal>
     </div>
   );
 };
