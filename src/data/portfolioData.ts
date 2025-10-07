@@ -196,7 +196,7 @@ export const projectsData: Project[] = [
     image: "/my-portfolio-website.jpg", // Updated path
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     githubLink: "https://github.com/yourusername/portfolio",
-    liveLink: "https://yourportfolio.com",
+    liveLink: "/projects/portfolio-details-under-maintenance", // Changed to an unknown internal route
   },
   {
     id: 2,
