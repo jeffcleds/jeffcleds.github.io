@@ -188,7 +188,7 @@ export const projectsData: Project[] = [
     id: 1,
     title: "Personal Portfolio Website",
     description: "A responsive personal portfolio website built with React, TypeScript, and Tailwind CSS, showcasing my skills and projects.",
-    image: "/placeholder.svg",
+    image: "/my-portfolio-website.jpg", // Updated path
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     githubLink: "https://github.com/yourusername/portfolio",
     liveLink: "https://yourportfolio.com",
@@ -197,7 +197,7 @@ export const projectsData: Project[] = [
     id: 2,
     title: "Calabanga Community College - School Management System",
     description: "A comprehensive school management system designed for Calabanga Community College, handling student records, course management, and administrative tasks.",
-    image: "/placeholder.svg", // You can replace this with a specific image for your project
+    image: "/calabanga-sms.png", // Updated path
     technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
     githubLink: "https://github.com/yourusername/calabanga-sms", // Placeholder
     liveLink: "https://calabanga-sms.com", // Placeholder
@@ -206,7 +206,7 @@ export const projectsData: Project[] = [
     id: 3,
     title: "Class Scheduler",
     description: "A web application to help students and instructors manage and visualize class schedules, assignments, and deadlines.",
-    image: "/placeholder.svg", // You can replace this with a specific image for your Class Scheduler project
+    image: "/class-scheduler.png", // Updated path
     technologies: ["React", "TypeScript", "Tailwind CSS", "Firebase"],
     githubLink: "https://github.com/yourusername/class-scheduler", // Placeholder
     liveLink: "https://class-scheduler.com", // Placeholder
