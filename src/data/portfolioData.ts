@@ -193,6 +193,11 @@ export const languagesData: string[] = [
   "CSS3",
   "PHP",
   "C++",
+  "Visual Basic",
+  "C#",
+  "Kotlin",
+  "SQL",
+  "Lua",
 ];
 
 export const projectsData: Project[] = [
