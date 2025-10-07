@@ -35,7 +35,7 @@ export interface Project {
 
 export const profileData = {
   name: "Ernie Joseph Cledera",
-  profileImage: "/placeholder.svg", // Replace with your profile image path, e.g., "/profile.jpg"
+  profileImage: "/ernie-joseph-cledera.jpg", // Replace with your profile image path, e.g., "/profile.jpg"
   introduction: `My name is <span class="highlight">Ernie Joseph Cledera</span>, a tech-savvy Virtual Assistant with 3+ years of experience optimizing workflows, data management, and digital tools to deliver accurate, high-quality support. Strong communicator skilled in client relations, time management, and leveraging technology to boost productivity.`,
   birthDate: '1998-04-09',
   email: "cledera.ernie@gmail.com",
@@ -134,7 +134,7 @@ export const educationData: Education[] = [
     location: "Naga City, Philippines",
     subtitle: "Bachelor of Science in Information Technology",
     date: "2022 - 2026",
-    logo: "/placeholder.svg", // Replace with STI logo path, e.g., "/sti-logo.png"
+    logo: "/sti-logo.png", // Replace with STI logo path, e.g., "/sti-logo.png"
   },
   {
     id: "ateneo-university",
@@ -142,7 +142,7 @@ export const educationData: Education[] = [
     location: "Naga City, Philippines",
     subtitle: "Bachelor of Engineering Technology Major in Computer Engineering Technology",
     date: "2014 - 2018",
-    logo: "/placeholder.svg", // Replace with Ateneo logo path, e.g., "/ateneo-logo.png"
+    logo: "/ateneo-logo.png", // Replace with Ateneo logo path, e.g., "/ateneo-logo.png"
   },
 ];
 
