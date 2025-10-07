@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 interface TypewriterEffectProps {
   words: string[];
@@ -20,6 +20,23 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+  const [minWidth, setMinWidth] = useState('auto');
+  const hiddenSpanRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    // Calculate the width of the longest word to prevent layout shifts
+    if (hiddenSpanRef.current && words.length > 0) {
+      const longestWord = words.reduce((a, b) => (a.length > b.length ? a : b), '');
+      hiddenSpanRef.current.innerText = longestWord;
+      // Use a small delay to ensure styles are applied before measuring
+      const timer = setTimeout(() => {
+        if (hiddenSpanRef.current) {
+          setMinWidth(`${hiddenSpanRef.current.offsetWidth}px`);
+        }
+      }, 50); 
+      return () => clearTimeout(timer);
+    }
+  }, [words, className]); // Recalculate if words or className (styles) change
 
   useEffect(() => {
     const handleType = () => {
@@ -48,7 +65,23 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
     return () => clearTimeout(timeout);
   }, [currentText, isDeleting, currentWordIndex, words, typingDelay, deletingDelay, pauseDelay]);
 
-  return <span className={className}>{currentText}</span>;
+  return (
+    <>
+      {/* Hidden span to measure the longest word's width accurately */}
+      <span 
+        ref={hiddenSpanRef} 
+        style={{ visibility: 'hidden', position: 'absolute', whiteSpace: 'nowrap' }} 
+        className={className}
+      ></span>
+      {/* Visible span with min-width to prevent layout shifts */}
+      <span 
+        className={className} 
+        style={{ minWidth: minWidth, display: 'inline-block', whiteSpace: 'nowrap' }}
+      >
+        {currentText}
+      </span>
+    </>
+  );
 };
 
 export default TypewriterEffect;
