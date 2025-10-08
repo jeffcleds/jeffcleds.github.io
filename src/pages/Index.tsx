@@ -31,7 +31,7 @@ export default function Index() {
       />
       <h1 className="text-5xl font-extrabold tracking-tight mb-4">
         {/* Temporarily replaced SplitText with plain text */}
-        Hello, I'm Ernie Joseph Cledera
+        Hello, I'm 14243d
       </h1>
       <TypewriterEffect
         words={jobTitles}
