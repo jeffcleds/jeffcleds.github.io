@@ -44,6 +44,33 @@ export const profileData = {
   location: "Philippines",
 };
 
+export const socialLinks = [
+  {
+    id: "linkedin",
+    name: "LinkedIn",
+    icon: "Linkedin", // Lucide icon name
+    url: "https://www.linkedin.com/in/ernie-cledera/",
+  },
+  {
+    id: "github",
+    name: "GitHub",
+    icon: "Github", // Lucide icon name
+    url: "https://github.com/jeffcleds",
+  },
+  {
+    id: "x",
+    name: "X (Twitter)",
+    icon: "X", // Lucide icon name
+    url: "https://twitter.com/yourusername", // Placeholder
+  },
+  {
+    id: "instagram",
+    name: "Instagram",
+    icon: "Instagram", // Lucide icon name
+    url: "https://www.instagram.com/yourusername", // Placeholder
+  },
+];
+
 export const experienceData: Experience[] = [
   {
     id: "mr-rooter",
