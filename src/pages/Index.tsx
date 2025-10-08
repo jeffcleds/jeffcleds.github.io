@@ -37,7 +37,7 @@ export default function Index() {
         </div>
 
         {/* Right Section: Text Content */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-2xl">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-3xl"> {/* Changed max-w-2xl to max-w-3xl */}
           <h2 className="text-2xl font-semibold text-foreground mb-2">Hi, It's</h2>
           <SplitText
             text="Ernie"
