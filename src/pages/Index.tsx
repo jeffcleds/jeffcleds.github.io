@@ -44,7 +44,7 @@ export default function Index() {
         />
         {" "}
         <SplitText
-          text="Ernie Joseph Clederas"
+          text="Ernie Joseph Cledera"
           className="text-blue-900 dark:text-blue-300" 
           delay={50}
           duration={0.4}
