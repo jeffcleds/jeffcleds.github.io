@@ -91,26 +91,12 @@
 }
 
 @layer base {
-  html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+  * {
+    @apply border-border;
   }
 
   body {
-    overflow-x: hidden; /* Only prevent horizontal scroll on body */
     @apply bg-background text-foreground;
-    .dark & {
-      background-color: hsl(var(--background));
-    }
-  }
-
-  #root {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
   }
 }
 
