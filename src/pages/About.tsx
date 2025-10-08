@@ -1,6 +1,5 @@
 import React from "react";
 import { Separator } from "@/components/ui/separator";
-import IntroCard from "@/components/portfolio/IntroCard";
 import DetailsCard from "@/components/portfolio/DetailsCard";
 import InterestsCard from "@/components/portfolio/InterestsCard";
 import SkillsCard from "@/components/portfolio/SkillsCard";
@@ -9,6 +8,7 @@ import ToolsCard from "@/components/portfolio/ToolsCard";
 import LanguagesCard from "@/components/portfolio/LanguagesCard";
 import EducationSection from "@/components/portfolio/EducationSection";
 import ScrollReveal from "@/components/animations/ScrollReveal"; // Import the new ScrollReveal component
+import { profileData } from "@/data/portfolioData"; // Import profileData for the introduction
 
 const About = () => {
   return (
@@ -17,7 +17,27 @@ const About = () => {
 
       <div className="space-y-8">
         <ScrollReveal delay={0}>
-          <IntroCard /> {/* Description */}
+          <div className="p-6 bg-card text-card-foreground rounded-lg shadow-sm">
+            <h2 className="text-2xl font-bold mb-4">Introduction</h2>
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              {profileData.introduction.split('<span class="highlight">').map((segment, index) => {
+                if (index === 0) {
+                  return segment;
+                } else {
+                  const partsAfterHighlight = segment.split('</span>');
+                  const highlightedText = partsAfterHighlight[0];
+                  const remainingText = partsAfterHighlight.slice(1).join('</span>');
+
+                  return (
+                    <React.Fragment key={index}>
+                      <span className="text-primary font-semibold">{highlightedText}</span>
+                      {remainingText}
+                    </React.Fragment>
+                  );
+                }
+              })}
+            </p>
+          </div>
         </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <ScrollReveal delay={0.1} className="h-full"> {/* Added h-full */}
