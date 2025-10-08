@@ -24,10 +24,10 @@ export default function Index() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-56px-96px)]"> {/* Outer div for full height centering */}
-      <div className="container mx-auto flex flex-col md:flex-row items-center px-4 gap-12"> {/* Inner container, removed py-12 */}
+    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-56px-96px)]">
+      <div className="container mx-auto flex flex-col md:flex-row items-center px-4 gap-12">
         {/* Left Section: Profile Image */}
-        <div className="relative flex-shrink-0 w-80 h-80 md:w-96 md:h-96 flex items-center justify-center"> {/* Increased size */}
+        <div className="relative flex-shrink-0 w-80 h-80 md:w-96 md:h-96 flex items-center justify-center">
           <div className="absolute inset-0 rounded-full bg-primary/20 animate-pulse-slow" style={{ transform: 'scale(1.1)' }}></div>
           <img
             src={profileData.profileImage}
@@ -41,7 +41,7 @@ export default function Index() {
           <h2 className="text-2xl font-semibold text-foreground mb-2">Hi, It's</h2>
           <SplitText
             text="Ernie"
-            className="text-6xl md:text-7xl font-extrabold tracking-tight mb-4 text-primary" {/* Increased size */}
+            className="text-6xl md:text-7xl font-extrabold tracking-tight mb-4 text-primary"
             delay={50}
             duration={0.4}
             ease="power3.out"
@@ -54,7 +54,7 @@ export default function Index() {
             tag="h1"
             onLetterAnimationComplete={handleAnimationComplete}
           />
-          <div className="flex items-center text-2xl md:text-3xl text-foreground mb-6"> {/* Increased size */}
+          <div className="flex items-center text-2xl md:text-3xl text-foreground mb-6">
             <TypewriterEffect
               words={jobTitles}
               className="font-bold text-primary"
