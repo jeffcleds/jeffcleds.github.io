@@ -1,9 +1,9 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom"; // Import useLocation
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-import ShinyText from "@/components/animations/ShinyText"; // Import ShinyText
+import ShinyText from "@/components/animations/ShinyText";
 
 const navItems = [
   { name: "Home", to: "/" },
@@ -13,7 +13,7 @@ const navItems = [
 ];
 
 const Navbar = () => {
-  const location = useLocation(); // Get current location
+  const location = useLocation();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -27,11 +27,11 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.to}
-                className={`transition-colors ${
-                  location.pathname === item.to
-                    ? "text-[#14243d] font-semibold" // Highlight color for active link
-                    : "text-foreground/60 hover:text-foreground/80"
-                }`}
+                className={`relative transition-colors text-foreground/60 hover:text-foreground/80 
+                  ${location.pathname === item.to ? "font-semibold text-[#14243d]" : ""}
+                  after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-[#14243d] after:transition-all after:duration-300 after:ease-in-out
+                  ${location.pathname === item.to ? "after:w-full" : "after:w-0 hover:after:w-full"}
+                `}
               >
                 {item.name}
               </Link>
@@ -57,9 +57,11 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.to}
-                  className={`flex w-full items-center py-2 text-lg font-semibold ${
-                    location.pathname === item.to ? "text-[#14243d]" : "" // Highlight color for active link in mobile menu
-                  }`}
+                  className={`flex w-full items-center py-2 text-lg font-semibold relative
+                    ${location.pathname === item.to ? "text-[#14243d]" : "text-foreground/60 hover:text-foreground/80"}
+                    after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-[#14243d] after:transition-all after:duration-300 after:ease-in-out
+                    ${location.pathname === item.to ? "after:w-full" : "after:w-0 hover:after:w-full"}
+                  `}
                 >
                   {item.name}
                 </Link>
