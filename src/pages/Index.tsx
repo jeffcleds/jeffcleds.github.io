@@ -7,7 +7,7 @@ import IntroCard from '@/components/portfolio/IntroCard';
 import TypewriterEffect from '@/components/TypewriterEffect';
 // import SplitText from '@/components/SplitText'; // Temporarily commented out
 import MagnetEffect from '@/components/animations/MagnetEffect';
-import ShinyText from '@/components/animations/ShinyText'; // Import ShinyText
+// import ShinyText from '@/components/animations/ShinyText'; // Removed ShinyText import as it's no longer used for the name
 
 export default function Index() {
   const jobTitles = [
@@ -31,7 +31,7 @@ export default function Index() {
         className="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full object-cover mb-8 transition-transform duration-300 ease-in-out border-4 border-primary shadow-lg hover:scale-105 hover:shadow-xl hover:shadow-primary/50"
       />
       <h1 className="text-5xl font-extrabold tracking-tight mb-4">
-        Hello, I'm <ShinyText>14243d</ShinyText>
+        Hello, I'm Ernie Joseph Cledera
       </h1>
       <TypewriterEffect
         words={jobTitles}
