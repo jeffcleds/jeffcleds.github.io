@@ -40,10 +40,9 @@ export default function Index() {
           to={{ opacity: 1, y: 0 }}
           threshold={0.1}
           rootMargin="-100px"
-          textAlign="left"
           tag="span"
         />
-        {" "} {/* Explicit space added here */}
+        {" "}
         <SplitText
           text="Ernie Joseph Cledera"
           className="text-blue-900 dark:text-blue-300" 
@@ -55,7 +54,6 @@ export default function Index() {
           to={{ opacity: 1, y: 0 }}
           threshold={0.1}
           rootMargin="-100px"
-          textAlign="left"
           tag="span"
           onLetterAnimationComplete={handleAnimationComplete}
         />
