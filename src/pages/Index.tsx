@@ -28,7 +28,7 @@ export default function Index() {
       <img
         src="/ernie-joseph-cledera.jpg"
         alt="Ernie Joseph Cledera"
-        className="w-48 h-48 rounded-full object-cover mb-8 transition-transform duration-300 ease-in-out border-4 border-primary shadow-lg hover:scale-105 hover:shadow-xl hover:shadow-primary/50"
+        className="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full object-cover mb-8 transition-transform duration-300 ease-in-out border-4 border-primary shadow-lg hover:scale-105 hover:shadow-xl hover:shadow-primary/50"
       />
       <SplitText
         text="Hello, I'm Ernie Joseph Cledera"
