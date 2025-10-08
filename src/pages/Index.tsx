@@ -44,8 +44,9 @@ export default function Index() {
           textAlign="left"
           tag="span"
         />
+        {" "} {/* Explicit space added here */}
         <SplitText
-          text=" Ernie Joseph Cledera"
+          text="Ernie Joseph Cledera" {/* Removed leading space */}
           className="text-blue-900 dark:text-blue-300" 
           delay={50}
           duration={0.4}
