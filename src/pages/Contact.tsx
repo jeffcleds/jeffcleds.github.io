@@ -66,6 +66,21 @@ const Contact = () => {
               </div>
             </CardContent>
           </Card>
+
+          {/* New Card for Download Resume button */}
+          <Card>
+            <CardHeader>
+              <CardTitle>My Resume</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <Button asChild className="w-full">
+                <a href="/ernie-joseph-cledera-resume.pdf" download="Ernie_Joseph_Cledera_Resume.pdf">
+                  <Download className="h-4 w-4 mr-2" /> Download Resume
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
           <Card>
             <CardHeader>
               <CardTitle>Find Me Online</CardTitle>
@@ -78,13 +93,6 @@ const Contact = () => {
               <div className="flex items-center space-x-3">
                 <LinkIcon className="h-5 w-5 text-muted-foreground" />
                 <a href="https://www.linkedin.com/in/ernie-cledera/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">linkedin.com/in/ernie-cledera</a>
-              </div>
-              <div className="pt-4">
-                <Button asChild className="w-full">
-                  <a href="/ernie-joseph-cledera-resume.pdf" download="Ernie_Joseph_Cledera_Resume.pdf">
-                    <Download className="h-4 w-4 mr-2" /> Download Resume
-                  </a>
-                </Button>
               </div>
             </CardContent>
           </Card>
