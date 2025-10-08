@@ -18,7 +18,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience }) => {
           </span>
         </div>
         <p className="text-muted-foreground mt-1">{experience.subtitle}</p>
-        <ul className="list-disc list-inside space-y-1 text-muted-foreground mt-2">
+        <ul className="list-disc space-y-1 text-muted-foreground mt-2 pl-5"> {/* Removed list-inside and added pl-5 */}
           {experience.responsibilities.map((responsibility, index) => (
             <li key={index}>{responsibility}</li>
           ))}
