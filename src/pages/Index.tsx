@@ -24,7 +24,7 @@ export default function Index() {
   };
 
   return (
-    <div className="container mx-auto flex flex-col md:flex-row items-center justify-center min-h-[calc(100vh-14rem)] px-4 py-12 gap-12">
+    <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4 py-12 gap-12"> {/* Removed min-h-[calc(100vh-14rem)] */}
       {/* Left Section: Profile Image */}
       <div className="relative flex-shrink-0 w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
         <div className="absolute inset-0 rounded-full bg-primary/20 animate-pulse-slow" style={{ transform: 'scale(1.1)' }}></div> {/* Lighter red circle background */}
