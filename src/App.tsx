@@ -11,16 +11,18 @@ import Contact from "./pages/Contact";
 import ProjectsPage from "./pages/ProjectsPage";
 import NotFound from "./pages/NotFound";
 import CalculatorProject from "./components/portfolio/CalculatorProject";
+import ScrollToTop from "./components/layout/ScrollToTop"; // Import the new ScrollToTop component
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <> {/* Added a React Fragment to wrap all children */}
+    <>
       <Toaster />
       <Sonner />
       <TooltipProvider>
         <BrowserRouter>
+          <ScrollToTop /> {/* Place ScrollToTop inside BrowserRouter */}
           <Layout>
             <Routes>
               <Route path="/" element={<Index />} />
