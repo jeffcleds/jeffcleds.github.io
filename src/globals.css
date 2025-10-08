@@ -91,16 +91,30 @@
 }
 
 @layer base {
+  html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+
   * {
     @apply border-border;
   }
 
   body {
     @apply bg-background text-foreground;
-    /* Removed the CSS radial gradient background from dark mode */
     .dark & {
-      background-color: hsl(var(--background)); /* Ensure base background color is still applied */
+      background-color: hsl(var(--background));
     }
+  }
+
+  #root {
+    /* Removed max-width, margin, and padding from #root */
+    min-height: 100vh; /* Ensure root takes full height */
+    display: flex;
+    flex-direction: column;
   }
 }
 
