@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import IntroCard from '@/components/portfolio/IntroCard';
 import TypewriterEffect from '@/components/TypewriterEffect';
-// import SplitText from '@/components/SplitText'; // Temporarily commented out
-// import MagnetEffect from '@/components/animations/MagnetEffect'; // Removed import
-import ShinyText from '@/components/animations/ShinyText'; // Import ShinyText
+import ShinyText from '@/components/animations/ShinyText';
+import GlareCard from '@/components/animations/GlareCard'; // Import GlareCard
 
 export default function Index() {
   const jobTitles = [
@@ -38,14 +37,16 @@ export default function Index() {
         className="text-xl text-muted-foreground mb-8 max-w-2xl"
       />
       <div className="mb-12 flex gap-4">
-        {/* Removed MagnetEffect wrapper */}
-        <Button asChild size="lg">
-          <Link to="/projects">View My Work</Link>
-        </Button>
-        {/* Removed MagnetEffect wrapper */}
-        <Button asChild size="lg" variant="outline">
-          <Link to="/about">About Me</Link>
-        </Button>
+        <GlareCard className="rounded-lg"> {/* Wrap with GlareCard */}
+          <Button asChild size="lg">
+            <Link to="/projects">View My Work</Link>
+          </Button>
+        </GlareCard>
+        <GlareCard className="rounded-lg"> {/* Wrap with GlareCard */}
+          <Button asChild size="lg" variant="outline">
+            <Link to="/about">About Me</Link>
+          </Button>
+        </GlareCard>
       </div>
       <IntroCard />
 
