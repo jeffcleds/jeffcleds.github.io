@@ -17,7 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="relative flex min-h-screen flex-col">
       {isDarkMode && (
-        <div className="absolute inset-0 z-0">
+        <div className="fixed inset-0 z-0"> {/* Changed to fixed inset-0 */}
           <DarkVeil
             hueShift={0}
             noiseIntensity={0.02}
