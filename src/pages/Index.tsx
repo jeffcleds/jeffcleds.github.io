@@ -7,7 +7,7 @@ import IntroCard from '@/components/portfolio/IntroCard';
 import TypewriterEffect from '@/components/TypewriterEffect';
 import SplitText from '@/components/SplitText';
 import MagnetEffect from '@/components/animations/MagnetEffect';
-import { softwareUsedData } from '@/data/portfolioData';
+// Removed unused import: import { softwareUsedData } from '@/data/portfolioData';
 
 export default function Index() {
   const jobTitles = [
@@ -45,7 +45,7 @@ export default function Index() {
           tag="span"
         />
         <SplitText
-          text=" Ernie Joseph Cledera" {/* Added leading space and darker blue */}
+          text=" Ernie Joseph Cledera"
           className="text-blue-900 dark:text-blue-300" 
           delay={50}
           duration={0.4}
