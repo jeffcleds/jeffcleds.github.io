@@ -97,6 +97,12 @@
 
   body {
     @apply bg-background text-foreground;
+    /* Apply a subtle dark veil effect in dark mode */
+    .dark & {
+      background-image: radial-gradient(at 20% 80%, hsla(210, 40%, 10%, 0.1), transparent 50%),
+                        radial-gradient(at 80% 20%, hsla(210, 40%, 10%, 0.1), transparent 50%);
+      background-color: hsl(var(--background)); /* Ensure base background color is still applied */
+    }
   }
 }
 
