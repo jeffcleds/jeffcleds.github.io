@@ -5,14 +5,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Github, Link as LinkIcon, Download } from "lucide-react";
-import { showError } from "@/utils/toast"; // Only need showError now
+import { showError } from "@/utils/toast";
+import MagnetEffect from "@/components/animations/MagnetEffect"; // Import MagnetEffect
 
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Instead of sending data to a backend, show the requested message.
     showError("Kindly send me an email for now as the API for this is not working properly. I apologize for the inconvenience.");
-    // No need to reset the form or show success if the API isn't working.
   };
 
   return (
@@ -67,17 +66,18 @@ const Contact = () => {
             </CardContent>
           </Card>
 
-          {/* New Card for Download Resume button */}
           <Card>
             <CardHeader>
               <CardTitle>My Resume</CardTitle>
             </CardHeader>
             <CardContent>
-              <Button asChild className="w-full">
-                <a href="/ernie-joseph-cledera-resume.pdf" download="Ernie_Joseph_Cledera_Resume.pdf">
-                  <Download className="h-4 w-4 mr-2" /> Download Resume
-                </a>
-              </Button>
+              <MagnetEffect strength={10} tolerance={0.5} className="w-full"> {/* Apply MagnetEffect here */}
+                <Button asChild className="w-full">
+                  <a href="/ernie-joseph-cledera-resume.pdf" download="Ernie_Joseph_Cledera_Resume.pdf">
+                    <Download className="h-4 w-4 mr-2" /> Download Resume
+                  </a>
+                </Button>
+              </MagnetEffect>
             </CardContent>
           </Card>
 
