@@ -24,7 +24,7 @@ export default function Index() {
   };
 
   return (
-    <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4 py-12 gap-12"> {/* Removed min-h-[calc(100vh-14rem)] */}
+    <div className="container mx-auto flex flex-col md:flex-row items-center px-4 py-12 gap-12"> {/* Removed justify-center for better mobile flow */}
       {/* Left Section: Profile Image */}
       <div className="relative flex-shrink-0 w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
         <div className="absolute inset-0 rounded-full bg-primary/20 animate-pulse-slow" style={{ transform: 'scale(1.1)' }}></div> {/* Lighter red circle background */}
@@ -39,7 +39,7 @@ export default function Index() {
       <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-2xl">
         <h2 className="text-2xl font-semibold text-foreground mb-2">Hi, It's</h2>
         <SplitText
-          text={profileData.name}
+          text="Ernie"
           className="text-5xl md:text-6xl font-extrabold tracking-tight mb-4 text-primary" // Apply primary color here
           delay={50}
           duration={0.4}
