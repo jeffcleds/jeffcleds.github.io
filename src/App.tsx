@@ -11,33 +11,36 @@ import Contact from "./pages/Contact";
 import ProjectsPage from "./pages/ProjectsPage";
 import NotFound from "./pages/NotFound";
 import CalculatorProject from "./components/portfolio/CalculatorProject";
-import ScrollToTop from "./components/layout/ScrollToTop"; // Import the new ScrollToTop component
+import ScrollToTop from "./components/layout/ScrollToTop";
+import { ThemeProvider } from "next-themes"; // Import ThemeProvider
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <>
-      <Toaster />
-      <Sonner />
-      <TooltipProvider>
-        <BrowserRouter>
-          <ScrollToTop /> {/* Place ScrollToTop inside BrowserRouter */}
-          <Layout>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/projects-old" element={<Projects />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/projects/calculator" element={<CalculatorProject />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Layout>
-        </BrowserRouter>
-      </TooltipProvider>
-    </>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem> {/* Added ThemeProvider */}
+      <>
+        <Toaster />
+        <Sonner />
+        <TooltipProvider>
+          <BrowserRouter>
+            <ScrollToTop />
+            <Layout>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/projects-old" element={<Projects />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="/projects/calculator" element={<CalculatorProject />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Layout>
+          </BrowserRouter>
+        </TooltipProvider>
+      </>
+    </ThemeProvider>
   </QueryClientProvider>
 );
 

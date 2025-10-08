@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import ShinyText from "@/components/animations/ShinyText";
+import ThemeToggle from "./ThemeToggle"; // Import the new ThemeToggle component
 
 const navItems = [
   { name: "Home", to: "/" },
@@ -70,7 +71,7 @@ const Navbar = () => {
           </SheetContent>
         </Sheet>
         <div className="flex flex-1 items-center justify-end space-x-2">
-          {/* ThemeToggle removed */}
+          <ThemeToggle /> {/* Added ThemeToggle here */}
         </div>
       </div>
     </header>
