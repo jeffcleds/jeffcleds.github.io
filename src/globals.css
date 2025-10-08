@@ -96,7 +96,7 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow: hidden; /* Changed from overflow-x: hidden to overflow: hidden */
   }
 
   * {
@@ -111,8 +111,8 @@
   }
 
   #root {
-    /* Removed max-width, margin, and padding from #root */
-    min-height: 100vh; /* Ensure root takes full height */
+    height: 100%; /* Changed from min-height: 100vh to height: 100% */
+    width: 100%; /* Added width: 100% */
     display: flex;
     flex-direction: column;
   }
