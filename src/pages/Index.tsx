@@ -45,9 +45,9 @@ export default function Index() {
         {" "}
         <SplitText
           text="Ernie Joseph Cledera"
-          className="text-blue-900 dark:text-blue-300" 
+          className="text-blue-900 dark:text-blue-300"
           delay={50}
-          duration={0.4}
+          duration={1.3}
           ease="power3.out"
           splitType="chars"
           from={{ opacity: 0, y: 40 }}
@@ -62,10 +62,15 @@ export default function Index() {
         words={jobTitles}
         className="text-xl text-muted-foreground mb-8 max-w-2xl"
       />
-      <div className="mb-12">
+      <div className="mb-12 flex gap-4"> {/* Added flex and gap-4 for button spacing */}
         <MagnetEffect strength={20} tolerance={0.8}>
           <Button asChild size="lg">
             <Link to="/projects">View My Work</Link>
+          </Button>
+        </MagnetEffect>
+        <MagnetEffect strength={20} tolerance={0.8}> {/* New MagnetEffect for About Me button */}
+          <Button asChild size="lg" variant="outline"> {/* Added variant="outline" for a slightly different look, but you can change it to default if you want it identical */}
+            <Link to="/about">About Me</Link>
           </Button>
         </MagnetEffect>
       </div>
