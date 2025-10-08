@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import IntroCard from '@/components/portfolio/IntroCard';
 import TypewriterEffect from '@/components/TypewriterEffect';
-import SplitText from '@/components/SplitText';
+// import SplitText from '@/components/SplitText'; // Temporarily commented out
 import MagnetEffect from '@/components/animations/MagnetEffect';
 
 export default function Index() {
@@ -30,46 +30,21 @@ export default function Index() {
         className="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full object-cover mb-8 transition-transform duration-300 ease-in-out border-4 border-primary shadow-lg hover:scale-105 hover:shadow-xl hover:shadow-primary/50"
       />
       <h1 className="text-5xl font-extrabold tracking-tight mb-4">
-        <SplitText
-          text="Hello, I'm"
-          delay={50}
-          duration={0.4}
-          ease="power3.out"
-          splitType="chars"
-          from={{ opacity: 0, y: 40 }}
-          to={{ opacity: 1, y: 0 }}
-          threshold={0.1}
-          rootMargin="-100px"
-          tag="span"
-        />
-        {" "}
-        <SplitText
-          text="Ernie Joseph Cledera"
-          className="text-blue-900 dark:text-blue-300"
-          delay={50}
-          duration={1.3}
-          ease="power3.out"
-          splitType="chars"
-          from={{ opacity: 0, y: 40 }}
-          to={{ opacity: 1, y: 0 }}
-          threshold={0.1}
-          rootMargin="-100px"
-          tag="span"
-          onLetterAnimationComplete={handleAnimationComplete}
-        />
+        {/* Temporarily replaced SplitText with plain text */}
+        Hello, I'm Ernie Joseph Cledera
       </h1>
       <TypewriterEffect
         words={jobTitles}
         className="text-xl text-muted-foreground mb-8 max-w-2xl"
       />
-      <div className="mb-12 flex gap-4"> {/* Added flex and gap-4 for button spacing */}
+      <div className="mb-12 flex gap-4">
         <MagnetEffect strength={20} tolerance={0.8}>
           <Button asChild size="lg">
             <Link to="/projects">View My Work</Link>
           </Button>
         </MagnetEffect>
-        <MagnetEffect strength={20} tolerance={0.8}> {/* New MagnetEffect for About Me button */}
-          <Button asChild size="lg" variant="outline"> {/* Added variant="outline" for a slightly different look, but you can change it to default if you want it identical */}
+        <MagnetEffect strength={20} tolerance={0.8}>
+          <Button asChild size="lg" variant="outline">
             <Link to="/about">About Me</Link>
           </Button>
         </MagnetEffect>
