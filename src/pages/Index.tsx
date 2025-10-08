@@ -32,7 +32,7 @@ export default function Index() {
       />
       <h1 className="text-5xl font-extrabold tracking-tight mb-4">
         <SplitText
-          text="Hello, I'm "
+          text="Hello, I'm"
           delay={50}
           duration={0.4}
           ease="power3.out"
@@ -45,8 +45,8 @@ export default function Index() {
           tag="span"
         />
         <SplitText
-          text="Ernie Joseph Cledera"
-          className="text-blue-800 dark:text-blue-400" // Applied navy blue color here
+          text=" Ernie Joseph Cledera" {/* Added leading space and darker blue */}
+          className="text-blue-900 dark:text-blue-300" 
           delay={50}
           duration={0.4}
           ease="power3.out"
