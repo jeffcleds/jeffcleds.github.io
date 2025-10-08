@@ -18,7 +18,7 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
   className,
 }) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [currentText, setCurrentText] = useState('\u00A0'); // Initialize with a non-breaking space
+  const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [minWidth, setMinWidth] = useState('auto');
   const hiddenSpanRef = useRef<HTMLSpanElement>(null);

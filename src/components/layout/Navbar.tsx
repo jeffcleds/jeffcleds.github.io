@@ -20,16 +20,16 @@ const Navbar = () => {
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <Link to="/" className="mr-6 flex items-center space-x-2">
-            <ShinyText className="font-bold text-primary">cledera.ernie</ShinyText>
+            <ShinyText className="font-bold">cledera.ernie</ShinyText>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.to}
-                className={`transition-colors relative ${
+                className={`transition-colors ${
                   location.pathname === item.to
-                    ? "text-primary font-semibold after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-primary" // Highlight color and underline for active link
+                    ? "text-[#14243d] font-semibold" // Highlight color for active link
                     : "text-foreground/60 hover:text-foreground/80"
                 }`}
               >
@@ -50,7 +50,7 @@ const Navbar = () => {
           </SheetTrigger>
           <SheetContent side="left" className="pr-0">
             <Link to="/" className="flex items-center space-x-2">
-              <ShinyText className="font-bold text-primary">cledera.ernie</ShinyText>
+              <ShinyText className="font-bold">cledera.ernie</ShinyText>
             </Link>
             <nav className="flex flex-col gap-2 mt-4">
               {navItems.map((item) => (
@@ -58,7 +58,7 @@ const Navbar = () => {
                   key={item.name}
                   to={item.to}
                   className={`flex w-full items-center py-2 text-lg font-semibold ${
-                    location.pathname === item.to ? "text-primary" : "" // Highlight color for active link in mobile menu
+                    location.pathname === item.to ? "text-[#14243d]" : "" // Highlight color for active link in mobile menu
                   }`}
                 >
                   {item.name}
