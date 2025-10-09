@@ -26,7 +26,7 @@ const Navbar = () => {
     : "text-[#14243d] after:bg-[#14243d]";
 
   return (
-    <header className={`sticky top-0 z-50 w-full ${isDarkVeilActive ? 'border-b-transparent bg-transparent' : 'border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'}`}>
+    <header className={`sticky top-0 z-50 w-full ${isDarkVeilActive ? 'border-b bg-background/50 backdrop-blur supports-[backdrop-filter]:bg-background/60' : 'border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'}`}>
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <Link to="/" className="mr-6 flex items-center space-x-2">
@@ -66,7 +66,7 @@ const Navbar = () => {
               <span className="sr-only">Toggle Menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className={`pr-0 ${isDarkVeilActive ? 'bg-transparent' : ''}`}>
+          <SheetContent side="left" className={`pr-0 ${isDarkVeilActive ? 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60' : ''}`}>
             <Link to="/" className="flex items-center space-x-2">
               <ShinyText
                 className="font-bold"
