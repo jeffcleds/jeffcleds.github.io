@@ -23,7 +23,8 @@ const NotFound = () => {
           baseIntensity={0.2}
           hoverIntensity={0.5}
           enableHover={true}
-          className="text-foreground mb-4 mx-auto"
+          className="mb-4 mx-auto"
+          color={isDarkVeilActive ? 'white' : 'hsl(var(--foreground))'} // Conditional color
         >
           404
         </FuzzyText>
@@ -33,7 +34,8 @@ const NotFound = () => {
           baseIntensity={0.1}
           hoverIntensity={0.3}
           enableHover={true}
-          className="text-muted-foreground mb-8 mx-auto"
+          className="mb-8 mx-auto"
+          color={isDarkVeilActive ? 'hsl(var(--muted))' : 'hsl(var(--muted-foreground))'} // Conditional color
         >
           This section is under maintenance.
         </FuzzyText>
