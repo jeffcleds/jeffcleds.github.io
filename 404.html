@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Page Not Found</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script takes the current URL and converts the path and query
+      // string into just the query string, and then redirects the browser
+      // to the new URL with the query string and a hash fragment,
+      // e.g. http://example.com/foo?bar=baz -> http://example.com/?bar=baz#foo
+      // This is required because GitHub Pages doesn't directly support
+      // client-side routing with a 404 page.
+
+      (function(){
+        var redirect = sessionStorage.getItem('redirect');
+        if (redirect) {
+          sessionStorage.removeItem('redirect');
+          window.location.replace(redirect);
+        } else {
+          var path = window.location.pathname;
+          var query = window.location.search;
+          var hash = window.location.hash;
+          if (path !== '/' && !path.includes('.')) { // Only redirect if it's a SPA route, not a file
+            sessionStorage.setItem('redirect', window.location.href);
+            window.location.replace(window.location.origin + window.location.search + '#' + path);
+          }
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <h1>Page Not Found</h1>
+    <p>Redirecting...</p>
+  </body>
+</html>
