@@ -12,18 +12,16 @@ import ProjectsPage from "./pages/ProjectsPage";
 import NotFound from "./pages/NotFound";
 import CalculatorProject from "./components/portfolio/CalculatorProject";
 import ScrollToTop from "./components/layout/ScrollToTop";
-import { ThemeProvider } from "next-themes";
-import ThemeVeil from "./components/layout/ThemeVeil"; // Import ThemeVeil
+import { ThemeProvider } from "next-themes"; // Import ThemeProvider
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem> {/* Changed defaultTheme to "light" */}
       <>
         <Toaster />
         <Sonner />
-        <ThemeVeil /> {/* Added ThemeVeil here */}
         <TooltipProvider>
           <BrowserRouter>
             <ScrollToTop />
