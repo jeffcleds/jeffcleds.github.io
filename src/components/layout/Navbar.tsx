@@ -19,11 +19,11 @@ const Navbar = () => {
   const { isDarkVeilActive } = useDarkVeil(); // Get Dark Veil state
 
   return (
-    <header className={`sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 ${isDarkVeilActive ? 'border-b-transparent bg-transparent' : ''}`}>
+    <header className={`sticky top-0 z-50 w-full ${isDarkVeilActive ? 'border-b-transparent bg-transparent' : 'border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'}`}>
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <Link to="/" className="mr-6 flex items-center space-x-2">
-            <ShinyText className="font-bold bg-[linear-gradient(110deg,hsl(218_47%_16%),45%,hsl(218_60%_30%),55%,hsl(218_47%_16%))]">cledera.ernie</ShinyText>
+            <ShinyText className="font-bold">cledera.ernie</ShinyText>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             {navItems.map((item) => (
@@ -51,9 +51,9 @@ const Navbar = () => {
               <span className="sr-only">Toggle Menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="pr-0">
+          <SheetContent side="left" className={`pr-0 ${isDarkVeilActive ? 'bg-transparent' : ''}`}>
             <Link to="/" className="flex items-center space-x-2">
-              <ShinyText className="font-bold bg-[linear-gradient(110deg,hsl(218_47%_16%),45%,hsl(218_60%_30%),55%,hsl(218_47%_16%))]">cledera.ernie</ShinyText>
+              <ShinyText className="font-bold">cledera.ernie</ShinyText>
             </Link>
             <nav className="flex flex-col gap-2 mt-4">
               {navItems.map((item) => (
