@@ -12,25 +12,16 @@ import ProjectsPage from "./pages/ProjectsPage";
 import NotFound from "./pages/NotFound";
 import CalculatorProject from "./components/portfolio/CalculatorProject";
 import ScrollToTop from "./components/layout/ScrollToTop";
-import { ThemeProvider, useTheme } from "next-themes"; // Import useTheme
+import { ThemeProvider } from "next-themes";
 import { DarkVeilProvider, useDarkVeil } from "./components/layout/DarkVeilProvider";
 import DarkVeil from "./components/animations/DarkVeil";
-import { useEffect } from "react"; // Import useEffect
+// Removed useEffect import as it's no longer needed for body background
 
 const queryClient = new QueryClient();
 
 const AppContent = () => {
   const { isDarkVeilActive } = useDarkVeil();
-  const { theme } = useTheme(); // Get the current theme
-
-  useEffect(() => {
-    if (isDarkVeilActive) {
-      document.body.style.backgroundColor = 'transparent';
-    } else {
-      // Revert to default background, allowing Tailwind's bg-background to apply
-      document.body.style.removeProperty('background-color');
-    }
-  }, [isDarkVeilActive, theme]); // Re-run if theme changes while veil is off
+  // Removed useTheme and useEffect for body background as it's now handled by ThemeAndVeilSwitcher
 
   return (
     <>

@@ -4,8 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import ShinyText from "@/components/animations/ShinyText";
-import ThemeToggle from "./ThemeToggle";
-import DarkVeilToggle from "./DarkVeilToggle"; // Import the new DarkVeilToggle component
+import ThemeAndVeilSwitcher from "./ThemeAndVeilSwitcher"; // Import the new switcher component
 
 const navItems = [
   { name: "Home", to: "/" },
@@ -72,8 +71,7 @@ const Navbar = () => {
           </SheetContent>
         </Sheet>
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <DarkVeilToggle /> {/* Added DarkVeilToggle here */}
-          <ThemeToggle />
+          <ThemeAndVeilSwitcher /> {/* Replaced toggles with the new switcher */}
         </div>
       </div>
     </header>
