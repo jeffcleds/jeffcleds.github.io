@@ -5,7 +5,8 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import ShinyText from "@/components/animations/ShinyText";
 import ThemeAndVeilSwitcher from "./ThemeAndVeilSwitcher";
-import { useDarkVeil } from "./DarkVeilProvider"; // Import useDarkVeil
+import { useDarkVeil } from "./DarkVeilProvider";
+import { useTheme } from "next-themes"; // Import useTheme
 
 const navItems = [
   { name: "Home", to: "/" },
@@ -16,10 +17,13 @@ const navItems = [
 
 const Navbar = () => {
   const location = useLocation();
-  const { isDarkVeilActive } = useDarkVeil(); // Get Dark Veil state
+  const { isDarkVeilActive } = useDarkVeil();
+  const { theme } = useTheme(); // Get the current theme
 
-  // Determine the active link color based on DarkVeil state
-  const activeLinkColorClass = isDarkVeilActive ? "text-white after:bg-white" : "text-[#14243d] after:bg-[#14243d]";
+  // Determine the active link color based on DarkVeil state and current theme
+  const activeLinkColorClass = isDarkVeilActive || theme === 'dark'
+    ? "text-white after:bg-white"
+    : "text-[#14243d] after:bg-[#14243d]";
 
   return (
     <header className={`sticky top-0 z-50 w-full ${isDarkVeilActive ? 'border-b-transparent bg-transparent' : 'border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'}`}>
