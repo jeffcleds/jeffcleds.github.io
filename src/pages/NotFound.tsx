@@ -35,7 +35,7 @@ const NotFound = () => {
           hoverIntensity={0.3}
           enableHover={true}
           className="mb-8 mx-auto"
-          color={isDarkVeilActive ? 'hsl(var(--muted-foreground))' : 'hsl(var(--muted-foreground))'} // Conditional color
+          color={isDarkVeilActive ? 'white' : 'hsl(var(--muted-foreground))'} // Conditional color
         >
           This section is under maintenance.
         </FuzzyText>
