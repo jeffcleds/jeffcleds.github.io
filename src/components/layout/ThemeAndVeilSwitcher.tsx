@@ -5,63 +5,63 @@ import { Moon, Sun, Sparkles } from "lucide-react";
 import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { useDarkVeil } from "./DarkVeilProvider";
+
+type AppMode = 'light' | 'dark' | 'sparkle';
 
 const ThemeAndVeilSwitcher: React.FC = () => {
   const { setTheme, theme } = useTheme();
   const { isDarkVeilActive, toggleDarkVeil } = useDarkVeil();
 
-  const handleSelect = (selectedMode: 'light' | 'dark' | 'sparkle') => {
-    if (selectedMode === 'sparkle') {
+  // Determine the current active mode
+  const currentMode: AppMode = React.useMemo(() => {
+    if (isDarkVeilActive) {
+      return 'sparkle';
+    }
+    return (theme as AppMode) || 'light'; // Default to light if theme is not set
+  }, [isDarkVeilActive, theme]);
+
+  const cycleMode = () => {
+    let nextMode: AppMode;
+
+    if (currentMode === 'light') {
+      nextMode = 'dark';
+    } else if (currentMode === 'dark') {
+      nextMode = 'sparkle';
+    } else { // currentMode === 'sparkle'
+      nextMode = 'light';
+    }
+
+    applyMode(nextMode);
+  };
+
+  const applyMode = (mode: AppMode) => {
+    if (mode === 'sparkle') {
       if (!isDarkVeilActive) {
         toggleDarkVeil();
-        setTheme('dark'); // Dark Veil always implies dark theme
       }
+      setTheme('dark'); // Dark Veil always implies dark theme
     } else {
       if (isDarkVeilActive) {
         toggleDarkVeil(); // Deactivate Dark Veil if switching to light/dark
       }
-      setTheme(selectedMode);
+      setTheme(mode);
     }
   };
 
-  // Determine the current active icon for the trigger button
+  // Determine the icon to display based on the current mode
   const ActiveIcon = React.useMemo(() => {
-    if (isDarkVeilActive) {
+    if (currentMode === 'sparkle') {
       return Sparkles;
     }
-    return theme === 'dark' ? Moon : Sun;
-  }, [isDarkVeilActive, theme]);
+    return currentMode === 'dark' ? Moon : Sun;
+  }, [currentMode]);
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon">
-          <ActiveIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
-          <span className="sr-only">Toggle theme and veil</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => handleSelect("light")}>
-          <Sun className="mr-2 h-4 w-4" />
-          <span>Light</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => handleSelect("dark")}>
-          <Moon className="mr-2 h-4 w-4" />
-          <span>Dark</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => handleSelect("sparkle")}>
-          <Sparkles className="mr-2 h-4 w-4" />
-          <span>Sparkle</span>
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <Button variant="ghost" size="icon" onClick={cycleMode}>
+      <ActiveIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
+      <span className="sr-only">Toggle theme and veil</span>
+    </Button>
   );
 };
 
