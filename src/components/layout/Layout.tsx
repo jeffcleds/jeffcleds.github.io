@@ -15,6 +15,7 @@ interface LayoutProps {
 }
 
 const NAVBAR_HEIGHT = 56; // Assuming h-14 is 56px
+const FADE_DISTANCE = 100; // Pixels over which the fade effect will occur
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const mainRef = useRef<HTMLElement>(null);
@@ -33,8 +34,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         scrollTrigger: {
           id: "main-fade-scroll", // Assign an ID for easier killing
           trigger: mainRef.current,
-          start: `top ${NAVBAR_HEIGHT}px`, // Start fading when content top reaches bottom of navbar
-          end: `top 0px`, // End fading when content top reaches top of viewport (fully under navbar)
+          start: `top ${NAVBAR_HEIGHT + FADE_DISTANCE}px`, // Start fading when content top is FADE_DISTANCE pixels below navbar bottom
+          end: `top ${NAVBAR_HEIGHT}px`, // End fading when content top reaches bottom of navbar
           scrub: true,
         },
       });
