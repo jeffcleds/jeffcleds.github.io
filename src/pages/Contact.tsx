@@ -21,7 +21,7 @@ const Contact = () => {
     <div className={`container mx-auto py-12 px-4 ${isDarkVeilActive ? 'bg-transparent text-white/80' : ''}`}>
       <h1 className="text-4xl font-bold text-center mb-10">Get in Touch</h1>
       <div className="grid md:grid-cols-2 gap-10">
-        <Card className={isDarkVeilActive ? 'opacity-50' : ''}>
+        <Card className={isDarkVeilActive ? 'opacity-90' : ''}>
           <CardHeader>
             <CardTitle>Send Me a Message</CardTitle>
             <CardDescription>I'd love to hear from you!</CardDescription>
@@ -49,7 +49,7 @@ const Contact = () => {
           </CardContent>
         </Card>
         <div className="space-y-8">
-          <Card className={isDarkVeilActive ? 'opacity-50' : ''}>
+          <Card className={isDarkVeilActive ? 'opacity-90' : ''}>
             <CardHeader>
               <CardTitle>Contact Information</CardTitle>
             </CardHeader>
@@ -69,7 +69,7 @@ const Contact = () => {
             </CardContent>
           </Card>
 
-          <Card className={isDarkVeilActive ? 'opacity-50' : ''}>
+          <Card className={isDarkVeilActive ? 'opacity-90' : ''}>
             <CardHeader>
               <CardTitle>My Resume</CardTitle>
             </CardHeader>
@@ -84,7 +84,7 @@ const Contact = () => {
             </CardContent>
           </Card>
 
-          <Card className={isDarkVeilActive ? 'opacity-50' : ''}>
+          <Card className={isDarkVeilActive ? 'opacity-90' : ''}>
             <CardHeader>
               <CardTitle>Find Me Online</CardTitle>
             </CardHeader>
