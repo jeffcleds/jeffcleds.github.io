@@ -12,34 +12,59 @@ import ProjectsPage from "./pages/ProjectsPage";
 import NotFound from "./pages/NotFound";
 import CalculatorProject from "./components/portfolio/CalculatorProject";
 import ScrollToTop from "./components/layout/ScrollToTop";
-import { ThemeProvider } from "next-themes"; // Import ThemeProvider
+import { ThemeProvider } from "next-themes";
+import { DarkVeilProvider, useDarkVeil } from "./components/layout/DarkVeilProvider"; // Import DarkVeilProvider and useDarkVeil
+import DarkVeil from "./components/animations/DarkVeil"; // Import DarkVeil
 
 const queryClient = new QueryClient();
 
+const AppContent = () => {
+  const { isDarkVeilActive } = useDarkVeil();
+
+  return (
+    <>
+      {isDarkVeilActive && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          zIndex: 9999, // Ensure it's on top
+          pointerEvents: 'none', // Allow interaction with elements beneath
+        }}>
+          <DarkVeil />
+        </div>
+      )}
+      <Toaster />
+      <Sonner />
+      <TooltipProvider>
+        <BrowserRouter>
+          <ScrollToTop />
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/projects-old" element={<Projects />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/projects/calculator" element={<CalculatorProject />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      </TooltipProvider>
+    </>
+  );
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem> {/* Changed defaultTheme to "light" */}
-      <>
-        <Toaster />
-        <Sonner />
-        <TooltipProvider>
-          <BrowserRouter>
-            <ScrollToTop />
-            <Layout>
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/projects-old" element={<Projects />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/projects" element={<ProjectsPage />} />
-                <Route path="/projects/calculator" element={<CalculatorProject />} />
-                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Layout>
-          </BrowserRouter>
-        </TooltipProvider>
-      </>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+      <DarkVeilProvider> {/* Wrap with DarkVeilProvider */}
+        <AppContent />
+      </DarkVeilProvider>
     </ThemeProvider>
   </QueryClientProvider>
 );
