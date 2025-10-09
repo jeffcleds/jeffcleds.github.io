@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import ShinyText from "@/components/animations/ShinyText";
-import ThemeAndVeilSwitcher from "./ThemeAndVeilSwitcher"; // Import the new switcher component
+import ThemeAndVeilSwitcher from "./ThemeAndVeilSwitcher";
+import { useDarkVeil } from "./DarkVeilProvider"; // Import useDarkVeil
 
 const navItems = [
   { name: "Home", to: "/" },
@@ -15,9 +16,10 @@ const navItems = [
 
 const Navbar = () => {
   const location = useLocation();
+  const { isDarkVeilActive } = useDarkVeil(); // Get Dark Veil state
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className={`sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 ${isDarkVeilActive ? 'border-b-transparent bg-transparent' : ''}`}>
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <Link to="/" className="mr-6 flex items-center space-x-2">
@@ -71,7 +73,7 @@ const Navbar = () => {
           </SheetContent>
         </Sheet>
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <ThemeAndVeilSwitcher /> {/* Replaced toggles with the new switcher */}
+          <ThemeAndVeilSwitcher />
         </div>
       </div>
     </header>
