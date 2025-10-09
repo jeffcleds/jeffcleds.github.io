@@ -6,11 +6,11 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Github, Link as LinkIcon, Download } from "lucide-react";
 import { showError } from "@/utils/toast";
-import MagnetEffect from "@/components/animations/MagnetEffect"; // Import MagnetEffect
-import { useDarkVeil } from "@/components/layout/DarkVeilProvider"; // Import useDarkVeil
+import MagnetEffect from "@/components/animations/MagnetEffect";
+import { useDarkVeil } from "@/components/layout/DarkVeilProvider";
 
 const Contact = () => {
-  const { isDarkVeilActive } = useDarkVeil(); // Get the Dark Veil active state
+  const { isDarkVeilActive } = useDarkVeil();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ const Contact = () => {
     <div className={`container mx-auto py-12 px-4 ${isDarkVeilActive ? 'bg-transparent text-white/80' : ''}`}>
       <h1 className="text-4xl font-bold text-center mb-10">Get in Touch</h1>
       <div className="grid md:grid-cols-2 gap-10">
-        <Card>
+        <Card className={isDarkVeilActive ? 'opacity-50' : ''}>
           <CardHeader>
             <CardTitle>Send Me a Message</CardTitle>
             <CardDescription>I'd love to hear from you!</CardDescription>
@@ -49,7 +49,7 @@ const Contact = () => {
           </CardContent>
         </Card>
         <div className="space-y-8">
-          <Card>
+          <Card className={isDarkVeilActive ? 'opacity-50' : ''}>
             <CardHeader>
               <CardTitle>Contact Information</CardTitle>
             </CardHeader>
@@ -69,12 +69,12 @@ const Contact = () => {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className={isDarkVeilActive ? 'opacity-50' : ''}>
             <CardHeader>
               <CardTitle>My Resume</CardTitle>
             </CardHeader>
             <CardContent>
-              <MagnetEffect strength={10} tolerance={0.5} className="w-full"> {/* Apply MagnetEffect here */}
+              <MagnetEffect strength={10} tolerance={0.5} className="w-full">
                 <Button asChild className="w-full">
                   <a href="/ernie-joseph-cledera-resume.pdf" download="Ernie_Joseph_Cledera_Resume.pdf">
                     <Download className="h-4 w-4 mr-2" /> Download Resume
@@ -84,7 +84,7 @@ const Contact = () => {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className={isDarkVeilActive ? 'opacity-50' : ''}>
             <CardHeader>
               <CardTitle>Find Me Online</CardTitle>
             </CardHeader>
