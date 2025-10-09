@@ -18,6 +18,9 @@ const Navbar = () => {
   const location = useLocation();
   const { isDarkVeilActive } = useDarkVeil(); // Get Dark Veil state
 
+  // Determine the active link color based on DarkVeil state
+  const activeLinkColorClass = isDarkVeilActive ? "text-primary-foreground after:bg-primary-foreground" : "text-[#14243d] after:bg-[#14243d]";
+
   return (
     <header className={`sticky top-0 z-50 w-full ${isDarkVeilActive ? 'border-b-transparent bg-transparent' : 'border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'}`}>
       <div className="container flex h-14 items-center">
@@ -31,8 +34,8 @@ const Navbar = () => {
                 key={item.name}
                 to={item.to}
                 className={`relative transition-colors text-foreground/60 hover:text-foreground/80 
-                  ${location.pathname === item.to ? "font-semibold text-[#14243d]" : ""}
-                  after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-[#14243d] after:transition-all after:duration-300 after:ease-in-out
+                  ${location.pathname === item.to ? `font-semibold ${activeLinkColorClass}` : ""}
+                  after:absolute after:bottom-0 after:left-0 after:h-[2px] after:transition-all after:duration-300 after:ease-in-out
                   ${location.pathname === item.to ? "after:w-full" : "after:w-0 hover:after:w-full"}
                 `}
               >
@@ -61,8 +64,8 @@ const Navbar = () => {
                   key={item.name}
                   to={item.to}
                   className={`flex w-full items-center py-2 text-lg font-semibold relative
-                    ${location.pathname === item.to ? "text-[#14243d]" : "text-foreground/60 hover:text-foreground/80"}
-                    after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-[#14243d] after:transition-all after:duration-300 after:ease-in-out
+                    ${location.pathname === item.to ? activeLinkColorClass : "text-foreground/60 hover:text-foreground/80"}
+                    after:absolute after:bottom-0 after:left-0 after:h-[2px] after:transition-all after:duration-300 after:ease-in-out
                     ${location.pathname === item.to ? "after:w-full" : "after:w-0 hover:after:w-full"}
                   `}
                 >
