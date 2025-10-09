@@ -12,14 +12,25 @@ import ProjectsPage from "./pages/ProjectsPage";
 import NotFound from "./pages/NotFound";
 import CalculatorProject from "./components/portfolio/CalculatorProject";
 import ScrollToTop from "./components/layout/ScrollToTop";
-import { ThemeProvider } from "next-themes";
-import { DarkVeilProvider, useDarkVeil } from "./components/layout/DarkVeilProvider"; // Import DarkVeilProvider and useDarkVeil
-import DarkVeil from "./components/animations/DarkVeil"; // Import DarkVeil
+import { ThemeProvider, useTheme } from "next-themes"; // Import useTheme
+import { DarkVeilProvider, useDarkVeil } from "./components/layout/DarkVeilProvider";
+import DarkVeil from "./components/animations/DarkVeil";
+import { useEffect } from "react"; // Import useEffect
 
 const queryClient = new QueryClient();
 
 const AppContent = () => {
   const { isDarkVeilActive } = useDarkVeil();
+  const { theme } = useTheme(); // Get the current theme
+
+  useEffect(() => {
+    if (isDarkVeilActive) {
+      document.body.style.backgroundColor = 'transparent';
+    } else {
+      // Revert to default background, allowing Tailwind's bg-background to apply
+      document.body.style.removeProperty('background-color');
+    }
+  }, [isDarkVeilActive, theme]); // Re-run if theme changes while veil is off
 
   return (
     <>
@@ -30,8 +41,8 @@ const AppContent = () => {
           left: 0,
           width: '100vw',
           height: '100vh',
-          zIndex: 9999, // Ensure it's on top
-          pointerEvents: 'none', // Allow interaction with elements beneath
+          zIndex: -1, // Changed zIndex to -1 to place it in the background
+          pointerEvents: 'none',
         }}>
           <DarkVeil />
         </div>
@@ -62,7 +73,7 @@ const AppContent = () => {
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-      <DarkVeilProvider> {/* Wrap with DarkVeilProvider */}
+      <DarkVeilProvider>
         <AppContent />
       </DarkVeilProvider>
     </ThemeProvider>
