@@ -19,7 +19,7 @@ const Navbar = () => {
   const { isDarkVeilActive } = useDarkVeil(); // Get Dark Veil state
 
   // Determine the active link color based on DarkVeil state
-  const activeLinkColorClass = isDarkVeilActive ? "text-primary-foreground after:bg-primary-foreground" : "text-[#14243d] after:bg-[#14243d]";
+  const activeLinkColorClass = isDarkVeilActive ? "text-white after:bg-white" : "text-[#14243d] after:bg-[#14243d]";
 
   return (
     <header className={`sticky top-0 z-50 w-full ${isDarkVeilActive ? 'border-b-transparent bg-transparent' : 'border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'}`}>
