@@ -2,8 +2,11 @@ import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { profileData } from "@/data/portfolioData";
 import { Mail, Phone, MapPin, CalendarDays } from "lucide-react";
+import { useDarkVeil } from "@/components/layout/DarkVeilProvider"; // Import useDarkVeil
 
 const DetailsCard: React.FC = () => {
+  const { isDarkVeilActive } = useDarkVeil(); // Use DarkVeil hook
+
   const calculateAge = (birthDateString: string) => {
     const birthDate = new Date(birthDateString);
     const today = new Date();
@@ -18,7 +21,7 @@ const DetailsCard: React.FC = () => {
   const age = React.useMemo(() => calculateAge(profileData.birthDate), [profileData.birthDate]);
 
   return (
-    <Card className="p-6 h-full"> {/* Added h-full here */}
+    <Card className={`p-6 h-full ${isDarkVeilActive ? 'bg-card/50 border border-primary/20' : ''}`}>
       <CardHeader className="p-0 pb-4">
         <CardTitle className="text-2xl font-bold">Details</CardTitle>
       </CardHeader>

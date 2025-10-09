@@ -2,10 +2,13 @@ import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import ExperienceItem from "./ExperienceItem";
 import { experienceData } from "@/data/portfolioData";
+import { useDarkVeil } from "@/components/layout/DarkVeilProvider"; // Import useDarkVeil
 
 const ExperienceSection: React.FC = () => {
+  const { isDarkVeilActive } = useDarkVeil(); // Use DarkVeil hook
+
   return (
-    <Card className="p-6">
+    <Card className={`p-6 ${isDarkVeilActive ? 'bg-card/50 border border-primary/20' : ''}`}>
       <CardHeader className="p-0 pb-4">
         <CardTitle className="text-2xl font-bold">Experience</CardTitle>
       </CardHeader>

@@ -1,10 +1,13 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { interestsData } from "@/data/portfolioData";
+import { useDarkVeil } from "@/components/layout/DarkVeilProvider"; // Import useDarkVeil
 
 const InterestsCard: React.FC = () => {
+  const { isDarkVeilActive } = useDarkVeil(); // Use DarkVeil hook
+
   return (
-    <Card className="p-6 h-full"> {/* Added h-full here */}
+    <Card className={`p-6 h-full ${isDarkVeilActive ? 'bg-card/50 border border-primary/20' : ''}`}>
       <CardHeader className="p-0 pb-4">
         <CardTitle className="text-2xl font-bold">Interests</CardTitle>
       </CardHeader>

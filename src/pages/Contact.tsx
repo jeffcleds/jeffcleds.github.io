@@ -17,11 +17,13 @@ const Contact = () => {
     showError("Kindly send me an email for now as the API for this is not working properly. I apologize for the inconvenience.");
   };
 
+  const cardClassNames = isDarkVeilActive ? 'bg-card/50 border border-primary/20' : '';
+
   return (
     <div className={`container mx-auto py-12 px-4 ${isDarkVeilActive ? 'bg-transparent text-white/80' : ''}`}>
       <h1 className="text-4xl font-bold text-center mb-10">Get in Touch</h1>
       <div className="grid md:grid-cols-2 gap-10">
-        <Card className={isDarkVeilActive ? 'bg-opacity-50' : ''}>
+        <Card className={cardClassNames}>
           <CardHeader>
             <CardTitle>Send Me a Message</CardTitle>
             <CardDescription>I'd love to hear from you!</CardDescription>
@@ -49,7 +51,7 @@ const Contact = () => {
           </CardContent>
         </Card>
         <div className="space-y-8">
-          <Card className={isDarkVeilActive ? 'bg-opacity-50' : ''}>
+          <Card className={cardClassNames}>
             <CardHeader>
               <CardTitle>Contact Information</CardTitle>
             </CardHeader>
@@ -69,7 +71,7 @@ const Contact = () => {
             </CardContent>
           </Card>
 
-          <Card className={isDarkVeilActive ? 'bg-opacity-50' : ''}>
+          <Card className={cardClassNames}>
             <CardHeader>
               <CardTitle>My Resume</CardTitle>
             </CardHeader>
@@ -84,7 +86,7 @@ const Contact = () => {
             </CardContent>
           </Card>
 
-          <Card className={isDarkVeilActive ? 'bg-opacity-50' : ''}>
+          <Card className={cardClassNames}>
             <CardHeader>
               <CardTitle>Find Me Online</CardTitle>
             </CardHeader>
