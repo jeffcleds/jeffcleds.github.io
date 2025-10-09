@@ -7,15 +7,18 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Mail, Phone, MapPin, Github, Link as LinkIcon, Download } from "lucide-react";
 import { showError } from "@/utils/toast";
 import MagnetEffect from "@/components/animations/MagnetEffect"; // Import MagnetEffect
+import { useDarkVeil } from "@/components/layout/DarkVeilProvider"; // Import useDarkVeil
 
 const Contact = () => {
+  const { isDarkVeilActive } = useDarkVeil(); // Get the Dark Veil active state
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     showError("Kindly send me an email for now as the API for this is not working properly. I apologize for the inconvenience.");
   };
 
   return (
-    <div className="container mx-auto py-12 px-4">
+    <div className={`container mx-auto py-12 px-4 ${isDarkVeilActive ? 'bg-transparent text-white/80' : ''}`}>
       <h1 className="text-4xl font-bold text-center mb-10">Get in Touch</h1>
       <div className="grid md:grid-cols-2 gap-10">
         <Card>
