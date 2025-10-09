@@ -30,7 +30,15 @@ const Navbar = () => {
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <Link to="/" className="mr-6 flex items-center space-x-2">
-            <ShinyText className="font-bold">cledera.ernie</ShinyText>
+            <ShinyText
+              className="font-bold"
+              style={{
+                '--muted-foreground': '220 30% 15%', // Dark navy base color
+                '--primary-foreground': '220 80% 50%', // Brighter navy shine color
+              } as React.CSSProperties}
+            >
+              cledera.ernie
+            </ShinyText>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             {navItems.map((item) => (
@@ -60,7 +68,15 @@ const Navbar = () => {
           </SheetTrigger>
           <SheetContent side="left" className={`pr-0 ${isDarkVeilActive ? 'bg-transparent' : ''}`}>
             <Link to="/" className="flex items-center space-x-2">
-              <ShinyText className="font-bold">cledera.ernie</ShinyText>
+              <ShinyText
+                className="font-bold"
+                style={{
+                  '--muted-foreground': '220 30% 15%', // Dark navy base color
+                  '--primary-foreground': '220 80% 50%', // Brighter navy shine color
+                } as React.CSSProperties}
+              >
+                cledera.ernie
+              </ShinyText>
             </Link>
             <nav className="flex flex-col gap-2 mt-4">
               {navItems.map((item) => (
