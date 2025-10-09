@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import ShinyText from "@/components/animations/ShinyText";
-import ThemeAndVeilSwitcher from "./ThemeAndVeilSwitcher"; // Import the new switcher component
+import ThemeAndVeilSwitcher from "./ThemeAndVeilSwitcher";
+import { useDarkVeil } from "./DarkVeilProvider"; // Import useDarkVeil
 
 const navItems = [
   { name: "Home", to: "/" },
@@ -15,6 +16,7 @@ const navItems = [
 
 const Navbar = () => {
   const location = useLocation();
+  const { isDarkVeilActive } = useDarkVeil(); // Get Dark Veil state
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -29,9 +31,11 @@ const Navbar = () => {
                 key={item.name}
                 to={item.to}
                 className={`relative transition-colors text-foreground/60 hover:text-foreground/80 
-                  ${location.pathname === item.to ? "font-semibold text-[#14243d]" : ""}
-                  after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-[#14243d] after:transition-all after:duration-300 after:ease-in-out
-                  ${location.pathname === item.to ? "after:w-full" : "after:w-0 hover:after:w-full"}
+                  ${location.pathname === item.to ? "font-semibold text-[hsl(var(--primary-foreground))]" : ""}
+                  ${!isDarkVeilActive ? `
+                    after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-[hsl(var(--primary-foreground))] after:transition-all after:duration-300 after:ease-in-out
+                    ${location.pathname === item.to ? "after:w-full" : "after:w-0 hover:after:w-full"}
+                  ` : ''}
                 `}
               >
                 {item.name}
@@ -59,9 +63,11 @@ const Navbar = () => {
                   key={item.name}
                   to={item.to}
                   className={`flex w-full items-center py-2 text-lg font-semibold relative
-                    ${location.pathname === item.to ? "text-[#14243d]" : "text-foreground/60 hover:text-foreground/80"}
-                    after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-[#14243d] after:transition-all after:duration-300 after:ease-in-out
-                    ${location.pathname === item.to ? "after:w-full" : "after:w-0 hover:after:w-full"}
+                    ${location.pathname === item.to ? "text-[hsl(var(--primary-foreground))]" : "text-foreground/60 hover:text-foreground/80"}
+                    ${!isDarkVeilActive ? `
+                      after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-[hsl(var(--primary-foreground))] after:transition-all after:duration-300 after:ease-in-out
+                      ${location.pathname === item.to ? "after:w-full" : "after:w-0 hover:after:w-full"}
+                    ` : ''}
                   `}
                 >
                   {item.name}
@@ -71,7 +77,7 @@ const Navbar = () => {
           </SheetContent>
         </Sheet>
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <ThemeAndVeilSwitcher /> {/* Replaced toggles with the new switcher */}
+          <ThemeAndVeilSwitcher />
         </div>
       </div>
     </header>
