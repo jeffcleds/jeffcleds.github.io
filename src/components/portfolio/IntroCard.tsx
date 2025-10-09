@@ -1,31 +1,29 @@
-"use client";
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { profileData } from '@/data/portfolioData'; // Import profileData
+import { useDarkVeil } from '@/components/layout/DarkVeilProvider'; // Import useDarkVeil
+
+const profileData = {
+  introduction: `Hello! I'm Ernie Joseph Cledera, a passionate and dedicated IT professional with a strong background in web development and network engineering. I thrive on solving complex problems and creating efficient, user-friendly solutions. My journey in IT has equipped me with a diverse skill set, allowing me to adapt to various roles and challenges. I'm always eager to learn new technologies and contribute to innovative projects. Let's build something amazing together!`,
+};
 
 const IntroCard = () => {
+  const { isDarkVeilActive } = useDarkVeil(); // Get Dark Veil state
+
   return (
-    <Card className="w-full max-w-3xl mx-auto p-6 shadow-lg rounded-lg">
+    <Card className={`w-full max-w-3xl mx-auto p-6 shadow-lg rounded-lg ${isDarkVeilActive ? 'bg-transparent border-transparent' : ''}`}>
       <CardContent className="p-0">
         <p className="text-lg leading-relaxed text-muted-foreground">
           {profileData.introduction.split('<span class="highlight">').map((segment, index) => {
-            if (index === 0) {
-              // This is the part before the first highlight tag
-              return segment;
-            } else {
-              // This segment contains the highlighted text and potentially text after it
-              const partsAfterHighlight = segment.split('</span>');
-              const highlightedText = partsAfterHighlight[0];
-              const remainingText = partsAfterHighlight.slice(1).join('</span>'); // Join any subsequent parts if there were multiple </span>
-
+            if (segment.includes('</span>')) {
+              const parts = segment.split('</span>');
               return (
                 <React.Fragment key={index}>
-                  <span className="text-primary font-semibold">{highlightedText}</span>
-                  {remainingText}
+                  <span className="text-primary font-semibold">{parts[0]}</span>
+                  {parts[1]}
                 </React.Fragment>
               );
             }
+            return <React.Fragment key={index}>{segment}</React.Fragment>;
           })}
         </p>
       </CardContent>
