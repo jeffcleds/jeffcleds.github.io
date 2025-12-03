@@ -80,20 +80,20 @@ const ClassSchedulerProject: React.FC = () => {
         <div className="space-y-6">
           <h2 className="text-3xl font-bold">Project Overview & Features</h2>
           <p className="text-muted-foreground leading-relaxed">
-            The Class Scheduler is a productivity tool designed to help students and educators efficiently manage their academic timetables, assignments, and deadlines in a centralized digital environment.
+            A web application to help the school manage and visualize class schedules and to check if there is a conflict in the schedule.
           </p>
 
           <h3 className="text-2xl font-semibold">Key Features:</h3>
           <ul className="list-disc space-y-2 pl-6 text-muted-foreground">
-            <li>**Interactive Calendar View:** Allows users to visualize their weekly schedule and upcoming events easily.</li>
-            <li>**Assignment Tracking:** Features for adding, editing, and marking assignments as complete, with deadline reminders.</li>
-            <li>**User Authentication:** Secure login and personalized data storage using Firebase.</li>
-            <li>**Filtering and Sorting:** Tools to quickly find specific classes or assignments based on criteria like course name or priority.</li>
+            <li><span className="font-semibold text-foreground">Conflict Detection:</span> Automatically identifies and flags scheduling conflicts between classes, rooms, and instructors.</li>
+            <li><span className="font-semibold text-foreground">Interactive Schedule View:</span> Allows administrators to visualize the entire school timetable easily.</li>
+            <li><span className="font-semibold text-foreground">Course and Room Management:</span> Tools for adding, editing, and assigning courses and physical classrooms.</li>
+            <li><span className="font-semibold text-foreground">Data Persistence:</span> Securely stores all scheduling data using MySQL.</li>
           </ul>
 
           <h3 className="text-2xl font-semibold pt-4">My Role & Contributions:</h3>
           <p className="text-muted-foreground leading-relaxed">
-            I focused on developing the front-end interface and state management using React and TypeScript, ensuring a smooth and intuitive user experience. I also implemented the integration with Firebase for real-time data synchronization.
+            I focused on developing the backend logic using C# to handle complex scheduling algorithms and conflict resolution. I also managed the MySQL database design and implementation to ensure data integrity and efficient querying.
           </p>
         </div>
       </Card>

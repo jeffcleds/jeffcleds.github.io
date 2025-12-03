@@ -222,9 +222,9 @@ export const projectsData: Project[] = [
   {
     id: 3,
     title: "Class Scheduler",
-    description: "A web application to help students and instructors manage and visualize class schedules, assignments, and deadlines.",
+    description: "A web application to help the school manage and visualize class schedules and to check if there is a conflict in the schedule.",
     image: "/class-scheduler.png", // Updated path
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Firebase"],
+    technologies: ["C#", "MySQL"],
     githubLink: "/not-found-repo", // Changed to a local route to trigger 404
     liveLink: "/projects/class-scheduler", // Updated to new route
   },
@@ -234,7 +234,6 @@ export const projectsData: Project[] = [
     description: "A basic interactive calculator application built with React and TypeScript, demonstrating fundamental UI and state management.",
     image: "/ai-calculator.png", // AI-generated photo
     technologies: ["React", "TypeScript", "Tailwind CSS"],
-    // Removed githubLink and liveLink
     liveLink: "/projects/simple-calculator", // Keep the internal link to the details page
   },
 ];
