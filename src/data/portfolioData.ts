@@ -207,7 +207,7 @@ export const projectsData: Project[] = [
     description: "A responsive personal portfolio website built with React, TypeScript, and Tailwind CSS, showcasing my skills and projects.",
     image: "/my-portfolio-website.jpg", // Updated path
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    githubLink: "https://github.com/yourusername/portfolio",
+    githubLink: "https://github.com/jeffcleds/jeffcleds.github.io",
     liveLink: "/projects/portfolio-website", // Updated to new route
   },
   {

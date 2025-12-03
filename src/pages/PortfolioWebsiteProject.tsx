@@ -82,10 +82,10 @@ const PortfolioWebsiteProject: React.FC = () => {
 
           <h3 className="text-2xl font-semibold">Key Features:</h3>
           <ul className="list-disc space-y-2 pl-6 text-muted-foreground">
-            <li>**Responsive Design:** Fully optimized for desktop, tablet, and mobile devices using Tailwind CSS.</li>
-            <li>**Interactive Animations:** Utilizes GSAP for smooth scroll-based and hover effects (like TiltedCard and ScrollReveal) to enhance user engagement.</li>
-            <li>**Theme Switching:** Implements dark mode and a unique 'Dark Veil' mode for a personalized viewing experience.</li>
-            <li>**Component-Based Architecture:** Built with React and TypeScript for robust, scalable, and easy-to-maintain code.</li>
+            <li><strong>Responsive Design:</strong> Fully optimized for desktop, tablet, and mobile devices using Tailwind CSS.</li>
+            <li><strong>Interactive Animations:</strong> Utilizes GSAP for smooth scroll-based and hover effects (like TiltedCard and ScrollReveal) to enhance user engagement.</li>
+            <li><strong>Theme Switching:</strong> Implements dark mode and a unique 'Dark Veil' mode for a personalized viewing experience.</li>
+            <li><strong>Component-Based Architecture:</strong> Built with React and TypeScript for robust, scalable, and easy-to-maintain code.</li>
           </ul>
 
           <h3 className="text-2xl font-semibold pt-4">My Role & Contributions:</h3>
