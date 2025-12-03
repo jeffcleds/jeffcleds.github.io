@@ -71,16 +71,16 @@ const CalabangaProject: React.FC = () => {
         <div className="space-y-6">
           <h2 className="text-3xl font-bold">Project Overview & Features</h2>
           <p className="text-muted-foreground leading-relaxed">
-            The Calabanga Community College School Management System (CCC-SMS) was developed to streamline administrative processes, improve data accuracy, and enhance communication between students, faculty, and staff. This system replaced manual record-keeping with a centralized digital platform.
+            The Calabanga Community College or E-CCC was developed to streamline administrative processes, improve data accuracy, and enhance communication between students, faculty, and staff. This system is an enrollment and academic records management system for the Calabanga Community College.
           </p>
 
           <h3 className="text-2xl font-semibold">Key Features Implemented:</h3>
           <ul className="list-disc space-y-2 pl-6 text-muted-foreground">
-            <li>**Student Enrollment & Records:** Digital registration, tracking academic history, and managing personal information securely.</li>
-            <li>**Course Management:** Scheduling classes, assigning instructors, and managing curriculum updates.</li>
-            <li>**Grading System:** Automated calculation and recording of grades, providing instant access to academic performance.</li>
-            <li>**Administrative Dashboards:** Providing staff with real-time insights into enrollment numbers, financial status, and resource allocation.</li>
-            <li>**User Authentication & Roles:** Secure login system with distinct roles for students, faculty, and administrators, ensuring data integrity and access control.</li>
+            <li><span className="font-semibold text-foreground">Student Enrollment & Records:</span> Digital registration, tracking academic history, and managing personal information securely.</li>
+            <li><span className="font-semibold text-foreground">Course Management:</span> Scheduling classes, assigning instructors, and managing curriculum updates.</li>
+            <li><span className="font-semibold text-foreground">Grading System:</span> Automated calculation and recording of grades, providing instant access to academic performance.</li>
+            <li><span className="font-semibold text-foreground">Administrative Dashboards:</span> Providing staff with real-time insights into enrollment numbers, financial status, and resource allocation.</li>
+            <li><span className="font-semibold text-foreground">User Authentication & Roles:</span> Secure login system with distinct roles for students, faculty, and administrators, ensuring data integrity and access control.</li>
           </ul>
 
           <h3 className="text-2xl font-semibold pt-4">My Role & Contributions:</h3>

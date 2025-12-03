@@ -215,7 +215,7 @@ export const projectsData: Project[] = [
     title: "Calabanga Community College - School Management System",
     description: "A comprehensive school management system designed for Calabanga Community College, handling student records, course management, and administrative tasks.",
     image: "/calabanga-sms.png", // Updated path
-    technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+    technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "Laravel", "Filament"],
     githubLink: "https://github.com/yourusername/calabanga-sms", // Placeholder
     liveLink: "/projects/calabanga-sms", // Already correct
   },
