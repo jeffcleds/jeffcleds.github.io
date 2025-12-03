@@ -15,16 +15,35 @@ import CalabangaProject from "./pages/CalabangaProject";
 import PortfolioWebsiteProject from "./pages/PortfolioWebsiteProject";
 import ClassSchedulerProject from "./pages/ClassSchedulerProject";
 import ScrollToTop from "./components/layout/ScrollToTop";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider, useTheme } from "next-themes";
 import { DarkVeilProvider, useDarkVeil } from "./components/layout/DarkVeilProvider";
 import DarkVeil from "./components/animations/DarkVeil";
-// Removed useEffect import as it's no longer needed for body background
+import React from "react"; // Import React for useState/useEffect
 
 const queryClient = new QueryClient();
 
+// Component to handle theme mounting check
+const ThemeWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [mounted, setMounted] = React.useState(false);
+  const { theme } = useTheme();
+
+  // useEffect only runs on the client, so now we can safely show the UI
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    // Optionally render a minimal loading state or null to prevent FOUC
+    // For now, we render null to wait for the theme class to be applied.
+    return null;
+  }
+
+  return <>{children}</>;
+};
+
+
 const AppContent = () => {
   const { isDarkVeilActive } = useDarkVeil();
-  // Removed useTheme and useEffect for body background as it's now handled by ThemeAndVeilSwitcher
 
   return (
     <>
@@ -35,7 +54,7 @@ const AppContent = () => {
           left: 0,
           width: '100vw',
           height: '100vh',
-          zIndex: -1, // Changed zIndex to -1 to place it in the background
+          zIndex: -1,
           pointerEvents: 'none',
         }}>
           <DarkVeil />
@@ -71,7 +90,9 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
       <DarkVeilProvider>
-        <AppContent />
+        <ThemeWrapper>
+          <AppContent />
+        </ThemeWrapper>
       </DarkVeilProvider>
     </ThemeProvider>
   </QueryClientProvider>
