@@ -9,11 +9,28 @@ interface DarkVeilContextType {
 
 const DarkVeilContext = createContext<DarkVeilContextType | undefined>(undefined);
 
+const DARK_VEIL_STORAGE_KEY = 'dyad-dark-veil-active';
+
 export const DarkVeilProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [isDarkVeilActive, setIsDarkVeilActive] = useState(true);
+  // Initialize state from localStorage, defaulting to false if not found.
+  const [isDarkVeilActive, setIsDarkVeilActive] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const storedValue = localStorage.getItem(DARK_VEIL_STORAGE_KEY);
+      // If storedValue is null/undefined, default to false. Otherwise, parse 'true'/'false'.
+      return storedValue === 'true';
+    }
+    // Default to false during SSR or initial render
+    return false;
+  });
 
   const toggleDarkVeil = () => {
-    setIsDarkVeilActive(prev => !prev);
+    setIsDarkVeilActive(prev => {
+      const newState = !prev;
+      if (typeof window !== 'undefined') {
+        localStorage.setItem(DARK_VEIL_STORAGE_KEY, String(newState));
+      }
+      return newState;
+    });
   };
 
   return (
