@@ -20,7 +20,7 @@ const Contact = () => {
   const cardClassNames = isDarkVeilActive ? 'bg-card/50 border border-primary/20' : '';
 
   return (
-    <div className={`container mx-auto py-12 px-4 ${isDarkVeilActive ? 'bg-transparent text-white/80' : ''}`}>
+    <div className={`container mx-auto py-12 px-4 ${isDarkVeilActive ? 'bg-transparent' : ''}`}>
       <h1 className="text-4xl font-bold text-center mb-10">Get in Touch</h1>
       <div className="grid md:grid-cols-2 gap-10">
         <Card className={cardClassNames}>
