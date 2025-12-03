@@ -96,9 +96,9 @@ const JumpQuestProject: React.FC = () => {
             As the Group Leader, I oversaw the project development lifecycle. My primary contributions included assigning tasks to my team members, programming core game logic in C#, adding assets, managing version control, and coordinating asset integration. I also contributed to the graphical design and ensuring the game met all technical requirements.
           </p>
           
-          <h3 className="text-2xl font-semibold pt-4">Team Acknowledgement:</h3>
+          <h3 className="text-2xl font-semibold pt-4">Acknowledgement:</h3>
           <p className="text-muted-foreground leading-relaxed">
-            This project was a collaborative effort by Roblera Palbun Studios. Special thanks to team members: Owen Christian Robas, Christian James Palo, and Mcjohn Bunao.
+            This project was a collaborative effort by Roblera Palbun Studios. Special thanks to team members: <strong>Owen Christian Robas</strong>, <strong>Christian James Palo</strong>, and <strong>Mcjohn Bunao</strong>.
           </p>
         </div>
       </Card>
