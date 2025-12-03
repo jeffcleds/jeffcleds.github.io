@@ -99,10 +99,10 @@ const CalabangaProject: React.FC = () => {
         <div className="space-y-6">
           <h2 className="text-3xl font-bold">Acknowledgement</h2>
           <p className="text-muted-foreground leading-relaxed">
-            This project was completed through the combined effort and commitment of my groupmates: Joshua Gabriel, Chrystian Ray C. Festin, Allan Aboga-a Jr., and Joshua Gabriel Gamora. Each contributed solid work that strengthened the final output.
+            This project was completed through the combined effort and commitment of my groupmates: <strong>Joshua Gabriel Gamora</strong>, <strong>Chrystian Ray C. Festin</strong>, and <strong>Allan Aboga-a Jr.</strong> Each contributed solid work that strengthened the final output.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            We also acknowledge Raymond A. Iglesia, STI College Naga Academic Head, for his support and guidance, and Dr. Angel Belleza, CCC School Administrator, for providing the necessary backing and direction. Their leadership made this project possible.
+            We also acknowledge <strong>Raymond A. Iglesia</strong>, STI College Naga Academic Head, for his support and guidance, and <strong>Dr. Angel Belleza</strong>, CCC School Administrator, for providing the necessary backing and direction. Their leadership made this project possible.
           </p>
         </div>
       </Card>
