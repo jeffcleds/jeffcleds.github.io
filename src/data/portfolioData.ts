@@ -70,7 +70,7 @@ export const experienceData: Experience[] = [
   {
     id: "concentrix",
     title: "Concentrix",
-    subtitle: "Customer Service Representative",
+    subtitle: "Claims and Insurance Specialist",
     date: "2018 - 2019",
     responsibilities: [
       "Manages insurance claims, verifies coverage, and ensures compliance with policies and regulations.",
