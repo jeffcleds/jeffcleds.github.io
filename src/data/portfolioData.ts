@@ -172,7 +172,7 @@ export const affiliationsData: Affiliation[] = [
     name: "Institute of Computer Engineers of the Philippines",
     status: "Student Member",
     date: "2015",
-    logo: "/placeholder.svg"
+    logo: "/icpep-logo.png" // Updated to use the new logo
   },
   {
     id: "afs",
