@@ -10,7 +10,7 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import ProjectsPage from "./pages/ProjectsPage";
 import NotFound from "./pages/NotFound";
-import CalculatorProject from "./components/portfolio/CalculatorProject";
+import SimpleCalculatorProject from "./pages/SimpleCalculatorProject"; // Import the new page
 import CalabangaProject from "./pages/CalabangaProject";
 import PortfolioWebsiteProject from "./pages/PortfolioWebsiteProject";
 import ClassSchedulerProject from "./pages/ClassSchedulerProject";
@@ -75,7 +75,7 @@ const AppContent = () => {
               <Route path="/projects/portfolio-website" element={<PortfolioWebsiteProject />} />
               <Route path="/projects/e-ccc" element={<CalabangaProject />} />
               <Route path="/projects/class-scheduler" element={<ClassSchedulerProject />} />
-              <Route path="/projects/simple-calculator" element={<CalculatorProject />} />
+              <Route path="/projects/simple-calculator" element={<SimpleCalculatorProject />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

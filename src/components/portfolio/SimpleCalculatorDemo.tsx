@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-const CalculatorProject: React.FC = () => {
+const SimpleCalculatorDemo: React.FC = () => {
   const [input, setInput] = useState<string>("");
   const [result, setResult] = useState<string>("");
 
@@ -81,4 +81,4 @@ const CalculatorProject: React.FC = () => {
   );
 };
 
-export default CalculatorProject;
+export default SimpleCalculatorDemo;
