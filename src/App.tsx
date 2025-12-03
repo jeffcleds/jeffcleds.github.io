@@ -10,10 +10,11 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import ProjectsPage from "./pages/ProjectsPage";
 import NotFound from "./pages/NotFound";
-import SimpleCalculatorProject from "./pages/SimpleCalculatorProject"; // Import the new page
+import SimpleCalculatorProject from "./pages/SimpleCalculatorProject";
 import CalabangaProject from "./pages/CalabangaProject";
 import PortfolioWebsiteProject from "./pages/PortfolioWebsiteProject";
 import ClassSchedulerProject from "./pages/ClassSchedulerProject";
+import JumpQuestProject from "./pages/JumpQuestProject"; // Import the new page
 import ScrollToTop from "./components/layout/ScrollToTop";
 import { ThemeProvider, useTheme } from "next-themes";
 import { DarkVeilProvider, useDarkVeil } from "./components/layout/DarkVeilProvider";
@@ -76,6 +77,7 @@ const AppContent = () => {
               <Route path="/projects/e-ccc" element={<CalabangaProject />} />
               <Route path="/projects/class-scheduler" element={<ClassSchedulerProject />} />
               <Route path="/projects/simple-calculator" element={<SimpleCalculatorProject />} />
+              <Route path="/projects/jumpquest" element={<JumpQuestProject />} /> {/* New Route */}
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
