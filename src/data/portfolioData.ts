@@ -217,7 +217,7 @@ export const projectsData: Project[] = [
     image: "/calabanga-sms.png", // Updated path
     technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "Laravel", "Filament"],
     githubLink: "https://github.com/jeffcleds/E-CCC", // Updated GitHub link
-    liveLink: "/projects/calabanga-sms", // Already correct
+    liveLink: "/projects/e-ccc", // Updated to new route /projects/e-ccc
   },
   {
     id: 3,

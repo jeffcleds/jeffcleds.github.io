@@ -54,7 +54,7 @@ const AppContent = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/projects/portfolio-website" element={<PortfolioWebsiteProject />} />
-              <Route path="/projects/calabanga-sms" element={<CalabangaProject />} />
+              <Route path="/projects/e-ccc" element={<CalabangaProject />} />
               <Route path="/projects/class-scheduler" element={<ClassSchedulerProject />} />
               <Route path="/projects/simple-calculator" element={<CalculatorProject />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
