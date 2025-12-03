@@ -162,7 +162,7 @@ export const educationData: Education[] = [
 export const affiliationsData: Affiliation[] = [
   {
     id: "apo",
-    name: "Alpha Phi Omega",
+    name: "Alpha Phi Omega - Beta Kappa Chapter",
     status: "Member",
     date: "2018-A",
     logo: "/placeholder.svg"
@@ -171,14 +171,14 @@ export const affiliationsData: Affiliation[] = [
     id: "icep",
     name: "Institute of Computer Engineers of the Philippines",
     status: "Student Member",
-    date: "N/A",
+    date: "2015",
     logo: "/placeholder.svg"
   },
   {
     id: "afs",
     name: "Ateneo Film Society",
-    status: "Batch 0",
-    date: "N/A",
+    status: "Member - Batch 0",
+    date: "2016",
     logo: "/placeholder.svg"
   },
 ];
