@@ -36,7 +36,7 @@ export interface Project {
 
 export const profileData = {
   name: "Ernie Joseph Cledera",
-  profileImage: "/ernie-joseph-cledera.jpg", // Replace with your profile image path, e.g., "/profile.jpg"
+  profileImage: "/ernie-joseph-cledera.jpg", // Replace with your profile image path, e/g., "/profile.jpg"
   introduction: `My name is <span class="highlight">Ernie Joseph Cledera</span>, a tech-savvy Virtual Assistant with 3+ years of experience optimizing workflows, data management, and digital tools to deliver accurate, high-quality support. Strong communicator skilled in client relations, time management, and leveraging technology to boost productivity.`,
   birthDate: '1998-04-09',
   email: "cledera.ernie@gmail.com",
@@ -216,7 +216,7 @@ export const projectsData: Project[] = [
     description: "A comprehensive school management system designed for Calabanga Community College, handling student records, course management, and administrative tasks.",
     image: "/calabanga-sms.png", // Updated path
     technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "Laravel", "Filament"],
-    githubLink: "https://github.com/yourusername/calabanga-sms", // Placeholder
+    githubLink: "https://github.com/jeffcleds/E-CCC", // Updated GitHub link
     liveLink: "/projects/calabanga-sms", // Already correct
   },
   {
