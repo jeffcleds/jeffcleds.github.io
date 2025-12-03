@@ -93,7 +93,7 @@ const JumpQuestProject: React.FC = () => {
 
           <h3 className="text-2xl font-semibold pt-4">My Role & Contributions:</h3>
           <p className="text-muted-foreground leading-relaxed">
-            As the Group Leader, I oversaw the project development lifecycle. My primary contributions included programming core game logic in C#, managing version control, and coordinating asset integration. I also contributed to the level design and ensuring the game met all technical requirements.
+            As the Group Leader, I oversaw the project development lifecycle. My primary contributions included assigning tasks to my team members, programming core game logic in C#, adding assets, managing version control, and coordinating asset integration. I also contributed to the graphical design and ensuring the game met all technical requirements.
           </p>
           
           <h3 className="text-2xl font-semibold pt-4">Team Acknowledgement:</h3>
