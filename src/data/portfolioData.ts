@@ -59,7 +59,7 @@ export const experienceData: Experience[] = [
   {
     id: "bell-canada",
     title: "Bell Canada",
-    subtitle: "Technical Service Representative",
+    subtitle: "Technical Support Representative",
     date: "2019 - 2020",
     responsibilities: [
       "Manage customers' account records, walkthrough their technical concerns in internet, satellite TV, and mobile phone services, provide support with billing concerns, and establish trust by providing excellent customer service and resolving telephone inquiries in a timely manner.",
