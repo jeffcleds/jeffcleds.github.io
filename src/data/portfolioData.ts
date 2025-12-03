@@ -241,7 +241,7 @@ export const projectsData: Project[] = [
     title: "JumpQuest: The Curse of Gold Begins",
     description: "A 2D pixel art platformer game developed as a capstone project for the Computer Graphics Programming & Game Development course.",
     image: "/JumpQuest.jpg", // Corrected path to root of public folder
-    technologies: ["Unity", "C#", "Pixel Art"],
+    technologies: ["Unity", "C#", "Pixel Art", "Visual Studio Code"],
     githubLink: "https://github.com/jeffcleds/JumpQuest", // Assuming a GitHub repo exists
     liveLink: "/projects/jumpquest",
   },
