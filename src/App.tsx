@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import ProjectsPage from "./pages/ProjectsPage";
 import NotFound from "./pages/NotFound";
 import CalculatorProject from "./components/portfolio/CalculatorProject";
+import CalabangaProject from "./pages/CalabangaProject";
 import ScrollToTop from "./components/layout/ScrollToTop";
 import { ThemeProvider } from "next-themes";
 import { DarkVeilProvider, useDarkVeil } from "./components/layout/DarkVeilProvider";
@@ -51,6 +52,7 @@ const AppContent = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/projects/calculator" element={<CalculatorProject />} />
+              <Route path="/projects/calabanga-sms" element={<CalabangaProject />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

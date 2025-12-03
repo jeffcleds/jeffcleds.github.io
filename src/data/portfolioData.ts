@@ -217,7 +217,7 @@ export const projectsData: Project[] = [
     image: "/calabanga-sms.png", // Updated path
     technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
     githubLink: "https://github.com/yourusername/calabanga-sms", // Placeholder
-    liveLink: "/portfolio-details-under-maintenance", // Changed to the maintenance route
+    liveLink: "/projects/calabanga-sms", // Updated to the new route
   },
   {
     id: 3,
