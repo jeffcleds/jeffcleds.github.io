@@ -93,6 +93,18 @@ const CalabangaProject: React.FC = () => {
             I was primarily responsible for the database design (MySQL) and the backend logic (PHP) that handled data persistence and business rules. I also contributed significantly to the front-end development, ensuring a responsive and intuitive user interface for administrative tasks.
           </p>
         </div>
+        
+        <Separator className="my-6" />
+
+        <div className="space-y-6">
+          <h2 className="text-3xl font-bold">Acknowledgement</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            This project was completed through the combined effort and commitment of my groupmates: Joshua Gabriel, Chrystian Ray C. Festin, Allan Aboga-a Jr., and Joshua Gabriel Gamora. Each contributed solid work that strengthened the final output.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            We also acknowledge Raymond A. Iglesia, STI College Naga Academic Head, for his support and guidance, and Dr. Angel Belleza, CCC School Administrator, for providing the necessary backing and direction. Their leadership made this project possible.
+          </p>
+        </div>
       </Card>
     </div>
   );

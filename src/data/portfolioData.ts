@@ -212,7 +212,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 2,
-    title: "Calabanga Community College - School Management System",
+    title: "E-CCC: A web-based enrollment and academic records management system for Calabanga Community College",
     description: "A comprehensive school management system designed for Calabanga Community College, handling student records, course management, and administrative tasks.",
     image: "/calabanga-sms.png", // Updated path
     technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "Laravel", "Filament"],
