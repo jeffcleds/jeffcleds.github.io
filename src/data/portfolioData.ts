@@ -165,21 +165,21 @@ export const affiliationsData: Affiliation[] = [
     name: "Alpha Phi Omega - Beta Kappa Chapter",
     status: "Member",
     date: "2018-A",
-    logo: "/placeholder.svg"
+    logo: "/apo-logo-placeholder.png"
   },
   {
     id: "icep",
     name: "Institute of Computer Engineers of the Philippines",
     status: "Student Member",
     date: "2015",
-    logo: "/icpep-logo.png" // Updated to use the new logo
+    logo: "/icpep-logo.png"
   },
   {
     id: "afs",
     name: "Ateneo Film Society",
     status: "Member - Batch 0",
     date: "2016",
-    logo: "/placeholder.svg"
+    logo: "/afs-logo-placeholder.png"
   },
 ];
 
