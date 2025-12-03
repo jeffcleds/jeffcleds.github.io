@@ -10,7 +10,7 @@ interface DarkVeilContextType {
 const DarkVeilContext = createContext<DarkVeilContextType | undefined>(undefined);
 
 export const DarkVeilProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [isDarkVeilActive, setIsDarkVeilActive] = useState(false);
+  const [isDarkVeilActive, setIsDarkVeilActive] = useState(true);
 
   const toggleDarkVeil = () => {
     setIsDarkVeilActive(prev => !prev);
