@@ -162,9 +162,9 @@ export const educationData: Education[] = [
 export const affiliationsData: Affiliation[] = [
   {
     id: "apo",
-    name: "Alpha Phi Omega - Beta Kappa Chapter",
-    status: "Member",
-    date: "2018-A",
+    name: "Alpha Phi Omega",
+    status: "Member - Beta Kappa Chapter 18A",
+    date: "2018",
     logo: "/apo-logo-placeholder.png"
   },
   {
