@@ -17,6 +17,7 @@ const ClassSchedulerProject: React.FC = () => {
   }
 
   const cardClassNames = isDarkVeilActive ? 'bg-card/50 border border-primary/20' : '';
+  const isLocalLink = project.githubLink && project.githubLink.startsWith('/');
 
   return (
     <div className="container mx-auto py-12 px-4">
@@ -56,11 +57,19 @@ const ClassSchedulerProject: React.FC = () => {
             <h3 className="text-2xl font-semibold pt-4">Links</h3>
             <div className="flex flex-col space-y-2">
               {project.githubLink && (
-                <Button asChild variant="outline">
-                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                    <Github className="h-4 w-4 mr-2" /> View GitHub Repo
-                  </a>
-                </Button>
+                isLocalLink ? (
+                  <Button asChild variant="outline">
+                    <Link to={project.githubLink}>
+                      <Github className="h-4 w-4 mr-2" /> View GitHub Repo
+                    </Link>
+                  </Button>
+                ) : (
+                  <Button asChild variant="outline">
+                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                      <Github className="h-4 w-4 mr-2" /> View GitHub Repo
+                    </a>
+                  </Button>
+                )
               )}
             </div>
           </CardContent>

@@ -225,7 +225,7 @@ export const projectsData: Project[] = [
     description: "A web application to help students and instructors manage and visualize class schedules, assignments, and deadlines.",
     image: "/class-scheduler.png", // Updated path
     technologies: ["React", "TypeScript", "Tailwind CSS", "Firebase"],
-    githubLink: "https://github.com/yourusername/class-scheduler", // Placeholder
+    githubLink: "/not-found-repo", // Changed to a local route to trigger 404
     liveLink: "/projects/class-scheduler", // Updated to new route
   },
   {
