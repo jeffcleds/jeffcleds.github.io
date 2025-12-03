@@ -16,6 +16,14 @@ export interface Education {
   logo?: string; // Path to logo image
 }
 
+export interface Affiliation {
+  id: string;
+  name: string;
+  status: string;
+  date: string;
+  logo?: string; // Optional logo/image path
+}
+
 export interface PortfolioLink {
   id: string;
   name: string;
@@ -148,6 +156,30 @@ export const educationData: Education[] = [
     subtitle: "Bachelor of Engineering Technology Major in Computer Engineering Technology",
     date: "2014 - 2018",
     logo: "/ateneo-logo.png", // Replace with Ateneo logo path, e.g., "/ateneo-logo.png"
+  },
+];
+
+export const affiliationsData: Affiliation[] = [
+  {
+    id: "apo",
+    name: "Alpha Phi Omega",
+    status: "Member",
+    date: "2018-A",
+    logo: "/placeholder.svg"
+  },
+  {
+    id: "icep",
+    name: "Institute of Computer Engineers of the Philippines",
+    status: "Student Member",
+    date: "N/A",
+    logo: "/placeholder.svg"
+  },
+  {
+    id: "afs",
+    name: "Ateneo Film Society",
+    status: "Batch 0",
+    date: "N/A",
+    logo: "/placeholder.svg"
   },
 ];
 

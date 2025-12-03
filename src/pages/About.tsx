@@ -8,6 +8,7 @@ import ExperienceSection from "@/components/portfolio/ExperienceSection";
 import ToolsCard from "@/components/portfolio/ToolsCard";
 import LanguagesCard from "@/components/portfolio/LanguagesCard";
 import EducationSection from "@/components/portfolio/EducationSection";
+import AffiliationsSection from "@/components/portfolio/AffiliationsSection"; // Import new component
 import ScrollReveal from "@/components/animations/ScrollReveal"; // Import the new ScrollReveal component
 
 const About = () => {
@@ -35,6 +36,9 @@ const About = () => {
         </ScrollReveal>
         <ScrollReveal delay={0.5}>
           <EducationSection />
+        </ScrollReveal>
+        <ScrollReveal delay={0.55}> {/* New Affiliations Section */}
+          <AffiliationsSection />
         </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <ScrollReveal delay={0.6} className="h-full"> {/* Added h-full */}
