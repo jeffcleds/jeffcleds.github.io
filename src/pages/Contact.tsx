@@ -78,7 +78,7 @@ const Contact = () => {
             <CardContent>
               <MagnetEffect strength={10} tolerance={0.5} className="w-full">
                 <Button asChild className="w-full">
-                  <a href="/ernie-joseph-cledera-resume.pdf" download="Ernie_Joseph_Cledera_Resume.pdf">
+                  <a href="/Resume - Cledera 2026.pdf" download="Resume - Cledera 2026.pdf">
                     <Download className="h-4 w-4 mr-2" /> Download Resume
                   </a>
                 </Button>
