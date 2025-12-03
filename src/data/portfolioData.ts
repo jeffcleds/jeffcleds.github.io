@@ -234,8 +234,8 @@ export const projectsData: Project[] = [
     description: "A basic interactive calculator application built with React and TypeScript, demonstrating fundamental UI and state management.",
     image: "/ai-calculator.png", // AI-generated photo
     technologies: ["React", "TypeScript", "Tailwind CSS"],
-    githubLink: "https://github.com/yourusername/simple-calculator", // Placeholder
-    liveLink: "/projects/simple-calculator", // Updated to new route
+    // Removed githubLink and liveLink
+    liveLink: "/projects/simple-calculator", // Keep the internal link to the details page
   },
 ];
 
