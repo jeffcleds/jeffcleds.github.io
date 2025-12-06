@@ -1,11 +1,14 @@
 "use client";
 
 import React from 'react';
-import { default as GitHubCalendar } from 'react-github-calendar'; // Changed import style
+import * as GitHubCalendarModule from 'react-github-calendar';
 import { useTheme } from 'next-themes';
 import { useDarkVeil } from '@/components/layout/DarkVeilProvider';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import ScrollReveal from '@/components/animations/ScrollReveal';
+
+// Access the default export from the module
+const GitHubCalendar = GitHubCalendarModule.default || GitHubCalendarModule;
 
 interface GithubCalendarProps {
   username: string;
