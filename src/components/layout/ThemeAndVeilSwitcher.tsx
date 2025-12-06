@@ -95,7 +95,7 @@ const ThemeAndVeilSwitcher: React.FC = () => {
         </Button>
       </TooltipTrigger>
       <TooltipContent side="bottom" className="bg-primary text-primary-foreground font-semibold">
-        (Try Me)
+        Switch Modes
       </TooltipContent>
     </Tooltip>
   );
