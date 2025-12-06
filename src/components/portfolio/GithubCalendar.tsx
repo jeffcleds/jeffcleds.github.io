@@ -1,27 +1,11 @@
 "use client";
 
-import React, { Suspense } from 'react';
+import React from 'react';
 import { useTheme } from 'next-themes';
 import { useDarkVeil } from '@/components/layout/DarkVeilProvider';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Skeleton } from '@/components/ui/skeleton';
-
-// Dynamically import the GitHubCalendar component
-const LazyGitHubCalendar = React.lazy(() => 
-  import('react-github-calendar').then(module => {
-    // Handle various export structures (default, named, nested default)
-    const GitHubCalendar = module.default || module;
-    if (typeof GitHubCalendar === 'function') {
-      return { default: GitHubCalendar };
-    }
-    // Fallback for deeply nested default exports
-    if (typeof (module.default as any)?.default === 'function') {
-      return { default: (module.default as any).default };
-    }
-    // If all else fails, return a component that renders null or an error
-    return { default: () => <div>Error loading calendar component.</div> };
-  })
-);
+import { Button } from '@/components/ui/button';
+import { Github } from 'lucide-react';
 
 interface GithubCalendarProps {
   username: string;
@@ -39,22 +23,20 @@ const GithubContributionsCalendar: React.FC<GithubCalendarProps> = ({ username }
       <CardHeader className="p-0 pb-4">
         <CardTitle className="text-2xl font-bold">GitHub Contributions</CardTitle>
       </CardHeader>
-      <CardContent className="p-0">
-        <Suspense fallback={<Skeleton className="h-48 w-full rounded-lg" />}>
-          <div className="calendar w-full overflow-x-auto">
-            <LazyGitHubCalendar
-              username={username}
-              blockSize={12}
-              blockMargin={4}
-              fontSize={14}
-              theme={isDark ? 'dark' : 'light'}
-              hideColorLegend={false}
-              hideMonthLabels={false}
-              hideTotalCount={false}
-              showWeekdayLabels={true}
-            />
-          </div>
-        </Suspense>
+      <CardContent className="p-0 flex flex-col items-center justify-center space-y-4 py-8">
+        <p className="text-muted-foreground text-center">
+          The interactive contribution calendar is currently unavailable.
+        </p>
+        <Button asChild>
+          <a 
+            href={`https://github.com/${username}`} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center"
+          >
+            <Github className="h-5 w-5 mr-2" /> View Contributions on GitHub
+          </a>
+        </Button>
       </CardContent>
     </Card>
   );
