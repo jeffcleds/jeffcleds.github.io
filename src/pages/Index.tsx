@@ -18,19 +18,13 @@ export default function Index() {
   
   const isDarkBackground = isDarkVeilActive || theme === 'dark';
 
-  // Define dynamic styles for ShinyText
-  const shinyTextStyle: CustomCSSProperties = isDarkBackground
-    ? {
-        // Base text color: White (100% lightness)
-        '--muted-foreground': '210 40% 100%', 
-        // Shine color: #280674 (HSL: 260 88% 24%)
-        '--primary-foreground': '260 88% 24%', 
-      }
-    : {
-        // Use original dark colors for contrast in light mode
-        '--muted-foreground': '220 30% 15%', // Dark navy base color
-        '--primary-foreground': '220 80% 50%', // Brighter navy shine color
-      };
+  // Define dynamic styles for ShinyText - consistent across all themes
+  const shinyTextStyle: CustomCSSProperties = {
+    // Base text color: Dark navy base color
+    '--muted-foreground': '220 30% 15%', 
+    // Shine color: Brighter navy shine color
+    '--primary-foreground': '220 80% 50%', 
+  };
 
   const jobTitles = [
     "IT Specialist",
