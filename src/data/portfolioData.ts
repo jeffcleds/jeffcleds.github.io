@@ -159,7 +159,7 @@ export const educationData: Education[] = [
   },
 ];
 
-export const affiliationsData: Affiliation[] = [
+const unsortedAffiliationsData: Affiliation[] = [
   {
     id: "apo",
     name: "Alpha Phi Omega",
@@ -181,7 +181,16 @@ export const affiliationsData: Affiliation[] = [
     date: "2016",
     logo: "/afs-logo-placeholder.png"
   },
+  {
+    id: "bgc",
+    name: "Bicolano Gaming Community",
+    status: "Founder",
+    date: "2020",
+    logo: "/BGCOfficial Logo.png"
+  },
 ];
+
+export const affiliationsData: Affiliation[] = unsortedAffiliationsData.sort((a, b) => a.name.localeCompare(b.name));
 
 export const softwareUsedData: { icon: string; name: string; className?: string }[] = [
   { icon: "VS", name: "Visual Studio", className: "bg-purple-700 text-white" },
