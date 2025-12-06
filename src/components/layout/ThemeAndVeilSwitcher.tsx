@@ -94,7 +94,7 @@ const ThemeAndVeilSwitcher: React.FC = () => {
           <span className="sr-only">Toggle theme and veil</span>
         </Button>
       </TooltipTrigger>
-      <TooltipContent side="bottom" className="bg-primary text-primary-foreground font-semibold">
+      <TooltipContent side="left" className="bg-primary text-primary-foreground font-semibold">
         Switch Modes
       </TooltipContent>
     </Tooltip>
