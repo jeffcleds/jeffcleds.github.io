@@ -110,3 +110,84 @@
     transform: translateY(0);
   }
 }
+
+/* Custom styles for GitHub Calendar to match theme */
+.calendar {
+  /* Ensure the container respects the theme background */
+  @apply bg-card border border-border rounded-lg p-4 shadow-lg;
+}
+
+.calendar svg.calendar-graph {
+  /* Override default SVG background */
+  background: transparent !important;
+}
+
+.calendar .graph-before-activity-overview {
+  /* Override default text color for months/days */
+  color: hsl(var(--foreground)) !important;
+}
+
+.calendar .contrib-column {
+  /* Override default text color for contribution count */
+  color: hsl(var(--foreground)) !important;
+}
+
+.calendar .contrib-column-first {
+  /* Override default text color for 'Total Contributions' */
+  color: hsl(var(--foreground)) !important;
+}
+
+.calendar .float-left {
+  /* Override default text color for 'Less' / 'More' */
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+/* Dark Mode Overrides */
+.dark .calendar {
+  /* Dark mode specific container adjustments */
+  @apply bg-card/50 border-primary/20;
+}
+
+.dark .calendar .graph-before-activity-overview,
+.dark .calendar .contrib-column,
+.dark .calendar .contrib-column-first {
+  color: hsl(var(--foreground)) !important;
+}
+
+.dark .calendar .float-left {
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+/* Color overrides for contribution squares (Light Mode) */
+.calendar .contrib-square[data-level="0"] {
+  fill: hsl(var(--muted)) !important; /* Background color for no contributions */
+}
+.calendar .contrib-square[data-level="1"] {
+  fill: hsl(210 40% 80%) !important; /* Light Blue/Gray */
+}
+.calendar .contrib-square[data-level="2"] {
+  fill: hsl(210 40% 60%) !important;
+}
+.calendar .contrib-square[data-level="3"] {
+  fill: hsl(210 40% 40%) !important;
+}
+.calendar .contrib-square[data-level="4"] {
+  fill: hsl(222.2 47.4% 11.2%) !important; /* Primary Dark */
+}
+
+/* Color overrides for contribution squares (Dark Mode) */
+.dark .calendar .contrib-square[data-level="0"] {
+  fill: hsl(217.2 32.6% 10%) !important; /* Darker background for no contributions */
+}
+.dark .calendar .contrib-square[data-level="1"] {
+  fill: hsl(217.2 32.6% 25%) !important; /* Dark Blue/Gray */
+}
+.dark .calendar .contrib-square[data-level="2"] {
+  fill: hsl(217.2 32.6% 40%) !important;
+}
+.dark .calendar .contrib-square[data-level="3"] {
+  fill: hsl(217.2 32.6% 55%) !important;
+}
+.dark .calendar .contrib-square[data-level="4"] {
+  fill: hsl(210 40% 98%) !important; /* Primary Light */
+}
