@@ -33,8 +33,8 @@ const Navbar = () => {
   // Define dynamic styles for ShinyText
   const shinyTextStyle: CustomCSSProperties = isDarkBackground
     ? {
-        // Base text color (Dark Mode): hsl(220, 4%, 72%)
-        '--muted-foreground': '220 4% 72%', 
+        // Base text color (Dark Mode): hsl(240, 1%, 70%)
+        '--muted-foreground': '240 1% 70%', 
         // Shine color: Deep Violet (260 90% 60%)
         '--primary-foreground': '260 90% 60%', 
       }
