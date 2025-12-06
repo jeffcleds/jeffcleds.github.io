@@ -27,12 +27,13 @@ const Navbar = () => {
     ? "text-white after:bg-white"
     : "text-[#14243d] after:bg-[#14243d]";
 
-  // Define dynamic styles for ShinyText to ensure it appears violet/purple in dark contexts
+  // Define dynamic styles for ShinyText
   const shinyTextStyle: React.CSSProperties = isDarkBackground
     ? {
-        // Use violet colors for a visible shine effect in dark mode
-        '--muted-foreground': '270 70% 60%', // Violet base
-        '--primary-foreground': '280 90% 70%', // Brighter violet shine
+        // Base text color: White (100% lightness)
+        '--muted-foreground': '210 40% 100%', 
+        // Shine color: Bright Violet (280 hue)
+        '--primary-foreground': '280 90% 70%', 
       }
     : {
         // Use original dark colors for contrast in light mode
