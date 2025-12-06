@@ -94,6 +94,9 @@ const JumpQuestProject: React.FC = () => {
           <p className="text-muted-foreground leading-relaxed">
             This project was a collaborative effort by Roblera Palbun Studios. Special thanks to team members: <strong>Owen Christian Robas</strong>, <strong>Christian James Palo</strong>, and <strong>Mcjohn Bunao</strong>.
           </p>
+          <p className="text-muted-foreground leading-relaxed">
+            We also extend our gratitude to our project coordinator and adviser, <strong>Mr. Everild Gerd Pablo, MBA</strong>, for his invaluable guidance and support throughout the development process.
+          </p>
         </div>
       </Card>
     </div>
