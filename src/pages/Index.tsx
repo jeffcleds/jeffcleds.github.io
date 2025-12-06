@@ -6,8 +6,32 @@ import { Button } from '@/components/ui/button';
 import IntroCard from '@/components/portfolio/IntroCard';
 import TypewriterEffect from '@/components/TypewriterEffect';
 import ShinyText from '@/components/animations/ShinyText'; // Import ShinyText
+import { useDarkVeil } from '@/components/layout/DarkVeilProvider';
+import { useTheme } from 'next-themes';
+
+// Define a type that allows custom CSS variables (prefixed with --)
+type CustomCSSProperties = React.CSSProperties & Record<`--${string}`, string | number>;
 
 export default function Index() {
+  const { isDarkVeilActive } = useDarkVeil();
+  const { theme } = useTheme();
+
+  const isDarkBackground = isDarkVeilActive || theme === 'dark';
+
+  // Define dynamic styles for ShinyText, matching Navbar logic
+  const shinyTextStyle: CustomCSSProperties = isDarkBackground
+    ? {
+        // Base text color: White (100% lightness)
+        '--muted-foreground': '210 40% 100%', 
+        // Shine color: Deep Violet (260 90% 60%)
+        '--primary-foreground': '260 90% 60%', 
+      }
+    : {
+        // Use original dark colors for contrast in light mode
+        '--muted-foreground': '220 30% 15%', // Dark navy base color
+        '--primary-foreground': '220 80% 50%', // Brighter navy shine color
+      };
+
   const jobTitles = [
     "IT Specialist",
     "Web Developer",
@@ -29,7 +53,7 @@ export default function Index() {
         className="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full object-cover mb-8 transition-transform duration-300 ease-in-out border-4 border-primary shadow-lg hover:scale-105 hover:shadow-xl hover:shadow-primary/50"
       />
       <h1 className="text-5xl font-extrabold tracking-tight mb-4">
-        Hello, I'm <ShinyText>Ernie Joseph Cledera</ShinyText>
+        Hello, I'm <ShinyText style={shinyTextStyle}>Ernie Joseph Cledera</ShinyText>
       </h1>
       <TypewriterEffect
         words={jobTitles}
