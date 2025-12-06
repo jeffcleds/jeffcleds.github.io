@@ -117,10 +117,21 @@
   @apply bg-card border border-border rounded-lg p-4 shadow-lg;
 }
 
+/* Hide the skip link */
+.calendar .sr-only {
+  display: none !important;
+}
+
 .calendar svg.calendar-graph {
   /* Override default SVG background */
   background: transparent !important;
 }
+
+/* Target the specific hardcoded background color (dddbdb) and make it transparent */
+.calendar svg.calendar-graph rect.day[fill="#dddbdb"] {
+  fill: transparent !important;
+}
+
 
 .calendar .graph-before-activity-overview {
   /* Override default text color for months/days */
