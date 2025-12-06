@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectCards from "@/components/portfolio/ProjectCards"; // Import the ProjectCards component
-import GithubContributionsCalendar from "@/components/portfolio/GithubCalendar"; // Import new component
+import FeaturedTechCard from "@/components/portfolio/FeaturedTechCard"; // Import new component
 import ScrollReveal from "@/components/animations/ScrollReveal"; // Import ScrollReveal
 
 const ProjectsPage: React.FC = () => {
@@ -13,7 +13,7 @@ const ProjectsPage: React.FC = () => {
       </ScrollReveal>
 
       <ScrollReveal delay={0.2} className="mt-12">
-        <GithubContributionsCalendar username="jeffcleds" />
+        <FeaturedTechCard />
       </ScrollReveal>
     </div>
   );
