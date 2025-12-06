@@ -53,7 +53,7 @@ export default function Index() {
         className="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full object-cover mb-8 transition-transform duration-300 ease-in-out border-4 border-primary shadow-lg hover:scale-105 hover:shadow-xl hover:shadow-primary/50"
       />
       <h1 className="text-5xl font-extrabold tracking-tight mb-4">
-        Hello, I'm <span className="opacity-80"> {/* Added opacity wrapper */}
+        Hello, I'm <span className="opacity-[0.65]"> {/* Updated opacity to 65% */}
           <ShinyText style={shinyTextStyle}>Ernie Joseph Cledera</ShinyText>
         </span>
       </h1>
