@@ -30,9 +30,9 @@ const Navbar = () => {
   // Define dynamic styles for ShinyText to ensure it appears white/light in dark contexts
   const shinyTextStyle: React.CSSProperties = isDarkBackground
     ? {
-        // Use light colors for white appearance in dark mode/veil (210 40% 98% is light foreground HSL)
-        '--muted-foreground': '210 40% 98%',
-        '--primary-foreground': '210 40% 98%',
+        // Use slightly different light colors for a visible shine effect in dark mode
+        '--muted-foreground': '210 40% 90%', // Off-white base
+        '--primary-foreground': '210 40% 100%', // Pure white shine
       }
     : {
         // Use original dark colors for contrast in light mode
