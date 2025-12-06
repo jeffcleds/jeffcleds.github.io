@@ -12,15 +12,19 @@ const DarkVeilContext = createContext<DarkVeilContextType | undefined>(undefined
 const DARK_VEIL_STORAGE_KEY = 'dyad-dark-veil-active';
 
 export const DarkVeilProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // Initialize state from localStorage, defaulting to false if not found.
+  // Initialize state from localStorage.
   const [isDarkVeilActive, setIsDarkVeilActive] = useState(() => {
     if (typeof window !== 'undefined') {
       const storedValue = localStorage.getItem(DARK_VEIL_STORAGE_KEY);
-      // If storedValue is null/undefined, default to false. Otherwise, parse 'true'/'false'.
+      
+      // If storedValue is null (first visit), default to TRUE. Otherwise, parse 'true'/'false'.
+      if (storedValue === null) {
+        return true; // Default to Dark Veil active on first load
+      }
       return storedValue === 'true';
     }
-    // Default to false during SSR or initial render
-    return false;
+    // Default to true during SSR or initial render if window is undefined
+    return true;
   });
 
   const toggleDarkVeil = () => {
