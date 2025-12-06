@@ -3,15 +3,31 @@
 import * as React from "react";
 import { Moon, Sun, Sparkles } from "lucide-react";
 import { useTheme } from "next-themes";
+import { toast } from "sonner"; // Import toast from sonner
 
 import { Button } from "@/components/ui/button";
 import { useDarkVeil } from "./DarkVeilProvider";
 
 type AppMode = 'light' | 'dark' | 'sparkle';
 
+const INTRO_TOAST_KEY = 'dyad-intro-theme-toast-shown';
+
 const ThemeAndVeilSwitcher: React.FC = () => {
   const { setTheme, theme } = useTheme();
   const { isDarkVeilActive, toggleDarkVeil } = useDarkVeil();
+
+  // --- Introductory Toast Logic ---
+  React.useEffect(() => {
+    if (typeof window !== 'undefined' && !localStorage.getItem(INTRO_TOAST_KEY)) {
+      toast('💡 Click me to cycle between Light, Dark, and Sparkle modes!', {
+        duration: 8000, // Show for 8 seconds
+        id: 'intro-theme-guide',
+        position: 'bottom-right',
+      });
+      localStorage.setItem(INTRO_TOAST_KEY, 'true');
+    }
+  }, []);
+  // --------------------------------
 
   // Determine the current active mode
   const currentMode: AppMode = React.useMemo(() => {
@@ -22,6 +38,9 @@ const ThemeAndVeilSwitcher: React.FC = () => {
   }, [isDarkVeilActive, theme]);
 
   const cycleMode = () => {
+    // Dismiss the introductory toast if the user interacts with the button
+    toast.dismiss('intro-theme-guide');
+    
     let nextMode: AppMode;
 
     if (currentMode === 'light') {
