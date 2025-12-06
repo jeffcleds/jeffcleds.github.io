@@ -35,8 +35,8 @@ const Navbar = () => {
     ? {
         // Base text color: White (100% lightness)
         '--muted-foreground': '210 40% 100%', 
-        // Shine color: Deep Violet (260 90% 60%)
-        '--primary-foreground': '260 90% 60%', 
+        // Shine color: #280674 (HSL: 260 88% 24%)
+        '--primary-foreground': '260 88% 24%', 
       }
     : {
         // Use original dark colors for contrast in light mode
