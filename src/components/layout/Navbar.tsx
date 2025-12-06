@@ -49,12 +49,14 @@ const Navbar = () => {
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <Link to="/" className="mr-6 flex items-center space-x-2">
-            <ShinyText
-              className="font-bold"
-              style={shinyTextStyle}
-            >
-              cledera.ernie
-            </ShinyText>
+            <span className="opacity-80"> {/* Added opacity wrapper */}
+              <ShinyText
+                className="font-bold"
+                style={shinyTextStyle}
+              >
+                cledera.ernie
+              </ShinyText>
+            </span>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             {navItems.map((item) => (
@@ -84,12 +86,14 @@ const Navbar = () => {
           </SheetTrigger>
           <SheetContent side="left" className={`pr-0 ${isDarkVeilActive ? 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60' : ''}`}>
             <Link to="/" className="flex items-center space-x-2">
-              <ShinyText
-                className="font-bold"
-                style={shinyTextStyle}
-              >
-                cledera.ernie
-              </ShinyText>
+              <span className="opacity-80"> {/* Added opacity wrapper */}
+                <ShinyText
+                  className="font-bold"
+                  style={shinyTextStyle}
+                >
+                  cledera.ernie
+                </ShinyText>
+              </span>
             </Link>
             <nav className="flex flex-col gap-2 mt-4">
               {navItems.map((item) => (
