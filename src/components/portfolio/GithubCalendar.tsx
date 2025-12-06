@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import GitHubCalendar from 'react-github-calendar';
+import { default as GitHubCalendar } from 'react-github-calendar'; // Changed import style
 import { useTheme } from 'next-themes';
 import { useDarkVeil } from '@/components/layout/DarkVeilProvider';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
