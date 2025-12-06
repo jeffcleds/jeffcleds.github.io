@@ -6,7 +6,7 @@ import { Menu } from "lucide-react";
 import ShinyText from "@/components/animations/ShinyText";
 import ThemeAndVeilSwitcher from "./ThemeAndVeilSwitcher";
 import { useDarkVeil } from "./DarkVeilProvider";
-import { useTheme } from "next-themes"; // Import useTheme
+import { useTheme } from "next-themes";
 
 const navItems = [
   { name: "Home", to: "/" },
@@ -18,12 +18,27 @@ const navItems = [
 const Navbar = () => {
   const location = useLocation();
   const { isDarkVeilActive } = useDarkVeil();
-  const { theme } = useTheme(); // Get the current theme
+  const { theme } = useTheme();
+
+  const isDarkBackground = isDarkVeilActive || theme === 'dark';
 
   // Determine the active link color based on DarkVeil state and current theme
-  const activeLinkColorClass = isDarkVeilActive || theme === 'dark'
+  const activeLinkColorClass = isDarkBackground
     ? "text-white after:bg-white"
     : "text-[#14243d] after:bg-[#14243d]";
+
+  // Define dynamic styles for ShinyText to ensure it appears white/light in dark contexts
+  const shinyTextStyle: React.CSSProperties = isDarkBackground
+    ? {
+        // Use light colors for white appearance in dark mode/veil (210 40% 98% is light foreground HSL)
+        '--muted-foreground': '210 40% 98%',
+        '--primary-foreground': '210 40% 98%',
+      }
+    : {
+        // Use original dark colors for contrast in light mode
+        '--muted-foreground': '220 30% 15%', // Dark navy base color
+        '--primary-foreground': '220 80% 50%', // Brighter navy shine color
+      };
 
   return (
     <header className={`sticky top-0 z-50 w-full ${isDarkVeilActive ? 'border-b bg-background/50 backdrop-blur supports-[backdrop-filter]:bg-background/60' : 'border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'}`}>
@@ -32,10 +47,7 @@ const Navbar = () => {
           <Link to="/" className="mr-6 flex items-center space-x-2">
             <ShinyText
               className="font-bold"
-              style={{
-                '--muted-foreground': '220 30% 15%', // Dark navy base color
-                '--primary-foreground': '220 80% 50%', // Brighter navy shine color
-              } as React.CSSProperties}
+              style={shinyTextStyle}
             >
               cledera.ernie
             </ShinyText>
@@ -70,10 +82,7 @@ const Navbar = () => {
             <Link to="/" className="flex items-center space-x-2">
               <ShinyText
                 className="font-bold"
-                style={{
-                  '--muted-foreground': '220 30% 15%', // Dark navy base color
-                  '--primary-foreground': '220 80% 50%', // Brighter navy shine color
-                } as React.CSSProperties}
+                style={shinyTextStyle}
               >
                 cledera.ernie
               </ShinyText>
