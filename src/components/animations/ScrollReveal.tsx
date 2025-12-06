@@ -37,18 +37,36 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
   const revealRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    if (!revealRef.current) return;
+    const element = revealRef.current;
+    if (!element) return;
 
-    gsap.fromTo(
-      revealRef.current,
-      { ...from },
+    // If triggerOnce is true, check if the element is already past the trigger point.
+    if (triggerOnce) {
+      // 'top 80%' means the animation starts when the top of the element hits 80% down the viewport.
+      const viewportHeight = window.innerHeight;
+      const triggerThreshold = viewportHeight * 0.8;
+      const rect = element.getBoundingClientRect();
+      
+      // If the element's top is already above the trigger threshold, it means it should have been triggered.
+      if (rect.top < triggerThreshold) {
+        // Set final state immediately and skip ScrollTrigger setup.
+        gsap.set(element, { ...to });
+        return;
+      }
+    }
+
+    // Set initial state before setting up the ScrollTrigger
+    gsap.set(element, { ...from });
+
+    gsap.to(
+      element,
       {
         ...to,
         duration,
         ease,
         delay,
         scrollTrigger: {
-          trigger: revealRef.current,
+          trigger: element,
           start,
           end,
           toggleActions: 'play none none none',
