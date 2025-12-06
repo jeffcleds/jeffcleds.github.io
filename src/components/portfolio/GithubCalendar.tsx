@@ -7,11 +7,20 @@ import { useDarkVeil } from '@/components/layout/DarkVeilProvider';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 
-// Access the default export from the module. Check for function type to ensure it's a valid component.
-const GitHubCalendar = 
-  typeof GitHubCalendarModule.default === 'function' 
-    ? GitHubCalendarModule.default 
-    : (typeof GitHubCalendarModule === 'function' ? GitHubCalendarModule : null);
+// Robustly resolve the GitHubCalendar component function
+const GitHubCalendar = (() => {
+  if (typeof GitHubCalendarModule.default === 'function') {
+    return GitHubCalendarModule.default;
+  }
+  if (typeof GitHubCalendarModule === 'function') {
+    return GitHubCalendarModule;
+  }
+  // Check for double nesting, which sometimes occurs with CJS modules in ESM wrappers
+  if (typeof (GitHubCalendarModule.default as any)?.default === 'function') {
+    return (GitHubCalendarModule.default as any).default;
+  }
+  return null;
+})();
 
 interface GithubCalendarProps {
   username: string;
