@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Github, ArrowLeft, Download } from "lucide-react";
 import { projectsData } from "@/data/portfolioData";
 import { useDarkVeil } from "@/components/layout/DarkVeilProvider";
-import DomeGallery from "@/components/DomeGallery"; // Import DomeGallery from the root components folder
 
 const CalabangaProject: React.FC = () => {
   const { isDarkVeilActive } = useDarkVeil();
@@ -18,16 +17,6 @@ const CalabangaProject: React.FC = () => {
   }
 
   const cardClassNames = isDarkVeilActive ? 'bg-card/50 border border-primary/20' : '';
-
-  // Data for the Dome Gallery (simplified to match DomeGallery component props)
-  const teamImages = [
-    { src: "/ernie-joseph-cledera.jpg", alt: "Ernie Joseph Cledera" },
-    { src: "/placeholder.svg", alt: "Joshua Gabriel Gamora" },
-    { src: "/placeholder.svg", alt: "Chrystian Ray C. Festin" },
-    { src: "/placeholder.svg", alt: "Allan Aboga-a Jr." },
-    { src: "/ateneo-logo.png", alt: "Raymond A. Iglesia (Adviser)" },
-    { src: "/sti-logo.png", alt: "Dr. Angel Belleza (Administrator)" },
-  ];
 
   return (
     <div className="container mx-auto py-12 px-4">
@@ -115,10 +104,6 @@ const CalabangaProject: React.FC = () => {
           <p className="text-muted-foreground leading-relaxed">
             We also acknowledge <strong>Raymond A. Iglesia</strong>, STI College Naga Academic Head, for his support and guidance, and <strong>Dr. Angel Belleza</strong>, CCC School Administrator, for providing the necessary backing and direction. Their leadership made this project possible.
           </p>
-          
-          <div className="flex justify-center pt-8 h-[500px] w-full">
-            <DomeGallery images={teamImages} />
-          </div>
         </div>
       </Card>
     </div>
