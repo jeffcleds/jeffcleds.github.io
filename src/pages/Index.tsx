@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import IntroCard from '@/components/portfolio/IntroCard';
 import TypewriterEffect from '@/components/TypewriterEffect';
-// import SplitText from '@/components/SplitText'; // Temporarily commented out
-// import MagnetEffect from '@/components/animations/MagnetEffect'; // Removed import
 import ShinyText from '@/components/animations/ShinyText'; // Import ShinyText
 
 export default function Index() {

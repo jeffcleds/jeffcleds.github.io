@@ -6,7 +6,6 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Index from "./pages/Index";
 import About from "./pages/About";
-import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import ProjectsPage from "./pages/ProjectsPage";
 import NotFound from "./pages/NotFound";
@@ -14,12 +13,12 @@ import SimpleCalculatorProject from "./pages/SimpleCalculatorProject";
 import CalabangaProject from "./pages/CalabangaProject";
 import PortfolioWebsiteProject from "./pages/PortfolioWebsiteProject";
 import ClassSchedulerProject from "./pages/ClassSchedulerProject";
-import JumpQuestProject from "./pages/JumpQuestProject"; // Import the new page
+import JumpQuestProject from "./pages/JumpQuestProject";
 import ScrollToTop from "./components/layout/ScrollToTop";
 import { ThemeProvider, useTheme } from "next-themes";
 import { DarkVeilProvider, useDarkVeil } from "./components/layout/DarkVeilProvider";
 import DarkVeil from "./components/animations/DarkVeil";
-import React from "react"; // Import React for useState/useEffect
+import React from "react";
 
 const queryClient = new QueryClient();
 
@@ -70,14 +69,13 @@ const AppContent = () => {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
-              <Route path="/projects-old" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/projects/portfolio-website" element={<PortfolioWebsiteProject />} />
               <Route path="/projects/e-ccc" element={<CalabangaProject />} />
               <Route path="/projects/class-scheduler" element={<ClassSchedulerProject />} />
               <Route path="/projects/simple-calculator" element={<SimpleCalculatorProject />} />
-              <Route path="/projects/jumpquest" element={<JumpQuestProject />} /> {/* New Route */}
+              <Route path="/projects/jumpquest" element={<JumpQuestProject />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
