@@ -5,9 +5,10 @@ import React from 'react';
 interface ShinyTextProps {
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
 }
 
-const ShinyText: React.FC<ShinyTextProps> = ({ children, className }) => {
+const ShinyText: React.FC<ShinyTextProps> = ({ children, className, style }) => {
   return (
     <span
       className={`
@@ -19,6 +20,7 @@ const ShinyText: React.FC<ShinyTextProps> = ({ children, className }) => {
         text-transparent
         ${className}
       `}
+      style={style}
     >
       {children}
     </span>
