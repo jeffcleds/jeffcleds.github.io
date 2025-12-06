@@ -15,7 +15,7 @@ const ProjectCards: React.FC = () => {
             className="flex flex-col h-full transition-all duration-300 ease-in-out hover:shadow-lg hover:border-primary" // Removed scale effect as TiltedCard handles transform
           >
             <img
-              src={project.images[0]}
+              src={project.image}
               alt={project.title}
               className="w-full h-48 object-cover rounded-t-lg"
             />

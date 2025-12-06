@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Download } from "lucide-react";
 import { projectsData } from "@/data/portfolioData";
 import { useDarkVeil } from "@/components/layout/DarkVeilProvider";
-import ProjectImageCarousel from "@/components/portfolio/ProjectImageCarousel"; // Import Carousel
 
 const JumpQuestProject: React.FC = () => {
   const { isDarkVeilActive } = useDarkVeil();
@@ -38,8 +37,11 @@ const JumpQuestProject: React.FC = () => {
         
         <div className="grid md:grid-cols-3 gap-6 mb-8">
           <div className="md:col-span-2">
-            {/* Replaced img tag with ProjectImageCarousel */}
-            <ProjectImageCarousel images={project.images} title={project.title} />
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-auto object-cover rounded-lg shadow-xl"
+            />
           </div>
           <CardContent className="p-0 space-y-4">
             <h3 className="text-2xl font-semibold">Technologies Used</h3>
