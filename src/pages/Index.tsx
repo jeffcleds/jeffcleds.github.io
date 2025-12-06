@@ -21,8 +21,8 @@ export default function Index() {
   // Define dynamic styles for ShinyText, matching Navbar logic
   const shinyTextStyle: CustomCSSProperties = isDarkBackground
     ? {
-        // Base text color: White (100% lightness)
-        '--muted-foreground': '210 40% 100%', 
+        // Base text color: #eaecef (HSL 210 17% 92%)
+        '--muted-foreground': '210 17% 92%', 
         // Shine color: Deep Violet (260 90% 60%)
         '--primary-foreground': '260 90% 60%', 
       }
@@ -53,7 +53,7 @@ export default function Index() {
         className="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full object-cover mb-8 transition-transform duration-300 ease-in-out border-4 border-primary shadow-lg hover:scale-105 hover:shadow-xl hover:shadow-primary/50"
       />
       <h1 className="text-5xl font-extrabold tracking-tight mb-4">
-        Hello, I'm <span className="opacity-[0.70]"> {/* Updated opacity to 70% */}
+        Hello, I'm <span className=""> {/* Removed opacity wrapper */}
           <ShinyText style={shinyTextStyle}>Ernie Joseph Cledera</ShinyText>
         </span>
       </h1>
