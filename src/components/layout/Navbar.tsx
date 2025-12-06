@@ -39,8 +39,8 @@ const Navbar = () => {
         '--primary-foreground': '260 90% 60%', 
       }
     : {
-        // Use original dark colors for contrast in light mode
-        '--muted-foreground': '220 30% 15%', // Dark navy base color
+        // Use new dark base color for contrast in light mode
+        '--muted-foreground': '240 2% 13%', // Updated base color for light mode
         '--primary-foreground': '220 80% 50%', // Brighter navy shine color
       };
 
