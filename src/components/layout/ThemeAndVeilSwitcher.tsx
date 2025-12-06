@@ -3,28 +3,39 @@
 import * as React from "react";
 import { Moon, Sun, Sparkles } from "lucide-react";
 import { useTheme } from "next-themes";
-import { toast } from "sonner"; // Import toast from sonner
+import { toast } from "sonner"; // Keep sonner import for potential future use, though not used for the hint
 
 import { Button } from "@/components/ui/button";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { useDarkVeil } from "./DarkVeilProvider";
 
 type AppMode = 'light' | 'dark' | 'sparkle';
 
-const INTRO_TOAST_KEY = 'dyad-intro-theme-toast-shown';
+const INTRO_HINT_KEY = 'dyad-intro-theme-hint-shown';
 
 const ThemeAndVeilSwitcher: React.FC = () => {
   const { setTheme, theme } = useTheme();
   const { isDarkVeilActive, toggleDarkVeil } = useDarkVeil();
+  const [isHintOpen, setIsHintOpen] = React.useState(false);
 
-  // --- Introductory Toast Logic ---
+  // --- Introductory Hint Logic ---
   React.useEffect(() => {
-    if (typeof window !== 'undefined' && !localStorage.getItem(INTRO_TOAST_KEY)) {
-      toast('💡 Click me to cycle between Light, Dark, and Sparkle modes!', {
-        duration: 8000, // Show for 8 seconds
-        id: 'intro-theme-guide',
-        position: 'bottom-right',
-      });
-      localStorage.setItem(INTRO_TOAST_KEY, 'true');
+    if (typeof window !== 'undefined' && !localStorage.getItem(INTRO_HINT_KEY)) {
+      // Show hint after a short delay to ensure layout is stable
+      const timer = setTimeout(() => {
+        setIsHintOpen(true);
+      }, 500); 
+      
+      // Automatically close hint after 5 seconds and mark as shown
+      const autoCloseTimer = setTimeout(() => {
+        setIsHintOpen(false);
+        localStorage.setItem(INTRO_HINT_KEY, 'true');
+      }, 5500);
+
+      return () => {
+        clearTimeout(timer);
+        clearTimeout(autoCloseTimer);
+      };
     }
   }, []);
   // --------------------------------
@@ -38,8 +49,11 @@ const ThemeAndVeilSwitcher: React.FC = () => {
   }, [isDarkVeilActive, theme]);
 
   const cycleMode = () => {
-    // Dismiss the introductory toast if the user interacts with the button
-    toast.dismiss('intro-theme-guide');
+    // Dismiss hint and mark as shown upon interaction
+    if (isHintOpen) {
+      setIsHintOpen(false);
+      localStorage.setItem(INTRO_HINT_KEY, 'true');
+    }
     
     let nextMode: AppMode;
 
@@ -77,10 +91,17 @@ const ThemeAndVeilSwitcher: React.FC = () => {
   }, [currentMode]);
 
   return (
-    <Button variant="ghost" size="icon" onClick={cycleMode}>
-      <ActiveIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
-      <span className="sr-only">Toggle theme and veil</span>
-    </Button>
+    <Tooltip open={isHintOpen} onOpenChange={setIsHintOpen}>
+      <TooltipTrigger asChild>
+        <Button variant="ghost" size="icon" onClick={cycleMode}>
+          <ActiveIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
+          <span className="sr-only">Toggle theme and veil</span>
+        </Button>
+      </TooltipTrigger>
+      <TooltipContent side="bottom" className="bg-primary text-primary-foreground font-semibold">
+        Click me to cycle between Light, Dark, and Sparkle modes!
+      </TooltipContent>
+    </Tooltip>
   );
 };
 
