@@ -39,8 +39,8 @@ const Navbar = () => {
         '--primary-foreground': '260 90% 60%', 
       }
     : {
-        // Base text color (Light Mode): hsl(222, 86%, 5%)
-        '--muted-foreground': '222 86% 5%', 
+        // Base text color (Light Mode): hsl(217, 53%, 15%)
+        '--muted-foreground': '217 53% 15%', 
         '--primary-foreground': '220 80% 50%', // Brighter navy shine color
       };
 
