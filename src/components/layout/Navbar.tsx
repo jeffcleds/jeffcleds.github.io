@@ -8,6 +8,9 @@ import ThemeAndVeilSwitcher from "./ThemeAndVeilSwitcher";
 import { useDarkVeil } from "./DarkVeilProvider";
 import { useTheme } from "next-themes";
 
+// Define a type that allows custom CSS variables (prefixed with --)
+type CustomCSSProperties = React.CSSProperties & Record<`--${string}`, string | number>;
+
 const navItems = [
   { name: "Home", to: "/" },
   { name: "About", to: "/about" },
@@ -28,7 +31,7 @@ const Navbar = () => {
     : "text-[#14243d] after:bg-[#14243d]";
 
   // Define dynamic styles for ShinyText
-  const shinyTextStyle: React.CSSProperties = isDarkBackground
+  const shinyTextStyle: CustomCSSProperties = isDarkBackground
     ? {
         // Base text color: White (100% lightness)
         '--muted-foreground': '210 40% 100%', 
