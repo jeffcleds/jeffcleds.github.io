@@ -36,7 +36,7 @@ export interface Project {
   id: number;
   title: string;
   description: string;
-  image: string;
+  images: string[];
   technologies: string[];
   githubLink?: string;
   liveLink?: string;
@@ -246,7 +246,7 @@ export const projectsData: Project[] = [
     id: 1,
     title: "Personal Portfolio Website",
     description: "A responsive personal portfolio website built with React, TypeScript, and Tailwind CSS, showcasing my skills and projects.",
-    image: "/my-portfolio-website.jpg", // Updated path
+    images: ["/my-portfolio-website.jpg"], // Updated to array
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     githubLink: "https://github.com/jeffcleds/jeffcleds.github.io",
     liveLink: "/projects/portfolio-website", // Updated to new route
@@ -255,7 +255,7 @@ export const projectsData: Project[] = [
     id: 2,
     title: "E-CCC: A web-based enrollment and academic records management system for Calabanga Community College",
     description: "A comprehensive school management system designed for Calabanga Community College, handling student records, course management, and administrative tasks.",
-    image: "/calabanga-sms.png", // Updated path
+    images: ["/calabanga-sms.png"], // Updated to array
     technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "Laravel", "Filament"],
     githubLink: "https://github.com/jeffcleds/E-CCC", // Updated GitHub link
     liveLink: "/projects/e-ccc", // Updated to new route /projects/e-ccc
@@ -264,7 +264,7 @@ export const projectsData: Project[] = [
     id: 3,
     title: "Class Scheduler",
     description: "A web application to help the school manage and visualize class schedules and to check if there is a conflict in the schedule.",
-    image: "/class-scheduler.png", // Updated path
+    images: ["/class-scheduler.png"], // Updated to array
     technologies: ["C#", "MySQL", "Visual Studio"],
     githubLink: "/not-found-repo", // Changed to a local route to trigger 404
     liveLink: "/projects/class-scheduler", // Updated to new route
@@ -273,7 +273,7 @@ export const projectsData: Project[] = [
     id: 4,
     title: "Simple Calculator",
     description: "A basic interactive calculator application built with React and TypeScript, demonstrating fundamental UI and state management.",
-    image: "/ai-calculator.png", // AI-generated photo
+    images: ["/ai-calculator.png"], // Updated to array
     technologies: ["React", "TypeScript", "Tailwind CSS"],
     liveLink: "/projects/simple-calculator", // Keep the internal link to the details page
   },
@@ -281,7 +281,7 @@ export const projectsData: Project[] = [
     id: 5,
     title: "JumpQuest: The Curse of Gold Begins",
     description: "A 2D pixel art platformer game developed as a project for the Computer Graphics Programming & Game Development course.",
-    image: "/JumpQuest.jpg", // Corrected path to root of public folder
+    images: ["/JumpQuest.jpg"], // Updated to array
     technologies: ["Unity", "C#", "Pixel Art", "Visual Studio Code"],
     liveLink: "/projects/jumpquest",
   },
