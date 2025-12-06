@@ -33,8 +33,8 @@ const Navbar = () => {
   // Define dynamic styles for ShinyText
   const shinyTextStyle: CustomCSSProperties = isDarkBackground
     ? {
-        // Base text color: #eaecef (HSL 210 17% 92%)
-        '--muted-foreground': '210 17% 92%', 
+        // Base text color: hsl(220, 4%, 72%)
+        '--muted-foreground': '220 4% 72%', 
         // Shine color: Deep Violet (260 90% 60%)
         '--primary-foreground': '260 90% 60%', 
       }
@@ -49,7 +49,7 @@ const Navbar = () => {
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <Link to="/" className="mr-6 flex items-center space-x-2">
-            <span className=""> {/* Removed opacity wrapper */}
+            <span className="">
               <ShinyText
                 className="font-bold"
                 style={shinyTextStyle}
@@ -86,7 +86,7 @@ const Navbar = () => {
           </SheetTrigger>
           <SheetContent side="left" className={`pr-0 ${isDarkVeilActive ? 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60' : ''}`}>
             <Link to="/" className="flex items-center space-x-2">
-              <span className=""> {/* Removed opacity wrapper */}
+              <span className="">
                 <ShinyText
                   className="font-bold"
                   style={shinyTextStyle}
