@@ -21,14 +21,14 @@ export default function Index() {
   // Define dynamic styles for ShinyText, matching Navbar logic
   const shinyTextStyle: CustomCSSProperties = isDarkBackground
     ? {
-        // Base text color: hsl(220, 4%, 72%)
+        // Base text color (Dark Mode): hsl(220, 4%, 72%)
         '--muted-foreground': '220 4% 72%', 
         // Shine color: Deep Violet (260 90% 60%)
         '--primary-foreground': '260 90% 60%', 
       }
     : {
-        // Use new dark base color for contrast in light mode
-        '--muted-foreground': '240 2% 13%', // Updated base color for light mode
+        // Base text color (Light Mode): Dark Gray (hsl(240, 2%, 25%))
+        '--muted-foreground': '240 2% 25%', 
         '--primary-foreground': '220 80% 50%', // Brighter navy shine color
       };
 
