@@ -102,6 +102,17 @@ const CalabangaProject: React.FC = () => {
         <Separator className="my-6" />
 
         <div className="space-y-6">
+          <h2 className="text-3xl font-bold">Certificate of Publication</h2>
+          <img
+            src="/COP.png"
+            alt="Certificate of Publication"
+            className="w-full h-auto object-contain rounded-lg shadow-xl border border-border"
+          />
+        </div>
+
+        <Separator className="my-6" />
+
+        <div className="space-y-6">
           <h2 className="text-3xl font-bold">Acknowledgement</h2>
           <p className="text-muted-foreground leading-relaxed">
             This project was completed through the combined effort and commitment of my groupmates: <strong>Joshua Gabriel Gamora</strong>, <strong>Chrystian Ray C. Festin</strong>, and <strong>Allan Aboga-a Jr.</strong> Each contributed solid work that strengthened the final output.
@@ -109,17 +120,6 @@ const CalabangaProject: React.FC = () => {
           <p className="text-muted-foreground leading-relaxed">
             We also acknowledge <strong>Raymond A. Iglesia</strong>, STI College Naga Academic Head, for his support and guidance, and <strong>Dr. Angel Belleza</strong>, CCC School Administrator, for providing the necessary backing and direction. Their leadership made this project possible.
           </p>
-        </div>
-
-        <Separator className="my-6" />
-
-        <div className="space-y-6">
-          <h2 className="text-3xl font-bold">Certificate of Publication</h2>
-          <img
-            src="/COP.png"
-            alt="Certificate of Publication"
-            className="w-full h-auto object-contain rounded-lg shadow-xl border border-border"
-          />
         </div>
       </Card>
     </div>
