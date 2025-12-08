@@ -4,7 +4,7 @@ import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Github, ArrowLeft, Download } from "lucide-react";
+import { Github, ArrowLeft, Download, BookOpen } from "lucide-react";
 import { projectsData } from "@/data/portfolioData";
 import { useDarkVeil } from "@/components/layout/DarkVeilProvider";
 
@@ -62,6 +62,11 @@ const CalabangaProject: React.FC = () => {
                   </a>
                 </Button>
               )}
+              <Button asChild variant="outline">
+                <a href="https://www.uniplat.social/document/593?brid=wVxhnNAXRkaolZSTjUWtag" target="_blank" rel="noopener noreferrer">
+                  <BookOpen className="h-4 w-4 mr-2" /> View Publication
+                </a>
+              </Button>
               <Button asChild>
                 <a href="/E-CCC-Manuscript.pdf" download="E-CCC-Manuscript.pdf">
                   <Download className="h-4 w-4 mr-2" /> Download Manuscript
