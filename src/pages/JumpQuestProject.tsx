@@ -97,13 +97,13 @@ const JumpQuestProject: React.FC = () => {
           <h2 className="text-3xl font-bold">Certificate of Commendation</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <img
-              src="/COC.png"
-              alt="Certificate of Commendation"
+              src="/COCChampion.png"
+              alt="Certificate of Commendation Champion"
               className="w-full h-auto object-contain rounded-lg shadow-xl border border-border"
             />
             <img
-              src="/COCChampion.png"
-              alt="Certificate of Commendation Champion"
+              src="/COC.png"
+              alt="Certificate of Commendation"
               className="w-full h-auto object-contain rounded-lg shadow-xl border border-border"
             />
           </div>
