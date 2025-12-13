@@ -94,7 +94,7 @@ const JumpQuestProject: React.FC = () => {
         <Separator className="my-6" />
 
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold">Certificate of Commendation</h2>
+          <h2 className="text-3xl font-bold">Certificates and Awards</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <img
               src="/COParticipation.png"
