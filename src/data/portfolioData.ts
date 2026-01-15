@@ -79,7 +79,7 @@ export const experienceData: Experience[] = [
     id: "concentrix",
     title: "Concentrix",
     subtitle: "Claims and Insurance Specialist",
-    date: "2018 - 2019",
+    date: "2021 - 2022",
     responsibilities: [
       "Manages insurance claims, verifies coverage, and ensures compliance with policies and regulations.",
       "Provides clients with accurate information, resolves inquiries, and maintains detailed records to support smooth processing, resolving 95% of cases within first contact, improving satisfaction.",
