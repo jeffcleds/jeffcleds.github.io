@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useDarkVeil } from "@/components/layout/DarkVeilProvider"; // Import useDarkVeil
 
 const SimpleCalculatorDemo: React.FC = () => {
   const [input, setInput] = useState<string>("");
   const [result, setResult] = useState<string>("");
+  const { isDarkVeilActive } = useDarkVeil(); // Use DarkVeil hook
 
   const handleButtonClick = (value: string) => {
     if (value === "=") {
@@ -35,7 +37,7 @@ const SimpleCalculatorDemo: React.FC = () => {
 
   return (
     <div className="flex justify-center items-center py-8">
-      <Card className="w-full max-w-md">
+      <Card className={`w-full max-w-md ${isDarkVeilActive ? 'border border-primary/20 backdrop-blur-md' : ''}`}>
         <CardHeader>
           <CardTitle className="text-center">Simple Calculator</CardTitle>
         </CardHeader>

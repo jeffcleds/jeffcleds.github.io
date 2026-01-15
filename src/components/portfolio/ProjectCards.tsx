@@ -5,14 +5,17 @@ import { Info } from "lucide-react";
 import { projectsData } from "@/data/portfolioData";
 import { Link } from "react-router-dom";
 import TiltedCard from "@/components/animations/TiltedCard"; // Import the new TiltedCard component
+import { useDarkVeil } from "@/components/layout/DarkVeilProvider"; // Import useDarkVeil
 
 const ProjectCards: React.FC = () => {
+  const { isDarkVeilActive } = useDarkVeil(); // Use DarkVeil hook
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {projectsData.map((project) => (
         <TiltedCard key={project.id} className="h-full"> {/* Wrap each card with TiltedCard */}
           <Card 
-            className="flex flex-col h-full transition-all duration-300 ease-in-out hover:shadow-lg hover:border-primary" // Removed scale effect as TiltedCard handles transform
+            className={`flex flex-col h-full transition-all duration-300 ease-in-out hover:shadow-lg hover:border-primary ${isDarkVeilActive ? 'border border-primary/20 backdrop-blur-md' : ''}`} // Added conditional blur
           >
             <img
               src={project.image}

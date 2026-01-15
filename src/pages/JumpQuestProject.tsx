@@ -16,7 +16,7 @@ const JumpQuestProject: React.FC = () => {
     return <div className="container mx-auto py-12 text-center">Project not found.</div>;
   }
 
-  const cardClassNames = isDarkVeilActive ? 'border border-primary/20' : '';
+  const cardClassNames = isDarkVeilActive ? 'border border-primary/20 backdrop-blur-md' : '';
 
   return (
     <div className="container mx-auto py-12 px-4">
