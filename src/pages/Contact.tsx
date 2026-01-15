@@ -8,6 +8,7 @@ import { Mail, Phone, MapPin, Github, Link as LinkIcon, Download } from "lucide-
 import { showError } from "@/utils/toast";
 import MagnetEffect from "@/components/animations/MagnetEffect";
 import { useDarkVeil } from "@/components/layout/DarkVeilProvider";
+import LogoIcon from "@/components/layout/LogoIcon";
 
 const Contact = () => {
   const { isDarkVeilActive } = useDarkVeil();
@@ -52,8 +53,9 @@ const Contact = () => {
         </Card>
         <div className="space-y-8">
           <Card className={cardClassNames}>
-            <CardHeader>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle>Contact Information</CardTitle>
+              <LogoIcon className="h-8 w-8" />
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center space-x-3">
