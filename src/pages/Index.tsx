@@ -23,8 +23,8 @@ export default function Index() {
     ? {
         // Base text color (Dark Mode): hsl(240, 4%, 85%)
         '--muted-foreground': '240 4% 85%', 
-        // Shine color: Deep Violet (260 90% 60%)
-        '--primary-foreground': '260 90% 60%', 
+        // Shine color: Golden Yellow (45 100% 50%)
+        '--primary-foreground': '45 100% 50%', 
       }
     : {
         // Base text color (Light Mode): hsl(217, 53%, 15%)
