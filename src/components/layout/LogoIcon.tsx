@@ -10,18 +10,17 @@ const LogoIcon: React.FC<{ className?: string }> = ({ className = '' }) => {
 
   const isDarkBackground = isDarkVeilActive || theme === 'dark';
 
-  // CSS filter classes to apply color tinting to the grayscale image
-  // Light Mode (Blue Tint): hue-rotate(180deg) saturate(150%) brightness(110%)
-  // Dark Mode (Purple Tint): hue-rotate(270deg) saturate(150%) brightness(110%)
-  const filterClass = isDarkBackground
-    ? 'filter hue-rotate-[270deg] saturate-[1.5] brightness-[1.1]' // Purple tint for dark mode
-    : 'filter hue-rotate-[180deg] saturate-[1.5] brightness-[1.1]'; // Blue tint for light mode
+  // Use the paths requested by the user
+  const logoSrc = isDarkBackground
+    ? '/Logo Purple.png' // Dark mode logo
+    : '/Logo Blue.png';  // Light mode logo
 
   return (
     <img
-      src="/ernie-joseph-cledera.jpg"
+      src={logoSrc}
       alt="EJC Logo"
-      className={`h-6 w-6 rounded-full object-cover transition-all duration-300 ${filterClass} ${className}`}
+      // Removed filter class since the images are expected to be pre-colored
+      className={`h-6 w-6 rounded-full object-cover transition-all duration-300 ${className}`}
     />
   );
 };
