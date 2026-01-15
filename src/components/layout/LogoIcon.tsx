@@ -1,10 +1,17 @@
 "use client";
 
 import React from 'react';
+import { useTheme } from 'next-themes';
+import { useDarkVeil } from './DarkVeilProvider';
 
 const LogoIcon: React.FC<{ className?: string }> = ({ className = '' }) => {
-  // Always use the blue logo, regardless of theme/Dark Veil state
-  const logoSrc = '/Logo Blue.png';
+  const { theme } = useTheme();
+  const { isDarkVeilActive } = useDarkVeil();
+
+  const isDarkBackground = isDarkVeilActive || theme === 'dark';
+
+  // Use Logo Yellow.png when in dark mode or Dark Veil mode, otherwise use Logo Blue.png
+  const logoSrc = isDarkBackground ? '/Logo Yellow.png' : '/Logo Blue.png';
 
   return (
     <img
