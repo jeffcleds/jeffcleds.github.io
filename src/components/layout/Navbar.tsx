@@ -7,6 +7,7 @@ import ShinyText from "@/components/animations/ShinyText";
 import ThemeAndVeilSwitcher from "./ThemeAndVeilSwitcher";
 import { useDarkVeil } from "./DarkVeilProvider";
 import { useTheme } from "next-themes";
+import LogoIcon from "./LogoIcon"; // Import LogoIcon
 
 // Define a type that allows custom CSS variables (prefixed with --)
 type CustomCSSProperties = React.CSSProperties & Record<`--${string}`, string | number>;
@@ -49,6 +50,7 @@ const Navbar = () => {
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <Link to="/" className="mr-6 flex items-center space-x-2">
+            <LogoIcon className="h-7 w-7" /> {/* Added LogoIcon */}
             <span className="">
               <ShinyText
                 className="font-bold"
@@ -86,6 +88,7 @@ const Navbar = () => {
           </SheetTrigger>
           <SheetContent side="left" className={`pr-0 ${isDarkVeilActive ? 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60' : ''}`}>
             <Link to="/" className="flex items-center space-x-2">
+              <LogoIcon className="h-7 w-7" /> {/* Added LogoIcon to mobile view */}
               <span className="">
                 <ShinyText
                   className="font-bold"
