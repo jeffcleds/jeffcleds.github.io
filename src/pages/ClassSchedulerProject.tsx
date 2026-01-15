@@ -16,7 +16,7 @@ const ClassSchedulerProject: React.FC = () => {
     return <div className="container mx-auto py-12 text-center">Project not found.</div>;
   }
 
-  const cardClassNames = isDarkVeilActive ? 'bg-card/50 border border-primary/20' : '';
+  const cardClassNames = isDarkVeilActive ? 'border border-primary/20' : '';
   const isLocalLink = project.githubLink && project.githubLink.startsWith('/');
 
   return (

@@ -8,7 +8,7 @@ const AffiliationsSection: React.FC = () => {
   const { isDarkVeilActive } = useDarkVeil();
 
   return (
-    <Card className={`p-6 ${isDarkVeilActive ? 'bg-card/50 border border-primary/20' : ''}`}>
+    <Card className={`p-6 ${isDarkVeilActive ? 'border border-primary/20' : ''}`}>
       <CardHeader className="p-0 pb-4">
         <CardTitle className="text-2xl font-bold">Affiliations</CardTitle>
       </CardHeader>

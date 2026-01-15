@@ -18,7 +18,7 @@ const Contact = () => {
     showError("Kindly send me an email for now as the API for this is not working properly. I apologize for the inconvenience.");
   };
 
-  const cardClassNames = isDarkVeilActive ? 'bg-card/50 border border-primary/20' : '';
+  const cardClassNames = isDarkVeilActive ? 'border border-primary/20' : '';
 
   return (
     <div className={`container mx-auto py-12 px-4 ${isDarkVeilActive ? 'bg-transparent' : ''}`}>

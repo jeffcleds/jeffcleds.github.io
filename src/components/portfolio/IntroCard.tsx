@@ -9,7 +9,7 @@ const IntroCard = () => {
   const { isDarkVeilActive } = useDarkVeil();
 
   return (
-    <Card className={`w-full max-w-3xl mx-auto p-6 shadow-lg rounded-lg ${isDarkVeilActive ? 'bg-card/50 border border-primary/20' : ''}`}>
+    <Card className={`w-full max-w-3xl mx-auto p-6 shadow-lg rounded-lg ${isDarkVeilActive ? 'border border-primary/20' : ''}`}>
       <CardContent className="p-0">
         <p className="text-lg leading-relaxed text-muted-foreground text-center">
           {profileData.introduction.split('<span class="highlight">').map((segment, index) => {
