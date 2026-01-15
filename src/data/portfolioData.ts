@@ -65,17 +65,6 @@ export const experienceData: Experience[] = [
     logo: "/mr-rooter-logo.png", // Example path for Mr. Rooter logo
   },
   {
-    id: "bell-canada",
-    title: "Bell Canada",
-    subtitle: "Technical Support Representative",
-    date: "2019 - 2020",
-    responsibilities: [
-      "Manage customers' account records, walkthrough their technical concerns in internet, satellite TV, and mobile phone services, provide support with billing concerns, and establish trust by providing excellent customer service and resolving telephone inquiries in a timely manner.",
-      "Best in first call resolution. Best in average hold time resolving inquiries within 140 seconds.",
-    ],
-    logo: "/bell-canada-logo.png", // Example path for Bell Canada logo
-  },
-  {
     id: "concentrix",
     title: "Concentrix",
     subtitle: "Claims and Insurance Specialist",
@@ -85,6 +74,17 @@ export const experienceData: Experience[] = [
       "Provides clients with accurate information, resolves inquiries, and maintains detailed records to support smooth processing, resolving 95% of cases within first contact, improving satisfaction.",
     ],
     logo: "/concentrix-logo.png", // Example path for Concentrix logo
+  },
+  {
+    id: "bell-canada",
+    title: "Bell Canada",
+    subtitle: "Technical Support Representative",
+    date: "2019 - 2020",
+    responsibilities: [
+      "Manage customers' account records, walkthrough their technical concerns in internet, satellite TV, and mobile phone services, provide support with billing concerns, and establish trust by providing excellent customer service and resolving telephone inquiries in a timely manner.",
+      "Best in first call resolution. Best in average hold time resolving inquiries within 140 seconds.",
+    ],
+    logo: "/bell-canada-logo.png", // Example path for Bell Canada logo
   },
   {
     id: "ateneo-intern",
