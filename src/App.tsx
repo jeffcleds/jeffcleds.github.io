@@ -58,7 +58,7 @@ const AppContent = () => {
           pointerEvents: 'none',
         }}>
           <DarkVeil
-            hueShift={-155}
+            hueShift={100} // Changed hueShift from -155 to 100 for a warmer, yellow/orange tone
             noiseIntensity={0}
             scanlineIntensity={0}
             speed={0.5}
