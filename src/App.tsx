@@ -14,6 +14,7 @@ import CalabangaProject from "./pages/CalabangaProject";
 import PortfolioWebsiteProject from "./pages/PortfolioWebsiteProject";
 import ClassSchedulerProject from "./pages/ClassSchedulerProject";
 import JumpQuestProject from "./pages/JumpQuestProject";
+import VercelWebAnalyticsGuide from "./pages/VercelWebAnalyticsGuide";
 import ScrollToTop from "./components/layout/ScrollToTop";
 import { ThemeProvider, useTheme } from "next-themes";
 import { DarkVeilProvider, useDarkVeil } from "./components/layout/DarkVeilProvider";
@@ -84,6 +85,7 @@ const AppContent = () => {
               <Route path="/projects/class-scheduler" element={<ClassSchedulerProject />} />
               <Route path="/projects/simple-calculator" element={<SimpleCalculatorProject />} />
               <Route path="/projects/jumpquest" element={<JumpQuestProject />} />
+              <Route path="/docs/analytics/getting-started" element={<VercelWebAnalyticsGuide />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
