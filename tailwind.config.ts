@@ -62,6 +62,8 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Add custom golden glow color
+        'golden-glow': 'hsl(var(--golden-glow))',
       },
       borderRadius: {
         lg: "var(--radius)",
