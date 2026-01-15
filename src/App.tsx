@@ -19,7 +19,6 @@ import { ThemeProvider, useTheme } from "next-themes";
 import { DarkVeilProvider, useDarkVeil } from "./components/layout/DarkVeilProvider";
 import DarkVeil from "./components/animations/DarkVeil";
 import React from "react";
-import { Analytics } from '@vercel/analytics/react'; // Added Vercel Analytics import
 
 const queryClient = new QueryClient();
 
@@ -101,7 +100,6 @@ const App = () => (
       <DarkVeilProvider>
         <ThemeWrapper>
           <AppContent />
-          <Analytics /> {/* Added Vercel Analytics component */}
         </ThemeWrapper>
       </DarkVeilProvider>
     </ThemeProvider>
