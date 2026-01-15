@@ -8,7 +8,7 @@ const SkillsCard: React.FC = () => {
   const { isDarkVeilActive } = useDarkVeil(); // Use DarkVeil hook
 
   return (
-    <Card className={`p-6 ${isDarkVeilActive ? 'border border-primary/20' : ''}`}>
+    <Card className={`p-6 ${isDarkVeilActive ? 'border border-primary/20 backdrop-blur-md' : ''}`}>
       <CardHeader className="p-0 pb-4">
         <CardTitle className="text-2xl font-bold">Skills</CardTitle>
       </CardHeader>
