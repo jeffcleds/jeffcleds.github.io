@@ -47,11 +47,53 @@ const Navbar = () => {
 
   return (
     <header className={`sticky top-0 z-50 w-full ${isDarkVeilActive ? 'border-b bg-background/50 backdrop-blur supports-[backdrop-filter]:bg-background/60' : 'border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'}`}>
-      <div className="container flex h-14 items-center">
-        <div className="mr-4 hidden md:flex">
-          <Link to="/" className="mr-6 flex items-center space-x-2">
-            <LogoIcon className="h-7 w-7" /> {/* Added LogoIcon */}
-            <span className="">
+      <div className="container flex h-14 items-center justify-between relative">
+        {/* Left Section: Mobile Trigger and Logo */}
+        <div className="flex items-center">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button
+                variant="ghost"
+                className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
+              >
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle Menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className={`pr-0 ${isDarkVeilActive ? 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60' : ''}`}>
+              <Link to="/" className="flex items-center space-x-2">
+                <LogoIcon className="h-7 w-7" />
+                <span className="">
+                  <ShinyText
+                    className="font-bold"
+                    style={shinyTextStyle}
+                  >
+                    cledera.ernie
+                  </ShinyText>
+                </span>
+              </Link>
+              <nav className="flex flex-col gap-2 mt-4">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.to}
+                    className={`flex w-full items-center py-2 text-lg font-semibold relative
+                      ${location.pathname === item.to ? activeLinkColorClass : "text-foreground/60 hover:text-foreground/80"}
+                      after:absolute after:bottom-0 after:left-0 after:h-[2px] after:transition-all after:duration-300 after:ease-in-out
+                      ${location.pathname === item.to ? "after:w-full" : "after:w-0 hover:after:w-full"}
+                    `}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
+          
+          {/* Logo (Visible on all screens, but positioned relative to the trigger on mobile) */}
+          <Link to="/" className="flex items-center space-x-2">
+            <LogoIcon className="h-7 w-7" />
+            <span className="hidden sm:inline"> {/* Hide text on small mobile screens */}
               <ShinyText
                 className="font-bold"
                 style={shinyTextStyle}
@@ -60,62 +102,27 @@ const Navbar = () => {
               </ShinyText>
             </span>
           </Link>
-          <nav className="flex items-center space-x-6 text-sm font-medium">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.to}
-                className={`relative transition-colors text-foreground/60 hover:text-foreground/80 
-                  ${location.pathname === item.to ? `font-semibold ${activeLinkColorClass}` : ""}
-                  after:absolute after:bottom-0 after:left-0 after:h-[2px] after:transition-all after:duration-300 after:ease-in-out
-                  ${location.pathname === item.to ? "after:w-full" : "after:w-0 hover:after:w-full"}
-                `}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
         </div>
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button
-              variant="ghost"
-              className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
+
+        {/* Center Section: Desktop Navigation */}
+        <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-6 text-sm font-medium">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={item.to}
+              className={`relative transition-colors text-foreground/60 hover:text-foreground/80 
+                ${location.pathname === item.to ? `font-semibold ${activeLinkColorClass}` : ""}
+                after:absolute after:bottom-0 after:left-0 after:h-[2px] after:transition-all after:duration-300 after:ease-in-out
+                ${location.pathname === item.to ? "after:w-full" : "after:w-0 hover:after:w-full"}
+              `}
             >
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Toggle Menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="left" className={`pr-0 ${isDarkVeilActive ? 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60' : ''}`}>
-            <Link to="/" className="flex items-center space-x-2">
-              <LogoIcon className="h-7 w-7" /> {/* Added LogoIcon to mobile view */}
-              <span className="">
-                <ShinyText
-                  className="font-bold"
-                  style={shinyTextStyle}
-                >
-                  cledera.ernie
-                </ShinyText>
-              </span>
+              {item.name}
             </Link>
-            <nav className="flex flex-col gap-2 mt-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.to}
-                  className={`flex w-full items-center py-2 text-lg font-semibold relative
-                    ${location.pathname === item.to ? activeLinkColorClass : "text-foreground/60 hover:text-foreground/80"}
-                    after:absolute after:bottom-0 after:left-0 after:h-[2px] after:transition-all after:duration-300 after:ease-in-out
-                    ${location.pathname === item.to ? "after:w-full" : "after:w-0 hover:after:w-full"}
-                  `}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </nav>
-          </SheetContent>
-        </Sheet>
-        <div className="flex flex-1 items-center justify-end space-x-2">
+          ))}
+        </nav>
+
+        {/* Right Section: Theme Switcher */}
+        <div className="flex items-center justify-end space-x-2">
           <ThemeAndVeilSwitcher />
         </div>
       </div>
