@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Github, Link as LinkIcon, Download } from "lucide-react";
 import { showError } from "@/utils/toast";
-import MagnetEffect from "@/components/animations/MagnetEffect";
+import MagnetEffect from "@/components/animations/MagnetEffect"; // Keep import for other uses if any
 import { useDarkVeil } from "@/components/layout/DarkVeilProvider";
 import LogoIcon from "@/components/layout/LogoIcon";
 
@@ -55,9 +55,10 @@ const Contact = () => {
           <Card className={cardClassNames}>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle>Contact Information</CardTitle>
-              <MagnetEffect strength={10} tolerance={0.5}>
-                <LogoIcon className="h-8 w-8 hover:shadow-lg hover:shadow-primary/50" />
-              </MagnetEffect>
+              {/* Removed MagnetEffect wrapper */}
+              <LogoIcon 
+                className="h-8 w-8 transition-all duration-300 hover:filter hover:drop-shadow-[0_0_8px_hsl(var(--primary))]" 
+              />
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center space-x-3">
