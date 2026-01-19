@@ -55,7 +55,9 @@ const Contact = () => {
           <Card className={cardClassNames}>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle>Contact Information</CardTitle>
-              <LogoIcon className="h-8 w-8" />
+              <MagnetEffect strength={10} tolerance={0.5}>
+                <LogoIcon className="h-8 w-8 hover:shadow-lg hover:shadow-primary/50" />
+              </MagnetEffect>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center space-x-3">
