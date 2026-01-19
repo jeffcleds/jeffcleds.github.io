@@ -52,7 +52,7 @@
   }
 
   .dark {
-    --background: 0 0% 15%; /* Changed from pure black to #262626 */
+    --background: 0 0% 0%; /* Changed to pure black */
     --foreground: 210 40% 98%;
 
     --card: 0 0% 0% / 0.2; /* Changed to 20% transparent black */
