@@ -34,7 +34,7 @@ const WorkstationPage: React.FC = () => {
 
       <ScrollReveal delay={0.2}>
         <div className="mb-12 flex justify-center">
-          <Carousel className="w-full max-w-4xl"> {/* Wrap images in Carousel */}
+          <Carousel className="w-full max-w-6xl"> {/* Increased max-width to 6xl */}
             <CarouselContent>
               {workstationImages.map((imageSrc, index) => (
                 <CarouselItem key={index}>
