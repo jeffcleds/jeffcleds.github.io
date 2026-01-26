@@ -17,8 +17,8 @@ const WorkstationPage: React.FC = () => {
   const cardClassNames = isDarkVeilActive ? 'border border-primary/20 backdrop-blur-md' : '';
 
   const workstationImages = [
+    "/Workstation 2.jpg", // Moved to first position
     "/Workstation.png",
-    "/Workstation 2.jpg", // Corrected image path with capital 'W'
   ];
 
   return (
