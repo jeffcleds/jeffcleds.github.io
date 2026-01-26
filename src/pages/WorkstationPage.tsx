@@ -18,21 +18,31 @@ const WorkstationPage: React.FC = () => {
         </p>
       </ScrollReveal>
 
+      <ScrollReveal delay={0.2}>
+        <div className="mb-12 flex justify-center">
+          <img
+            src="/Workstation.png"
+            alt="My Workstation Setup"
+            className="w-full max-w-4xl h-auto object-cover rounded-lg shadow-xl border border-border"
+          />
+        </div>
+      </ScrollReveal>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Placeholder for workstation items */}
-        <ScrollReveal delay={0.2}>
+        <ScrollReveal delay={0.3}>
           <div className={`p-6 rounded-lg shadow-lg text-center ${cardClassNames}`}>
             <h2 className="text-2xl font-semibold mb-2">Hardware</h2>
             <p className="text-muted-foreground">Coming Soon!</p>
           </div>
         </ScrollReveal>
-        <ScrollReveal delay={0.3}>
+        <ScrollReveal delay={0.4}>
           <div className={`p-6 rounded-lg shadow-lg text-center ${cardClassNames}`}>
             <h2 className="text-2xl font-semibold mb-2">Software</h2>
             <p className="text-muted-foreground">Coming Soon!</p>
           </div>
         </ScrollReveal>
-        <ScrollReveal delay={0.4}>
+        <ScrollReveal delay={0.5}>
           <div className={`p-6 rounded-lg shadow-lg text-center ${cardClassNames}`}>
             <h2 className="text-2xl font-semibold mb-2">Peripherals</h2>
             <p className="text-muted-foreground">Coming Soon!</p>
