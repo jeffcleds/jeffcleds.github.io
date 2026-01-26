@@ -318,8 +318,8 @@ export const workstationData: WorkstationCategory[] = [
     title: "Displays",
     items: [
       { name: "Main Display", value: "Xiaomi 34\" Ultrawide Monitor" },
-      { name: "Top Display", value: "Xiaomi A24i" }, // Renamed
-      { name: "Side Display", value: "Xiaomi A24i" }, // Renamed
+      { name: "Top Display", value: "Xiaomi A24i" },
+      { name: "Side Display", value: "Xiaomi A24i" },
       { name: "External Display", value: "Skyworth 24X1Q" },
       { name: "Wireless Display", value: "Poco Pad" }, 
     ],
@@ -336,7 +336,6 @@ export const workstationData: WorkstationCategory[] = [
     items: [
       { name: "Mouse", value: "R1 VXE Pro Max" },
       { name: "Keyboard", value: "Yunzi AL68" },
-      { name: "Keyboard", value: "Akko PC75B Plus" },
       { name: "Webcam", value: "Razer Kiyo Pro" },
       { name: "Controller", value: "Gulikit KingKong 2 Pro" },
       { name: "Microphone", value: "Fifine AM8" },
