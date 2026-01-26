@@ -42,6 +42,16 @@ export interface Project {
   liveLink?: string;
 }
 
+export interface WorkstationItem {
+  name: string;
+  value: string;
+}
+
+export interface WorkstationCategory {
+  title: string;
+  items: WorkstationItem[];
+}
+
 export const profileData = {
   name: "Ernie Joseph Cledera",
   profileImage: "/ernie-joseph-cledera.jpg", // Replace with your profile image path, e/g., "/profile.jpg"
@@ -284,6 +294,69 @@ export const projectsData: Project[] = [
     image: "/JumpQuest.jpg", // Corrected path to root of public folder
     technologies: ["Unity", "C#", "Pixel Art", "Visual Studio Code"],
     liveLink: "/projects/jumpquest",
+  },
+];
+
+export const workstationData: WorkstationCategory[] = [
+  {
+    title: "Specifications",
+    items: [
+      { name: "Processor", value: "Ryzen 7 5700x" },
+      { name: "Cooler", value: "IDCooling Zoomflow 360x" },
+      { name: "Chassis", value: "IDCooling Zoomflow 360x" },
+      { name: "Chassis Fan", value: "Jungle Leopard Interstellar V2" },
+      { name: "Motherboard", value: "MSI B450 Gaming Pro Carbon AC" },
+      { name: "Memory", value: "Kingston Fury DDR4 RAM 16x2 3600" },
+      { name: "GPU", value: "MSI RTX 2070 Super Gaming X Trio" },
+      { name: "Main Storage", value: "ADATA XPG SX8200 Pro 1TB" },
+      { name: "Secondary Storage", value: "WD HDD Blue 500 GB" },
+      { name: "Secondary Storage", value: "Seagate Barracuda 1TB" },
+      { name: "Power Supply", value: "Segotep GM850W Modular Gold" },
+    ],
+  },
+  {
+    title: "Displays",
+    items: [
+      { name: "Main Display", value: "Xiaomi 34\" Ultrawide Monitor" },
+      { name: "Secondary Display", value: "Xiaomi A24i" },
+      { name: "Secondary Display", value: "Xiaomi A24i" },
+      { name: "External Display", value: "Skyworth 24X1Q" },
+    ],
+  },
+  {
+    title: "Operating Systems",
+    items: [
+      { name: "Main OS", value: "W11 version 24H2" },
+      { name: "Virtual Machine", value: "Win 11 Lite" },
+    ],
+  },
+  {
+    title: "Peripherals",
+    items: [
+      { name: "Mouse", value: "R1 VXE Pro Max" },
+      { name: "Keyboard", value: "Yunzi AL68" },
+      { name: "Keyboard", value: "Akko PC75B Plus" },
+      { name: "Webcam", value: "Razer Kiyo Pro" },
+      { name: "Controller", value: "Gulikit KingKong 2 Pro" },
+      { name: "Microphone", value: "Fifine AM8" },
+      { name: "Headset", value: "Corsair HS80 RGB" },
+      { name: "Earbuds", value: "Salnotes 7hz Zero" },
+      { name: "TWS Earbuds", value: "Moondrop Space Travel" },
+      { name: "Speakers", value: "Logitech Z333" },
+      { name: "Audio Interface", value: "Behringer UMC 404" },
+    ],
+  },
+  {
+    title: "Accessories",
+    items: [
+      { name: "Mousepad", value: "MD/Alpha Mousepad 400x900" },
+      { name: "Lightbar", value: "Xiaomi Mijia Lightbar" },
+      { name: "Smart Speaker", value: "Google Home Mini" },
+      { name: "LED Strips", value: "Cob LED Strip Light" },
+      { name: "Mic Boom Arm", value: "Thronmax S8 Twins" },
+      { name: "GPU Mount", value: "PHANTEKS Vertical GPU Bracket" },
+      { name: "Cable Sleeves", value: "Visioncable Gray & Black Extension" },
+    ],
   },
 ];
 

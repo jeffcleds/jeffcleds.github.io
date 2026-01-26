@@ -1,6 +1,8 @@
 import React from "react";
 import { useDarkVeil } from "@/components/layout/DarkVeilProvider";
 import ScrollReveal from "@/components/animations/ScrollReveal";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { workstationData } from "@/data/portfolioData"; // Import workstationData
 
 const WorkstationPage: React.FC = () => {
   const { isDarkVeilActive } = useDarkVeil();
@@ -29,25 +31,23 @@ const WorkstationPage: React.FC = () => {
       </ScrollReveal>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {/* Placeholder for workstation items */}
-        <ScrollReveal delay={0.3}>
-          <div className={`p-6 rounded-lg shadow-lg text-center ${cardClassNames}`}>
-            <h2 className="text-2xl font-semibold mb-2">Hardware</h2>
-            <p className="text-muted-foreground">Coming Soon!</p>
-          </div>
-        </ScrollReveal>
-        <ScrollReveal delay={0.4}>
-          <div className={`p-6 rounded-lg shadow-lg text-center ${cardClassNames}`}>
-            <h2 className="text-2xl font-semibold mb-2">Software</h2>
-            <p className="text-muted-foreground">Coming Soon!</p>
-          </div>
-        </ScrollReveal>
-        <ScrollReveal delay={0.5}>
-          <div className={`p-6 rounded-lg shadow-lg text-center ${cardClassNames}`}>
-            <h2 className="text-2xl font-semibold mb-2">Peripherals</h2>
-            <p className="text-muted-foreground">Coming Soon!</p>
-          </div>
-        </ScrollReveal>
+        {workstationData.map((category, index) => (
+          <ScrollReveal key={category.title} delay={0.3 + index * 0.1} className="h-full">
+            <Card className={`p-6 h-full ${cardClassNames}`}>
+              <CardHeader className="p-0 pb-4">
+                <CardTitle className="text-2xl font-bold">{category.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="p-0 space-y-3">
+                {category.items.map((item, itemIndex) => (
+                  <div key={itemIndex} className="flex justify-between items-start text-muted-foreground">
+                    <span className="font-medium text-foreground">{item.name}:</span>
+                    <span className="text-right flex-1 ml-4">{item.value}</span>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </ScrollReveal>
+        ))}
       </div>
     </div>
   );
