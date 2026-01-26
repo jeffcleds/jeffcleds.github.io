@@ -321,6 +321,7 @@ export const workstationData: WorkstationCategory[] = [
       { name: "Secondary Display", value: "Xiaomi A24i" },
       { name: "Secondary Display", value: "Xiaomi A24i" },
       { name: "External Display", value: "Skyworth 24X1Q" },
+      { name: "Wireless Display", value: "Poco Pad" }, // Added new item
     ],
   },
   {
