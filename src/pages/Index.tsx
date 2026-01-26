@@ -50,7 +50,7 @@ export default function Index() {
       <img
         src="/ernie-joseph-cledera.jpg"
         alt="Ernie Joseph Cledera"
-        style={{ width: 'clamp(150px, 20vw, 350px)', height: 'clamp(150px, 20vw, 350px)' }}
+        style={{ width: 'clamp(150px, 25vw, 450px)', height: 'clamp(150px, 25vw, 450px)' }}
         className="rounded-full object-cover mb-8 transition-transform duration-300 ease-in-out border-4 border-primary shadow-lg hover:scale-105 hover:shadow-xl hover:shadow-primary/50"
       />
       <h1 className="text-5xl font-extrabold tracking-tight mb-4">
