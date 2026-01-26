@@ -18,7 +18,7 @@ const WorkstationPage: React.FC = () => {
 
   const workstationImages = [
     "/Workstation.png",
-    "/workstation 2.jpg", // Corrected image path
+    "/Workstation 2.jpg", // Corrected image path with capital 'W'
   ];
 
   return (
