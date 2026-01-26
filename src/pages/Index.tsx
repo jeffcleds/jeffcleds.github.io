@@ -50,7 +50,8 @@ export default function Index() {
       <img
         src="/ernie-joseph-cledera.jpg"
         alt="Ernie Joseph Cledera"
-        className="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full object-cover mb-8 transition-transform duration-300 ease-in-out border-4 border-primary shadow-lg hover:scale-105 hover:shadow-xl hover:shadow-primary/50"
+        style={{ width: 'clamp(150px, 20vw, 280px)', height: 'clamp(150px, 20vw, 280px)' }}
+        className="rounded-full object-cover mb-8 transition-transform duration-300 ease-in-out border-4 border-primary shadow-lg hover:scale-105 hover:shadow-xl hover:shadow-primary/50"
       />
       <h1 className="text-5xl font-extrabold tracking-tight mb-4">
         <span className={isDarkBackground ? 'text-foreground/65' : ''}>Hello, I'm</span>{' '}
