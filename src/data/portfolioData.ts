@@ -318,10 +318,10 @@ export const workstationData: WorkstationCategory[] = [
     title: "Displays",
     items: [
       { name: "Main Display", value: "Xiaomi 34\" Ultrawide Monitor" },
-      { name: "Secondary Display", value: "Xiaomi A24i" },
-      { name: "Secondary Display", value: "Xiaomi A24i" },
+      { name: "Top Display", value: "Xiaomi A24i" }, // Renamed
+      { name: "Side Display", value: "Xiaomi A24i" }, // Renamed
       { name: "External Display", value: "Skyworth 24X1Q" },
-      { name: "Wireless Display", value: "Poco Pad" }, // Added new item
+      { name: "Wireless Display", value: "Poco Pad" }, 
     ],
   },
   {
