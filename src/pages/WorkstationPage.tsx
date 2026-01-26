@@ -2,12 +2,24 @@ import React from "react";
 import { useDarkVeil } from "@/components/layout/DarkVeilProvider";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { workstationData } from "@/data/portfolioData"; // Import workstationData
+import { workstationData } from "@/data/portfolioData";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"; // Import Carousel components
 
 const WorkstationPage: React.FC = () => {
   const { isDarkVeilActive } = useDarkVeil();
 
   const cardClassNames = isDarkVeilActive ? 'border border-primary/20 backdrop-blur-md' : '';
+
+  const workstationImages = [
+    "/Workstation.png",
+    "/workstation 2.png", // New image
+  ];
 
   return (
     <div className="container mx-auto py-12 px-4">
@@ -22,11 +34,21 @@ const WorkstationPage: React.FC = () => {
 
       <ScrollReveal delay={0.2}>
         <div className="mb-12 flex justify-center">
-          <img
-            src="/Workstation.png"
-            alt="My Workstation Setup"
-            className="w-full max-w-4xl h-auto object-cover rounded-lg shadow-xl border border-border"
-          />
+          <Carousel className="w-full max-w-4xl"> {/* Wrap images in Carousel */}
+            <CarouselContent>
+              {workstationImages.map((imageSrc, index) => (
+                <CarouselItem key={index}>
+                  <img
+                    src={imageSrc}
+                    alt={`My Workstation Setup ${index + 1}`}
+                    className="w-full h-auto object-cover rounded-lg shadow-xl border border-border"
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </ScrollReveal>
 
