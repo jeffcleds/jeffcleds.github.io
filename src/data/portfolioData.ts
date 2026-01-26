@@ -329,6 +329,7 @@ export const workstationData: WorkstationCategory[] = [
     items: [
       { name: "Main OS", value: "W11 version 24H2" },
       { name: "Virtual Machine", value: "Win 11 Lite" },
+      { name: "Virtual Machine", value: "macOS 11 Big Sur" }, // Added new item
     ],
   },
   {
