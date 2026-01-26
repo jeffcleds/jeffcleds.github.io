@@ -303,7 +303,7 @@ export const workstationData: WorkstationCategory[] = [
     items: [
       { name: "Processor", value: "Ryzen 7 5700x" },
       { name: "Cooler", value: "IDCooling Zoomflow 360x" },
-      { name: "Chassis", value: "IDCooling Zoomflow 360x" },
+      { name: "Chassis", value: "Gamemax HypeBK" },
       { name: "Chassis Fan", value: "Jungle Leopard Interstellar V2" },
       { name: "Motherboard", value: "MSI B450 Gaming Pro Carbon AC" },
       { name: "Memory", value: "Kingston Fury DDR4 RAM 16x2 3600" },
