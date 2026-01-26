@@ -16,6 +16,7 @@ const navItems = [
   { name: "Home", to: "/" },
   { name: "About", to: "/about" },
   { name: "Projects", to: "/projects" },
+  { name: "Workstation", to: "/workstation" }, // Added Workstation
   { name: "Contact", to: "/contact" },
 ];
 

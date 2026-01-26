@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ProjectsPage from "./pages/ProjectsPage";
+import WorkstationPage from "./pages/WorkstationPage"; // Import new WorkstationPage
 import NotFound from "./pages/NotFound";
 import SimpleCalculatorProject from "./pages/SimpleCalculatorProject";
 import CalabangaProject from "./pages/CalabangaProject";
@@ -77,8 +78,9 @@ const AppContent = () => {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
               <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/workstation" element={<WorkstationPage />} /> {/* New Workstation Route */}
+              <Route path="/contact" element={<Contact />} />
               <Route path="/projects/portfolio-website" element={<PortfolioWebsiteProject />} />
               <Route path="/projects/e-ccc" element={<CalabangaProject />} />
               <Route path="/projects/class-scheduler" element={<ClassSchedulerProject />} />
