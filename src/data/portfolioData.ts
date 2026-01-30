@@ -317,7 +317,7 @@ export const workstationData: WorkstationCategory[] = [
   {
     title: "Peripherals",
     items: [
-      { name: "Mouse", value: "R1 VXE Pro Max" },
+      { name: "Mouse", value: "R1 VXE Pro Max 4k" }, // Updated here
       { name: "Keyboard", value: "Yunzi AL68" },
       { name: "Webcam", value: "Razer Kiyo Pro" },
       { name: "Controller", value: "Gulikit KingKong 2 Pro" },
