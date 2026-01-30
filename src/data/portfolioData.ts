@@ -303,9 +303,9 @@ export const workstationData: WorkstationCategory[] = [
     items: [
       { name: "Processor", value: "Ryzen 7 5700x" },
       { name: "Cooler", value: "IDCooling Zoomflow 360x" },
-      { name: "Motherboard", value: "MSI B450 Gaming Pro Carbon AC" }, // Motherboard
-      { name: "Chassis", value: "Gamemax HypeBK" }, // Moved here
-      { name: "Chassis Fan", value: "Jungle Leopard Interstellar V2" }, // Moved here
+      { name: "Motherboard", value: "MSI B450 Gaming Pro Carbon AC" },
+      { name: "Chassis", value: "Gamemax HypeBK" },
+      { name: "Chassis Fan", value: "Jungle Leopard Interstellar V2" },
       { name: "Memory", value: "Kingston Fury DDR4 RAM 16x2 3600" },
       { name: "GPU", value: "MSI RTX 2070 Super Gaming X Trio" },
       { name: "Main Storage", value: "ADATA XPG SX8200 Pro 1TB" },
@@ -322,7 +322,7 @@ export const workstationData: WorkstationCategory[] = [
       { name: "Webcam", value: "Razer Kiyo Pro" },
       { name: "Controller", value: "Gulikit KingKong 2 Pro" },
       { name: "Microphone", value: "Fifine AM8" },
-      { name: "Headset", value: "Corsair HS80 RGB" },
+      { name: "Headset", value: "Corsair HS80 MAX" }, // Updated here
       { name: "Earbuds", value: "Salnotes 7hz Zero" },
       { name: "TWS Earbuds", value: "Moondrop Space Travel" },
       { name: "Speakers", value: "Logitech Z333" },
