@@ -315,6 +315,21 @@ export const workstationData: WorkstationCategory[] = [
     ],
   },
   {
+    title: "Peripherals",
+    items: [
+      { name: "Mouse", value: "R1 VXE Pro Max" },
+      { name: "Keyboard", value: "Yunzi AL68" },
+      { name: "Webcam", value: "Razer Kiyo Pro" },
+      { name: "Controller", value: "Gulikit KingKong 2 Pro" },
+      { name: "Microphone", value: "Fifine AM8" },
+      { name: "Headset", value: "Corsair HS80 RGB" },
+      { name: "Earbuds", value: "Salnotes 7hz Zero" },
+      { name: "TWS Earbuds", value: "Moondrop Space Travel" },
+      { name: "Speakers", value: "Logitech Z333" },
+      { name: "Audio Interface", value: "Behringer UMC 404" },
+    ],
+  },
+  {
     title: "Displays",
     items: [
       { name: "Main Display", value: "Xiaomi 34\" Ultrawide Monitor" },
@@ -333,30 +348,6 @@ export const workstationData: WorkstationCategory[] = [
     ],
   },
   {
-    title: "Connectivity", // New category added
-    items: [
-      { name: "Router", value: "TP - Link AX3000 Dual Band Gigabit Wi-Fi 6 Router" },
-      { name: "Ethernet Cable", value: "Vention Cat8 SFTP 40Gbps" },
-      { name: "Internet Connectivity", value: "PLDT 700 Mbps" },
-      { name: "Back-up Internet Connectivity", value: "Globe 300 Mbps" },
-    ],
-  },
-  {
-    title: "Peripherals",
-    items: [
-      { name: "Mouse", value: "R1 VXE Pro Max" },
-      { name: "Keyboard", value: "Yunzi AL68" },
-      { name: "Webcam", value: "Razer Kiyo Pro" },
-      { name: "Controller", value: "Gulikit KingKong 2 Pro" },
-      { name: "Microphone", value: "Fifine AM8" },
-      { name: "Headset", value: "Corsair HS80 RGB" },
-      { name: "Earbuds", value: "Salnotes 7hz Zero" },
-      { name: "TWS Earbuds", value: "Moondrop Space Travel" },
-      { name: "Speakers", value: "Logitech Z333" },
-      { name: "Audio Interface", value: "Behringer UMC 404" },
-    ],
-  },
-  {
     title: "Accessories",
     items: [
       { name: "Mousepad", value: "MD/Alpha Mousepad 400x900" },
@@ -366,6 +357,15 @@ export const workstationData: WorkstationCategory[] = [
       { name: "Mic Boom Arm", value: "Thronmax S8 Twins" },
       { name: "GPU Mount", value: "PHANTEKS Vertical GPU Bracket" },
       { name: "Cable Sleeves", value: "Visioncable Gray & Black Extension" },
+    ],
+  },
+  {
+    title: "Connectivity", // New category added
+    items: [
+      { name: "Router", value: "TP - Link AX3000 Dual Band Gigabit Wi-Fi 6 Router" },
+      { name: "Ethernet Cable", value: "Vention Cat8 SFTP 40Gbps" },
+      { name: "Internet Connectivity", value: "PLDT 700 Mbps" },
+      { name: "Back-up Internet Connectivity", value: "Globe 300 Mbps" },
     ],
   },
 ];
