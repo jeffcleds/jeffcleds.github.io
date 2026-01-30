@@ -326,7 +326,7 @@ export const workstationData: WorkstationCategory[] = [
       { name: "Earbuds", value: "Salnotes 7hz Zero" },
       { name: "TWS Earbuds", value: "Moondrop Space Travel" },
       { name: "Speakers", value: "Logitech Z333" },
-      { name: "Audio Interface", value: "Behringer UMC 404" },
+      { name: "Audio Interface", value: "Behringer UMC 404HD" }, // Updated here
     ],
   },
   {
