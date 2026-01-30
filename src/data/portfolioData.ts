@@ -333,6 +333,15 @@ export const workstationData: WorkstationCategory[] = [
     ],
   },
   {
+    title: "Connectivity", // New category added
+    items: [
+      { name: "Router", value: "TP - Link AX3000 Dual Band Gigabit Wi-Fi 6 Router" },
+      { name: "Ethernet Cable", value: "Vention Cat8 SFTP 40Gbps" },
+      { name: "Internet Connectivity", value: "PLDT 700 Mbps" },
+      { name: "Back-up Internet Connectivity", value: "Globe 300 Mbps" },
+    ],
+  },
+  {
     title: "Peripherals",
     items: [
       { name: "Mouse", value: "R1 VXE Pro Max" },
