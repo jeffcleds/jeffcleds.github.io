@@ -36,7 +36,7 @@ export default function Index() {
     "IT Specialist",
     "Web Developer",
     "Virtual Assistant",
-    "Network Engineer",
+    "Network Specialist",
     "Dispatcher",
     "Software Developer"
   ];
