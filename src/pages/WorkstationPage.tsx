@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDarkVeil } from "@/components/layout/DarkVeilProvider";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,9 +10,16 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { ZoomIn } from "lucide-react";
 
 const WorkstationPage: React.FC = () => {
   const { isDarkVeilActive } = useDarkVeil();
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const cardClassNames = isDarkVeilActive ? 'border border-primary/20 backdrop-blur-md' : '';
 
@@ -33,18 +40,37 @@ const WorkstationPage: React.FC = () => {
       </ScrollReveal>
 
       <ScrollReveal delay={0.2}>
-        <div className="mb-12 flex justify-center px-4 md:px-16"> {/* Increased padding to accommodate buttons */}
+        <div className="mb-12 flex justify-center px-4 md:px-16">
           <Carousel className="w-full max-w-5xl">
             <CarouselContent>
               {workstationImages.map((imageSrc, index) => (
                 <CarouselItem key={index}>
-                  <div className="aspect-video overflow-hidden rounded-lg shadow-xl border border-border">
-                    <img
-                      src={imageSrc}
-                      alt={`My Workstation Setup ${index + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <div 
+                        className="group relative aspect-video overflow-hidden rounded-lg shadow-xl border border-border cursor-zoom-in"
+                        onClick={() => setSelectedImage(imageSrc)}
+                      >
+                        <img
+                          src={imageSrc}
+                          alt={`My Workstation Setup ${index + 1}`}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                          <div className="bg-background/80 p-2 rounded-full backdrop-blur-sm">
+                            <ZoomIn className="h-6 w-6 text-foreground" />
+                          </div>
+                        </div>
+                      </div>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 border-none bg-transparent shadow-none flex items-center justify-center">
+                      <img
+                        src={imageSrc}
+                        alt="Workstation Zoomed"
+                        className="w-full h-full object-contain rounded-lg"
+                      />
+                    </DialogContent>
+                  </Dialog>
                 </CarouselItem>
               ))}
             </CarouselContent>
