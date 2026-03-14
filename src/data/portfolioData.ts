@@ -332,7 +332,7 @@ export const workstationData: WorkstationCategory[] = [
   {
     title: "Displays",
     items: [
-      { name: "Main Display", value: "Xiaomi 34\" Ultrawide Monitor" },
+      { name: "Main Display", value: "Xiaomi G34WQi Ultrawide Monitor 180hz" },
       { name: "Top Display", value: "Xiaomi A24i" },
       { name: "Side Display", value: "Xiaomi A24i" },
       { name: "External Display", value: "Skyworth 24X1Q" },
