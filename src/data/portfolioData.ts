@@ -365,7 +365,7 @@ export const workstationData: WorkstationCategory[] = [
       { name: "Router", value: "TP - Link AX3000 Wi-Fi 6 Router" },
       { name: "Ethernet Cable", value: "Vention Cat8 SFTP 40Gbps" },
       { name: "Internet Connectivity", value: "PLDT 700 Mbps" },
-      { name: "Back-up Internet Connectivity", value: "Globe 300 Mbps" },
+      { name: "Back-up Internet Connectivity", value: "Globe 500 Mbps" },
     ],
   },
 ];
