@@ -29,7 +29,7 @@ const WorkstationPage: React.FC = () => {
   ];
 
   return (
-    <div className="container mx-auto py-8 md:py-12 px-4 overflow-x-hidden">
+    <div className="container mx-auto py-8 md:py-12 px-4">
       <ScrollReveal delay={0}>
         <h1 className="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-10">My Workstation</h1>
       </ScrollReveal>
@@ -40,7 +40,7 @@ const WorkstationPage: React.FC = () => {
       </ScrollReveal>
 
       <ScrollReveal delay={0.2}>
-        <div className="mb-12 flex justify-center px-4 md:px-16">
+        <div className="mb-12 flex justify-center px-4 md:px-12">
           <Carousel className="w-full max-w-5xl">
             <CarouselContent>
               {workstationImages.map((imageSrc, index) => (
