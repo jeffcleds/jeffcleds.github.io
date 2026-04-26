@@ -309,7 +309,7 @@ export const workstationData: WorkstationCategory[] = [
       { name: "Memory", value: "Kingston Fury DDR4 RAM 16x2 3600" },
       { name: "GPU", value: "MSI RTX 2070 Super Gaming X Trio" },
       { name: "Main Storage", value: "ADATA XPG SX8200 Pro 1TB" },
-      { name: "Secondary Storage", value: "WD HDD Blue 500 GB" },
+      { name: "Secondary Storage", value: "WD HDD Blue 1TB" },
       { name: "Secondary Storage", value: "Seagate Barracuda 1TB" },
       { name: "Power Supply", value: "Segotep GM850W Modular Gold" },
     ],
